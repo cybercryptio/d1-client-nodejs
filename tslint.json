@@ -1,3 +1,11 @@
 {
-    "extends": ["tslint:recommended", "tslint-config-prettier"]
+    "extends": ["tslint:recommended", "tslint-config-prettier"],
+    "linterOptions": {
+        "fix": true,
+        "exclude": [
+            "node_modules",
+            "**/*.d.ts",
+            "src/proto.js"
+        ]
+    }
 }
