@@ -23,6 +23,9 @@ jobs:
     - name: Setup and cache dependencies
       uses: cybercryptio/build-setup-action@master
 
+    - name: Install NPM modules
+      run: npm install
+
     - name: Build
       run: make build
 
