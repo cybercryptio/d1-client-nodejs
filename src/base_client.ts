@@ -3,7 +3,7 @@ import { Message, Method, rpc, RPCImplCallback } from 'protobufjs/minimal';
 import { d1 } from './proto';
 import { readFileSync } from 'fs';
 import { CallMetadataGenerator } from '@grpc/grpc-js/build/src/call-credentials';
-import { D1ChannelCredentials, ICredentials } from './credentials';
+import { D1InsecureChannelCredentials, ICredentials } from './credentials';
 
 /** Base client providing common client functionality */
 export abstract class D1BaseClient {
@@ -23,7 +23,7 @@ export abstract class D1BaseClient {
      * @param creds The credentials to use for authentication
      */
     constructor(serverUrl: string, creds: ICredentials, certPath: string | undefined = undefined) {
-        let channelCreds: ChannelCredentials = new D1ChannelCredentials();
+        let channelCreds: ChannelCredentials = new D1InsecureChannelCredentials();
         if (certPath) {
             const cert = readFileSync(certPath);
             channelCreds = credentials.createSsl(cert);

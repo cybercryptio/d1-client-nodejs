@@ -45,7 +45,11 @@ export class TokenCredentials implements ICredentials {
     }
 }
 
-export class D1ChannelCredentials extends ChannelCredentials {
+// Beacase the gRPC implementation doesn't allow sending call credentials over an insecure channel,
+// we need to implement our own channel credentials, to allow this.
+// This implementation is a pure copy/paste of the implementation in the gRPC library, with the check
+// for the insecure channel removed.
+export class D1InsecureChannelCredentials extends ChannelCredentials {
     constructor(callCredentials?: CallCredentials) {
         super(callCredentials);
     }
@@ -60,7 +64,7 @@ export class D1ChannelCredentials extends ChannelCredentials {
         return false;
     }
     _equals(other: ChannelCredentials) {
-        return other instanceof D1ChannelCredentials;
+        return other instanceof D1InsecureChannelCredentials;
     }
 }
 
