@@ -22,28 +22,28 @@ describe("generic", () => {
         } else {
             endpoint = "localhost:9000";
         }
-        let creds = new UsernamePasswordCredentials(uid, password, endpoint);
+        const creds = new UsernamePasswordCredentials(uid, password, endpoint);
         client = new D1GenericClient(endpoint, creds);
     })
     it("should be able to get version information", async () => {
-        let res = await client.version.version({});
+        const res = await client.version.version({});
         expect(res).toBeDefined();
     })
     it("should be able to manage users", async () => {
-        let createUserRes = await client.authn.createUser({ scopes: [] });
-        let createGroupRes = await client.authn.createGroup({ scopes: [] });
+        const createUserRes = await client.authn.createUser({ scopes: [] });
+        const createGroupRes = await client.authn.createGroup({ scopes: [] });
         await client.authn.addUserToGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
         await client.authn.removeUserFromGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
         await client.authn.removeUser({ userId: createUserRes.userId });
     })
     it("should be able to encrypt data", async () => {
-        let plaintext = Buffer.from("plaintext");
-        let associatedData = Buffer.from("associatedData");
-        let createUserResponse = await client.authn.createUser({ scopes: [d1.scopes.Scope.CREATE, d1.scopes.Scope.READ] });
-        let client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserResponse.userId, createUserResponse.password, endpoint));
+        const plaintext = Buffer.from("plaintext");
+        const associatedData = Buffer.from("associatedData");
+        const createUserResponse = await client.authn.createUser({ scopes: [d1.scopes.Scope.CREATE, d1.scopes.Scope.READ] });
+        const client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserResponse.userId, createUserResponse.password, endpoint));
 
-        let encryptResponse = await client2.generic.encrypt({ plaintext, associatedData });
-        let decryptResponse = await client2.generic.decrypt({ objectId: encryptResponse.objectId, ciphertext: encryptResponse.ciphertext, associatedData });
+        const encryptResponse = await client2.generic.encrypt({ plaintext, associatedData });
+        const decryptResponse = await client2.generic.decrypt({ objectId: encryptResponse.objectId, ciphertext: encryptResponse.ciphertext, associatedData });
 
         expect(plaintext).toStrictEqual(decryptResponse.plaintext);
         expect(associatedData).toStrictEqual(decryptResponse.associatedData);
@@ -51,25 +51,25 @@ describe("generic", () => {
     it("should be able to add and search for keywords in index", async () => {
         const keywords = ["keyword1", "keyword2"];
         const identifier = "id1";
-        let createUserRes = await client.authn.createUser({ scopes: [d1.scopes.Scope.INDEX] });
-        let client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserRes.userId, createUserRes.password, endpoint));
+        const createUserRes = await client.authn.createUser({ scopes: [d1.scopes.Scope.INDEX] });
+        const client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserRes.userId, createUserRes.password, endpoint));
 
         await client2.index.add({ keywords, identifier });
-        for (let keyword of keywords) {
-            let res = await client2.index.search({ keyword });
+        for (const keyword of keywords) {
+            const res = await client2.index.search({ keyword });
             expect(res.identifiers).toContain(identifier);
         }
     })
     it("should be able to delete keywords in index", async () => {
         const keywords = ["deletekeyword1", "deletekeyword2"];
         const identifier = "id2";
-        let createUserRes = await client.authn.createUser({ scopes: [d1.scopes.Scope.INDEX] });
-        let client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserRes.userId, createUserRes.password, endpoint));
+        const createUserRes = await client.authn.createUser({ scopes: [d1.scopes.Scope.INDEX] });
+        const client2 = new D1GenericClient(endpoint, new UsernamePasswordCredentials(createUserRes.userId, createUserRes.password, endpoint));
 
         await client2.index.add({ keywords, identifier });
         await client2.index.delete({ keywords, identifier });
-        for (let keyword of keywords) {
-            let res = await client2.index.search({ keyword });
+        for (const keyword of keywords) {
+            const res = await client2.index.search({ keyword });
             expect(res.identifiers).toEqual([]);
         }
     })
