@@ -9,7 +9,7 @@ SHELL := /bin/bash
 
 ##### Build targets #####
 .PHONY: build
-build: # Build all clients
+build: ## Build all clients
 	npm run build
 
 .PHONY: tests
