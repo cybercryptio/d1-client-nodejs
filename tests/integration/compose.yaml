@@ -1,0 +1,54 @@
+version: '3.9'
+
+x-health-config: &health-config
+  timeout: 30s
+  interval: 1s
+  retries: 30
+
+x-config:
+  &config
+  D1_SERVICE_INSECURE: "1"
+
+  # IO Provider
+  D1_IO_REDIS_ADDRESS: "redis:6379"
+
+services:
+  d1-service-storage:
+    image: ghcr.io/cybercryptio/d1-service-storage:v0.1.27-ci.35
+    container_name: d1-service-storage
+    environment:
+      <<: *config
+    volumes:
+      - ${PWD}/config.toml:/config.toml
+    ports:
+      - 9000:9000
+    depends_on:
+      redis:
+        condition: service_healthy
+    tty: true
+    profiles:
+      - storage
+
+  d1-service-generic:
+    image: ghcr.io/cybercryptio/d1-service-generic:v0.1.49-ci.48
+    container_name: d1-service-generic
+    environment:
+      <<: *config
+    volumes:
+      - ${PWD}/config.toml:/config.toml
+    ports:
+      - 9000:9000
+    depends_on:
+      redis:
+        condition: service_healthy
+    tty: true
+    profiles:
+      - generic
+
+  # redis
+  redis:
+    image: redis:7.0.3-alpine
+    container_name: redis
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+      <<: *health-config
