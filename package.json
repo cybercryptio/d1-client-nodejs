@@ -1,18 +1,27 @@
 {
-  "name": "d1-client-nodejs",
+  "name": "@cybercryptio/d1-client-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "repository": {
+    "name": "https://github.com/cybercryptio/d1-client-nodejs.git",
+    "type": "git"
+  },
   "scripts": {
     "test": "jest",
-    "build": "npm run protobuf && tsc --build --clean && tsc --build && cp -f src/proto.d.ts dist",
+    "build": "npm run protobuf && tsc --build --clean && tsc --build && cp -f src/proto.d.ts dist/src/",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "protobuf": "pbjs -t static-module -w commonjs -o src/proto.js protobufs/*.proto && pbts -o src/proto.d.ts src/proto.js",
     "clean": "rm -rf dist"
   },
-  "keywords": ["encryption", "crypto", "cryptography", "post-quantum"],
+  "keywords": [
+    "encryption",
+    "crypto",
+    "cryptography",
+    "post-quantum"
+  ],
   "author": "CyberCrypt",
   "license": "Apache 2.0",
   "devDependencies": {
@@ -28,10 +37,13 @@
     "typescript": "^4.7.4"
   },
   "files": [
-    "dist/**/*"
+    "dist/src/**/*"
   ],
   "dependencies": {
     "@grpc/grpc-js": "^1.6.8",
     "protobufjs": "~7.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
