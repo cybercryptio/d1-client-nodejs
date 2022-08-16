@@ -68,7 +68,7 @@ jobs:
 
     - name: Publish package
       if: github.ref_name == 'master'
-      run: npm publish
+      run: make publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.CYBOT_TOKEN }}
 
