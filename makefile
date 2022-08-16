@@ -13,7 +13,7 @@ build: ## Build all clients
 	npm run build
 
 .PHONY: publish
-publish: ## Publish package
+publish: build ## Publish package
 	npm publish
 
 .PHONY: tests
