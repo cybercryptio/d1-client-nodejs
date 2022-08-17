@@ -43,7 +43,6 @@
     "@grpc/grpc-js": "^1.6.8",
     "protobufjs": "~7.0.0"
   },
-  "private": "true",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
