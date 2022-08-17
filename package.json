@@ -4,10 +4,7 @@
   "description": "",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
-  "repository": {
-    "name": "https://github.com/cybercryptio/d1-client-nodejs.git",
-    "type": "git"
-  },
+  "repository": "https://github.com/cybercryptio/d1-client-nodejs.git",
   "scripts": {
     "test": "jest",
     "build": "npm run protobuf && tsc --build --clean && tsc --build && cp -f src/proto.d.ts dist/src/",
