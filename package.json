@@ -23,7 +23,7 @@
     "post-quantum"
   ],
   "author": "CyberCrypt",
-  "license": "Apache 2.0",
+  "license": "CC-BY-4.0",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/jest": "^28.1.6",
