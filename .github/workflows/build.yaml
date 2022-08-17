@@ -23,6 +23,13 @@ jobs:
     - name: Setup and cache dependencies
       uses: cybercryptio/build-setup-action@master
 
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+        registry-url: 'https://npm.pkg.github.com'
+        # Defaults to the user or organization that owns the workflow file
+        scope: '@cybercryptio'
+
     - name: Install NPM modules
       run: npm install
 
@@ -55,8 +62,18 @@ jobs:
       with:
         additionalArguments: '/overrideconfig mode=ContinuousDeployment'
 
+    - name: Set package version
+      if: github.ref_name == 'master'
+      run: npm version ${{ steps.gitversion.version }} --no-git-tag-version
+
+    - name: Publish package
+      if: github.ref_name == 'master'
+      run: make publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.CYBOT_TOKEN }}
+
     - name: Create tag
       if: github.ref_name == 'master'
       run: |
-        git tag -f ${{ steps.gitversion.outputs.semVer }}
+        git tag -f v${{ steps.gitversion.outputs.semVer }}
         git push origin ${{ steps.gitversion.outputs.semVer }}

@@ -12,6 +12,10 @@ SHELL := /bin/bash
 build: ## Build all clients
 	npm run build
 
+.PHONY: publish
+publish: build ## Publish package
+	npm publish
+
 .PHONY: tests
 tests: docker-generic-tests docker-storage-tests ## Run all tests
 
