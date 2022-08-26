@@ -6,11 +6,13 @@ help:  ## Display this help
 
 ##### Config #####
 SHELL := /bin/bash
+apiDocsDir = "./documentation/api"
 
 ##### Build targets #####
 .PHONY: build
 build: ## Build all clients
 	npm run build
+	$(MAKE) apidocs
 
 .PHONY: publish
 publish: build ## Publish package
@@ -55,6 +57,14 @@ docker-storage-tests-down: ## Stop docker Storage test environment
 .PHONY: lint
 lint: ## Run linting
 	npm run lint
+
+.PHONY: apidocs
+apidocs: ## Generate API documentation
+	npx typedoc
+
+.PHONY: apidocs-verify
+apidocs-verify: ## Verify API documentation is up-to-date
+	git ls-files --other --modified --deleted --exclude-standard -- $(apiDocsDir)  | sed q1
 
 ##### Cleanup targets #####
 .PHONY: clean

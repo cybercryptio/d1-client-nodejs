@@ -39,6 +39,9 @@ jobs:
     - name: Lint
       run: make lint
 
+    - name: Verify API docs is up-to-date
+      run: make apidocs-verify
+
     - name: Log in to the Github container registry
       uses: docker/login-action@v1
       with:
