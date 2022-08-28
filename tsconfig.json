@@ -6,5 +6,14 @@
     "declaration": true,
   },
   "include": ["src/**/*", "tests/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "typedocOptions": {
+    "entryPoints": "src/index.ts",
+    "out": "documentation/api",
+    "disableSources": true,
+    "cleanOutputDir": true,
+    "plugin": "typedoc-plugin-markdown",
+    "githubPages": false,
+    "namedAnchors": true
+  }
 }
