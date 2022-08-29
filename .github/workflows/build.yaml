@@ -1,4 +1,4 @@
-name: .NET build
+name: Build
 
 on:
   push:
@@ -67,7 +67,7 @@ jobs:
 
     - name: Set package version
       if: github.ref_name == 'master'
-      run: npm version ${{ steps.gitversion.version }} --no-git-tag-version
+      run: npm version ${{ steps.gitversion.outputs.semVer }} --no-git-tag-version
 
     - name: Publish package
       if: github.ref_name == 'master'
