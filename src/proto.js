@@ -1,3 +1,17 @@
+// Copyright 2022 CYBERCRYPT
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// 	http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
@@ -9,7 +23,7 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.d1 = (function() {
+$root.d1 = (function () {
 
     /**
      * Namespace d1.
@@ -18,7 +32,7 @@ $root.d1 = (function() {
      */
     var d1 = {};
 
-    d1.authn = (function() {
+    d1.authn = (function () {
 
         /**
          * Namespace authn.
@@ -27,7 +41,7 @@ $root.d1 = (function() {
          */
         var authn = {};
 
-        authn.Authn = (function() {
+        authn.Authn = (function () {
 
             /**
              * Constructs a new Authn service.
@@ -282,7 +296,7 @@ $root.d1 = (function() {
             return Authn;
         })();
 
-        authn.CreateUserRequest = (function() {
+        authn.CreateUserRequest = (function () {
 
             /**
              * Properties of a CreateUserRequest.
@@ -379,7 +393,7 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             if (!(message.scopes && message.scopes.length))
                                 message.scopes = [];
                             if ((tag & 7) === 2) {
@@ -390,9 +404,9 @@ $root.d1 = (function() {
                                 message.scopes.push(reader.int32());
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -430,16 +444,16 @@ $root.d1 = (function() {
                         return "scopes: array expected";
                     for (var i = 0; i < message.scopes.length; ++i)
                         switch (message.scopes[i]) {
-                        default:
-                            return "scopes: enum value[] expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                        case 6:
-                            break;
+                            default:
+                                return "scopes: enum value[] expected";
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                                break;
                         }
                 }
                 return null;
@@ -463,35 +477,35 @@ $root.d1 = (function() {
                     message.scopes = [];
                     for (var i = 0; i < object.scopes.length; ++i)
                         switch (object.scopes[i]) {
-                        default:
-                        case "READ":
-                        case 0:
-                            message.scopes[i] = 0;
-                            break;
-                        case "CREATE":
-                        case 1:
-                            message.scopes[i] = 1;
-                            break;
-                        case "GETACCESS":
-                        case 2:
-                            message.scopes[i] = 2;
-                            break;
-                        case "MODIFYACCESS":
-                        case 3:
-                            message.scopes[i] = 3;
-                            break;
-                        case "UPDATE":
-                        case 4:
-                            message.scopes[i] = 4;
-                            break;
-                        case "DELETE":
-                        case 5:
-                            message.scopes[i] = 5;
-                            break;
-                        case "INDEX":
-                        case 6:
-                            message.scopes[i] = 6;
-                            break;
+                            default:
+                            case "READ":
+                            case 0:
+                                message.scopes[i] = 0;
+                                break;
+                            case "CREATE":
+                            case 1:
+                                message.scopes[i] = 1;
+                                break;
+                            case "GETACCESS":
+                            case 2:
+                                message.scopes[i] = 2;
+                                break;
+                            case "MODIFYACCESS":
+                            case 3:
+                                message.scopes[i] = 3;
+                                break;
+                            case "UPDATE":
+                            case 4:
+                                message.scopes[i] = 4;
+                                break;
+                            case "DELETE":
+                            case 5:
+                                message.scopes[i] = 5;
+                                break;
+                            case "INDEX":
+                            case 6:
+                                message.scopes[i] = 6;
+                                break;
                         }
                 }
                 return message;
@@ -549,7 +563,7 @@ $root.d1 = (function() {
             return CreateUserRequest;
         })();
 
-        authn.CreateUserResponse = (function() {
+        authn.CreateUserResponse = (function () {
 
             /**
              * Properties of a CreateUserResponse.
@@ -652,17 +666,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.password = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -776,7 +790,7 @@ $root.d1 = (function() {
             return CreateUserResponse;
         })();
 
-        authn.LoginUserRequest = (function() {
+        authn.LoginUserRequest = (function () {
 
             /**
              * Properties of a LoginUserRequest.
@@ -879,17 +893,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.password = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -1003,7 +1017,7 @@ $root.d1 = (function() {
             return LoginUserRequest;
         })();
 
-        authn.LoginUserResponse = (function() {
+        authn.LoginUserResponse = (function () {
 
             /**
              * Properties of a LoginUserResponse.
@@ -1042,7 +1056,7 @@ $root.d1 = (function() {
              * @memberof d1.authn.LoginUserResponse
              * @instance
              */
-            LoginUserResponse.prototype.expiryTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            LoginUserResponse.prototype.expiryTime = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
 
             /**
              * Creates a new LoginUserResponse instance using the specified properties.
@@ -1106,17 +1120,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.accessToken = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.expiryTime = reader.int64();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -1244,7 +1258,7 @@ $root.d1 = (function() {
             return LoginUserResponse;
         })();
 
-        authn.RemoveUserRequest = (function() {
+        authn.RemoveUserRequest = (function () {
 
             /**
              * Properties of a RemoveUserRequest.
@@ -1336,13 +1350,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -1447,7 +1461,7 @@ $root.d1 = (function() {
             return RemoveUserRequest;
         })();
 
-        authn.RemoveUserResponse = (function() {
+        authn.RemoveUserResponse = (function () {
 
             /**
              * Properties of a RemoveUserResponse.
@@ -1528,9 +1542,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -1622,7 +1636,7 @@ $root.d1 = (function() {
             return RemoveUserResponse;
         })();
 
-        authn.CreateGroupRequest = (function() {
+        authn.CreateGroupRequest = (function () {
 
             /**
              * Properties of a CreateGroupRequest.
@@ -1719,7 +1733,7 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             if (!(message.scopes && message.scopes.length))
                                 message.scopes = [];
                             if ((tag & 7) === 2) {
@@ -1730,9 +1744,9 @@ $root.d1 = (function() {
                                 message.scopes.push(reader.int32());
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -1770,16 +1784,16 @@ $root.d1 = (function() {
                         return "scopes: array expected";
                     for (var i = 0; i < message.scopes.length; ++i)
                         switch (message.scopes[i]) {
-                        default:
-                            return "scopes: enum value[] expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                        case 6:
-                            break;
+                            default:
+                                return "scopes: enum value[] expected";
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                                break;
                         }
                 }
                 return null;
@@ -1803,35 +1817,35 @@ $root.d1 = (function() {
                     message.scopes = [];
                     for (var i = 0; i < object.scopes.length; ++i)
                         switch (object.scopes[i]) {
-                        default:
-                        case "READ":
-                        case 0:
-                            message.scopes[i] = 0;
-                            break;
-                        case "CREATE":
-                        case 1:
-                            message.scopes[i] = 1;
-                            break;
-                        case "GETACCESS":
-                        case 2:
-                            message.scopes[i] = 2;
-                            break;
-                        case "MODIFYACCESS":
-                        case 3:
-                            message.scopes[i] = 3;
-                            break;
-                        case "UPDATE":
-                        case 4:
-                            message.scopes[i] = 4;
-                            break;
-                        case "DELETE":
-                        case 5:
-                            message.scopes[i] = 5;
-                            break;
-                        case "INDEX":
-                        case 6:
-                            message.scopes[i] = 6;
-                            break;
+                            default:
+                            case "READ":
+                            case 0:
+                                message.scopes[i] = 0;
+                                break;
+                            case "CREATE":
+                            case 1:
+                                message.scopes[i] = 1;
+                                break;
+                            case "GETACCESS":
+                            case 2:
+                                message.scopes[i] = 2;
+                                break;
+                            case "MODIFYACCESS":
+                            case 3:
+                                message.scopes[i] = 3;
+                                break;
+                            case "UPDATE":
+                            case 4:
+                                message.scopes[i] = 4;
+                                break;
+                            case "DELETE":
+                            case 5:
+                                message.scopes[i] = 5;
+                                break;
+                            case "INDEX":
+                            case 6:
+                                message.scopes[i] = 6;
+                                break;
                         }
                 }
                 return message;
@@ -1889,7 +1903,7 @@ $root.d1 = (function() {
             return CreateGroupRequest;
         })();
 
-        authn.CreateGroupResponse = (function() {
+        authn.CreateGroupResponse = (function () {
 
             /**
              * Properties of a CreateGroupResponse.
@@ -1981,13 +1995,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.groupId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -2092,7 +2106,7 @@ $root.d1 = (function() {
             return CreateGroupResponse;
         })();
 
-        authn.AddUserToGroupRequest = (function() {
+        authn.AddUserToGroupRequest = (function () {
 
             /**
              * Properties of an AddUserToGroupRequest.
@@ -2195,17 +2209,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.groupId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -2319,7 +2333,7 @@ $root.d1 = (function() {
             return AddUserToGroupRequest;
         })();
 
-        authn.AddUserToGroupResponse = (function() {
+        authn.AddUserToGroupResponse = (function () {
 
             /**
              * Properties of an AddUserToGroupResponse.
@@ -2400,9 +2414,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -2494,7 +2508,7 @@ $root.d1 = (function() {
             return AddUserToGroupResponse;
         })();
 
-        authn.RemoveUserFromGroupRequest = (function() {
+        authn.RemoveUserFromGroupRequest = (function () {
 
             /**
              * Properties of a RemoveUserFromGroupRequest.
@@ -2597,17 +2611,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.groupId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -2721,7 +2735,7 @@ $root.d1 = (function() {
             return RemoveUserFromGroupRequest;
         })();
 
-        authn.RemoveUserFromGroupResponse = (function() {
+        authn.RemoveUserFromGroupResponse = (function () {
 
             /**
              * Properties of a RemoveUserFromGroupResponse.
@@ -2802,9 +2816,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -2899,7 +2913,7 @@ $root.d1 = (function() {
         return authn;
     })();
 
-    d1.scopes = (function() {
+    d1.scopes = (function () {
 
         /**
          * Namespace scopes.
@@ -2920,7 +2934,7 @@ $root.d1 = (function() {
          * @property {number} DELETE=5 Delete data.
          * @property {number} INDEX=6 Use secure index for searching in data.
          */
-        scopes.Scope = (function() {
+        scopes.Scope = (function () {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "READ"] = 0;
             values[valuesById[1] = "CREATE"] = 1;
@@ -2935,7 +2949,7 @@ $root.d1 = (function() {
         return scopes;
     })();
 
-    d1.authz = (function() {
+    d1.authz = (function () {
 
         /**
          * Namespace authz.
@@ -2944,7 +2958,7 @@ $root.d1 = (function() {
          */
         var authz = {};
 
-        authz.Authz = (function() {
+        authz.Authz = (function () {
 
             /**
              * Constructs a new Authz service.
@@ -3096,7 +3110,7 @@ $root.d1 = (function() {
             return Authz;
         })();
 
-        authz.GetPermissionsRequest = (function() {
+        authz.GetPermissionsRequest = (function () {
 
             /**
              * Properties of a GetPermissionsRequest.
@@ -3188,13 +3202,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -3299,7 +3313,7 @@ $root.d1 = (function() {
             return GetPermissionsRequest;
         })();
 
-        authz.GetPermissionsResponse = (function() {
+        authz.GetPermissionsResponse = (function () {
 
             /**
              * Properties of a GetPermissionsResponse.
@@ -3393,15 +3407,15 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             if (!(message.groupIds && message.groupIds.length))
                                 message.groupIds = [];
                             message.groupIds.push(reader.string());
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -3518,7 +3532,7 @@ $root.d1 = (function() {
             return GetPermissionsResponse;
         })();
 
-        authz.AddPermissionRequest = (function() {
+        authz.AddPermissionRequest = (function () {
 
             /**
              * Properties of an AddPermissionRequest.
@@ -3621,17 +3635,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.groupId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -3745,7 +3759,7 @@ $root.d1 = (function() {
             return AddPermissionRequest;
         })();
 
-        authz.AddPermissionResponse = (function() {
+        authz.AddPermissionResponse = (function () {
 
             /**
              * Properties of an AddPermissionResponse.
@@ -3826,9 +3840,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -3920,7 +3934,7 @@ $root.d1 = (function() {
             return AddPermissionResponse;
         })();
 
-        authz.RemovePermissionRequest = (function() {
+        authz.RemovePermissionRequest = (function () {
 
             /**
              * Properties of a RemovePermissionRequest.
@@ -4023,17 +4037,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.groupId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -4147,7 +4161,7 @@ $root.d1 = (function() {
             return RemovePermissionRequest;
         })();
 
-        authz.RemovePermissionResponse = (function() {
+        authz.RemovePermissionResponse = (function () {
 
             /**
              * Properties of a RemovePermissionResponse.
@@ -4228,9 +4242,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -4325,7 +4339,7 @@ $root.d1 = (function() {
         return authz;
     })();
 
-    d1.generic = (function() {
+    d1.generic = (function () {
 
         /**
          * Namespace generic.
@@ -4334,7 +4348,7 @@ $root.d1 = (function() {
          */
         var generic = {};
 
-        generic.Generic = (function() {
+        generic.Generic = (function () {
 
             /**
              * Constructs a new Generic service.
@@ -4435,7 +4449,7 @@ $root.d1 = (function() {
             return Generic;
         })();
 
-        generic.EncryptRequest = (function() {
+        generic.EncryptRequest = (function () {
 
             /**
              * Properties of an EncryptRequest.
@@ -4538,17 +4552,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -4680,7 +4694,7 @@ $root.d1 = (function() {
             return EncryptRequest;
         })();
 
-        generic.EncryptResponse = (function() {
+        generic.EncryptResponse = (function () {
 
             /**
              * Properties of an EncryptResponse.
@@ -4794,21 +4808,21 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.ciphertext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    case 3: {
+                        case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -4948,7 +4962,7 @@ $root.d1 = (function() {
             return EncryptResponse;
         })();
 
-        generic.DecryptRequest = (function() {
+        generic.DecryptRequest = (function () {
 
             /**
              * Properties of a DecryptRequest.
@@ -5062,21 +5076,21 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.ciphertext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    case 3: {
+                        case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -5216,7 +5230,7 @@ $root.d1 = (function() {
             return DecryptRequest;
         })();
 
-        generic.DecryptResponse = (function() {
+        generic.DecryptResponse = (function () {
 
             /**
              * Properties of a DecryptResponse.
@@ -5319,17 +5333,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -5464,7 +5478,7 @@ $root.d1 = (function() {
         return generic;
     })();
 
-    d1.index = (function() {
+    d1.index = (function () {
 
         /**
          * Namespace index.
@@ -5473,7 +5487,7 @@ $root.d1 = (function() {
          */
         var index = {};
 
-        index.Index = (function() {
+        index.Index = (function () {
 
             /**
              * Constructs a new Index service.
@@ -5607,7 +5621,7 @@ $root.d1 = (function() {
             return Index;
         })();
 
-        index.AddRequest = (function() {
+        index.AddRequest = (function () {
 
             /**
              * Properties of an AddRequest.
@@ -5712,19 +5726,19 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             if (!(message.keywords && message.keywords.length))
                                 message.keywords = [];
                             message.keywords.push(reader.string());
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.identifier = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -5850,7 +5864,7 @@ $root.d1 = (function() {
             return AddRequest;
         })();
 
-        index.AddResponse = (function() {
+        index.AddResponse = (function () {
 
             /**
              * Properties of an AddResponse.
@@ -5931,9 +5945,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -6025,7 +6039,7 @@ $root.d1 = (function() {
             return AddResponse;
         })();
 
-        index.SearchRequest = (function() {
+        index.SearchRequest = (function () {
 
             /**
              * Properties of a SearchRequest.
@@ -6117,13 +6131,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.keyword = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -6228,7 +6242,7 @@ $root.d1 = (function() {
             return SearchRequest;
         })();
 
-        index.SearchResponse = (function() {
+        index.SearchResponse = (function () {
 
             /**
              * Properties of a SearchResponse.
@@ -6322,15 +6336,15 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 2: {
+                        case 2: {
                             if (!(message.identifiers && message.identifiers.length))
                                 message.identifiers = [];
                             message.identifiers.push(reader.string());
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -6447,7 +6461,7 @@ $root.d1 = (function() {
             return SearchResponse;
         })();
 
-        index.DeleteRequest = (function() {
+        index.DeleteRequest = (function () {
 
             /**
              * Properties of a DeleteRequest.
@@ -6552,19 +6566,19 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             if (!(message.keywords && message.keywords.length))
                                 message.keywords = [];
                             message.keywords.push(reader.string());
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.identifier = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -6690,7 +6704,7 @@ $root.d1 = (function() {
             return DeleteRequest;
         })();
 
-        index.DeleteResponse = (function() {
+        index.DeleteResponse = (function () {
 
             /**
              * Properties of a DeleteResponse.
@@ -6771,9 +6785,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -6868,7 +6882,7 @@ $root.d1 = (function() {
         return index;
     })();
 
-    d1.storage = (function() {
+    d1.storage = (function () {
 
         /**
          * Namespace storage.
@@ -6877,7 +6891,7 @@ $root.d1 = (function() {
          */
         var storage = {};
 
-        storage.Storage = (function() {
+        storage.Storage = (function () {
 
             /**
              * Constructs a new Storage service.
@@ -7044,7 +7058,7 @@ $root.d1 = (function() {
             return Storage;
         })();
 
-        storage.StoreRequest = (function() {
+        storage.StoreRequest = (function () {
 
             /**
              * Properties of a StoreRequest.
@@ -7147,17 +7161,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -7289,7 +7303,7 @@ $root.d1 = (function() {
             return StoreRequest;
         })();
 
-        storage.StoreResponse = (function() {
+        storage.StoreResponse = (function () {
 
             /**
              * Properties of a StoreResponse.
@@ -7381,13 +7395,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -7492,7 +7506,7 @@ $root.d1 = (function() {
             return StoreResponse;
         })();
 
-        storage.RetrieveRequest = (function() {
+        storage.RetrieveRequest = (function () {
 
             /**
              * Properties of a RetrieveRequest.
@@ -7584,13 +7598,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -7695,7 +7709,7 @@ $root.d1 = (function() {
             return RetrieveRequest;
         })();
 
-        storage.RetrieveResponse = (function() {
+        storage.RetrieveResponse = (function () {
 
             /**
              * Properties of a RetrieveResponse.
@@ -7798,17 +7812,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -7940,7 +7954,7 @@ $root.d1 = (function() {
             return RetrieveResponse;
         })();
 
-        storage.UpdateRequest = (function() {
+        storage.UpdateRequest = (function () {
 
             /**
              * Properties of an UpdateRequest.
@@ -8054,21 +8068,21 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                    case 3: {
+                        case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -8208,7 +8222,7 @@ $root.d1 = (function() {
             return UpdateRequest;
         })();
 
-        storage.UpdateResponse = (function() {
+        storage.UpdateResponse = (function () {
 
             /**
              * Properties of an UpdateResponse.
@@ -8289,9 +8303,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -8383,7 +8397,7 @@ $root.d1 = (function() {
             return UpdateResponse;
         })();
 
-        storage.DeleteRequest = (function() {
+        storage.DeleteRequest = (function () {
 
             /**
              * Properties of a DeleteRequest.
@@ -8475,13 +8489,13 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -8586,7 +8600,7 @@ $root.d1 = (function() {
             return DeleteRequest;
         })();
 
-        storage.DeleteResponse = (function() {
+        storage.DeleteResponse = (function () {
 
             /**
              * Properties of a DeleteResponse.
@@ -8667,9 +8681,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -8764,7 +8778,7 @@ $root.d1 = (function() {
         return storage;
     })();
 
-    d1.version = (function() {
+    d1.version = (function () {
 
         /**
          * Namespace version.
@@ -8773,7 +8787,7 @@ $root.d1 = (function() {
          */
         var version = {};
 
-        version.Version = (function() {
+        version.Version = (function () {
 
             /**
              * Constructs a new Version service.
@@ -8841,7 +8855,7 @@ $root.d1 = (function() {
             return Version;
         })();
 
-        version.VersionRequest = (function() {
+        version.VersionRequest = (function () {
 
             /**
              * Properties of a VersionRequest.
@@ -8922,9 +8936,9 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
@@ -9016,7 +9030,7 @@ $root.d1 = (function() {
             return VersionRequest;
         })();
 
-        version.VersionResponse = (function() {
+        version.VersionResponse = (function () {
 
             /**
              * Properties of a VersionResponse.
@@ -9119,17 +9133,17 @@ $root.d1 = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1: {
+                        case 1: {
                             message.commit = reader.string();
                             break;
                         }
-                    case 2: {
+                        case 2: {
                             message.tag = reader.string();
                             break;
                         }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
                     }
                 }
                 return message;
