@@ -1,17 +1,3 @@
-// Copyright 2022 CYBERCRYPT
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// 	http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
@@ -23,7 +9,7 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.d1 = (function () {
+$root.d1 = (function() {
 
     /**
      * Namespace d1.
@@ -32,7 +18,7 @@ $root.d1 = (function () {
      */
     var d1 = {};
 
-    d1.authn = (function () {
+    d1.authn = (function() {
 
         /**
          * Namespace authn.
@@ -41,7 +27,7 @@ $root.d1 = (function () {
          */
         var authn = {};
 
-        authn.Authn = (function () {
+        authn.Authn = (function() {
 
             /**
              * Constructs a new Authn service.
@@ -83,8 +69,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Creates a new user.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
+             * Calls CreateUser.
              * @function createUser
              * @memberof d1.authn.Authn
              * @instance
@@ -98,8 +83,7 @@ $root.d1 = (function () {
             }, "name", { value: "CreateUser" });
 
             /**
-             * Creates a new user.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
+             * Calls CreateUser.
              * @function createUser
              * @memberof d1.authn.Authn
              * @instance
@@ -118,9 +102,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Logs in an existing user, returning a User Access Token and an expiry time.
-             * This call can fail if the caller provides the wrong credentials or if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls LoginUser.
              * @function loginUser
              * @memberof d1.authn.Authn
              * @instance
@@ -134,9 +116,7 @@ $root.d1 = (function () {
             }, "name", { value: "LoginUser" });
 
             /**
-             * Logs in an existing user, returning a User Access Token and an expiry time.
-             * This call can fail if the caller provides the wrong credentials or if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls LoginUser.
              * @function loginUser
              * @memberof d1.authn.Authn
              * @instance
@@ -155,9 +135,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Deletes an existing user.
-             * This call can fail if the user does not exist,
-             * or if the auth storage cannot be reached, in which case an error is returned.
+             * Calls RemoveUser.
              * @function removeUser
              * @memberof d1.authn.Authn
              * @instance
@@ -171,9 +149,7 @@ $root.d1 = (function () {
             }, "name", { value: "RemoveUser" });
 
             /**
-             * Deletes an existing user.
-             * This call can fail if the user does not exist,
-             * or if the auth storage cannot be reached, in which case an error is returned.
+             * Calls RemoveUser.
              * @function removeUser
              * @memberof d1.authn.Authn
              * @instance
@@ -192,9 +168,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Creates a new group with the requested scopes. The caller is added to the group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls CreateGroup.
              * @function createGroup
              * @memberof d1.authn.Authn
              * @instance
@@ -208,9 +182,7 @@ $root.d1 = (function () {
             }, "name", { value: "CreateGroup" });
 
             /**
-             * Creates a new group with the requested scopes. The caller is added to the group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls CreateGroup.
              * @function createGroup
              * @memberof d1.authn.Authn
              * @instance
@@ -220,89 +192,81 @@ $root.d1 = (function () {
              */
 
             /**
-             * Callback as used by {@link d1.authn.Authn#addUserToGroup}.
+             * Callback as used by {@link d1.authn.Authn#addUserToGroups}.
              * @memberof d1.authn.Authn
-             * @typedef AddUserToGroupCallback
+             * @typedef AddUserToGroupsCallback
              * @type {function}
              * @param {Error|null} error Error, if any
-             * @param {d1.authn.AddUserToGroupResponse} [response] AddUserToGroupResponse
+             * @param {d1.authn.AddUserToGroupsResponse} [response] AddUserToGroupsResponse
              */
 
             /**
-             * Adds a user to a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @function addUserToGroup
+             * Calls AddUserToGroups.
+             * @function addUserToGroups
              * @memberof d1.authn.Authn
              * @instance
-             * @param {d1.authn.IAddUserToGroupRequest} request AddUserToGroupRequest message or plain object
-             * @param {d1.authn.Authn.AddUserToGroupCallback} callback Node-style callback called with the error, if any, and AddUserToGroupResponse
+             * @param {d1.authn.IAddUserToGroupsRequest} request AddUserToGroupsRequest message or plain object
+             * @param {d1.authn.Authn.AddUserToGroupsCallback} callback Node-style callback called with the error, if any, and AddUserToGroupsResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(Authn.prototype.addUserToGroup = function addUserToGroup(request, callback) {
-                return this.rpcCall(addUserToGroup, $root.d1.authn.AddUserToGroupRequest, $root.d1.authn.AddUserToGroupResponse, request, callback);
-            }, "name", { value: "AddUserToGroup" });
+            Object.defineProperty(Authn.prototype.addUserToGroups = function addUserToGroups(request, callback) {
+                return this.rpcCall(addUserToGroups, $root.d1.authn.AddUserToGroupsRequest, $root.d1.authn.AddUserToGroupsResponse, request, callback);
+            }, "name", { value: "AddUserToGroups" });
 
             /**
-             * Adds a user to a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @function addUserToGroup
+             * Calls AddUserToGroups.
+             * @function addUserToGroups
              * @memberof d1.authn.Authn
              * @instance
-             * @param {d1.authn.IAddUserToGroupRequest} request AddUserToGroupRequest message or plain object
-             * @returns {Promise<d1.authn.AddUserToGroupResponse>} Promise
+             * @param {d1.authn.IAddUserToGroupsRequest} request AddUserToGroupsRequest message or plain object
+             * @returns {Promise<d1.authn.AddUserToGroupsResponse>} Promise
              * @variation 2
              */
 
             /**
-             * Callback as used by {@link d1.authn.Authn#removeUserFromGroup}.
+             * Callback as used by {@link d1.authn.Authn#removeUserFromGroups}.
              * @memberof d1.authn.Authn
-             * @typedef RemoveUserFromGroupCallback
+             * @typedef RemoveUserFromGroupsCallback
              * @type {function}
              * @param {Error|null} error Error, if any
-             * @param {d1.authn.RemoveUserFromGroupResponse} [response] RemoveUserFromGroupResponse
+             * @param {d1.authn.RemoveUserFromGroupsResponse} [response] RemoveUserFromGroupsResponse
              */
 
             /**
-             * Removes a user from a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @function removeUserFromGroup
+             * Calls RemoveUserFromGroups.
+             * @function removeUserFromGroups
              * @memberof d1.authn.Authn
              * @instance
-             * @param {d1.authn.IRemoveUserFromGroupRequest} request RemoveUserFromGroupRequest message or plain object
-             * @param {d1.authn.Authn.RemoveUserFromGroupCallback} callback Node-style callback called with the error, if any, and RemoveUserFromGroupResponse
+             * @param {d1.authn.IRemoveUserFromGroupsRequest} request RemoveUserFromGroupsRequest message or plain object
+             * @param {d1.authn.Authn.RemoveUserFromGroupsCallback} callback Node-style callback called with the error, if any, and RemoveUserFromGroupsResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(Authn.prototype.removeUserFromGroup = function removeUserFromGroup(request, callback) {
-                return this.rpcCall(removeUserFromGroup, $root.d1.authn.RemoveUserFromGroupRequest, $root.d1.authn.RemoveUserFromGroupResponse, request, callback);
-            }, "name", { value: "RemoveUserFromGroup" });
+            Object.defineProperty(Authn.prototype.removeUserFromGroups = function removeUserFromGroups(request, callback) {
+                return this.rpcCall(removeUserFromGroups, $root.d1.authn.RemoveUserFromGroupsRequest, $root.d1.authn.RemoveUserFromGroupsResponse, request, callback);
+            }, "name", { value: "RemoveUserFromGroups" });
 
             /**
-             * Removes a user from a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @function removeUserFromGroup
+             * Calls RemoveUserFromGroups.
+             * @function removeUserFromGroups
              * @memberof d1.authn.Authn
              * @instance
-             * @param {d1.authn.IRemoveUserFromGroupRequest} request RemoveUserFromGroupRequest message or plain object
-             * @returns {Promise<d1.authn.RemoveUserFromGroupResponse>} Promise
+             * @param {d1.authn.IRemoveUserFromGroupsRequest} request RemoveUserFromGroupsRequest message or plain object
+             * @returns {Promise<d1.authn.RemoveUserFromGroupsResponse>} Promise
              * @variation 2
              */
 
             return Authn;
         })();
 
-        authn.CreateUserRequest = (function () {
+        authn.CreateUserRequest = (function() {
 
             /**
              * Properties of a CreateUserRequest.
              * @memberof d1.authn
              * @interface ICreateUserRequest
-             * @property {Array.<d1.scopes.Scope>|null} [scopes] The scopes the user should be assigned.
+             * @property {Array.<d1.scopes.Scope>|null} [scopes] CreateUserRequest scopes
              */
 
             /**
@@ -322,7 +286,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The scopes the user should be assigned.
+             * CreateUserRequest scopes.
              * @member {Array.<d1.scopes.Scope>} scopes
              * @memberof d1.authn.CreateUserRequest
              * @instance
@@ -393,7 +357,7 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             if (!(message.scopes && message.scopes.length))
                                 message.scopes = [];
                             if ((tag & 7) === 2) {
@@ -404,9 +368,9 @@ $root.d1 = (function () {
                                 message.scopes.push(reader.int32());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -444,16 +408,16 @@ $root.d1 = (function () {
                         return "scopes: array expected";
                     for (var i = 0; i < message.scopes.length; ++i)
                         switch (message.scopes[i]) {
-                            default:
-                                return "scopes: enum value[] expected";
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                                break;
+                        default:
+                            return "scopes: enum value[] expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            break;
                         }
                 }
                 return null;
@@ -477,35 +441,35 @@ $root.d1 = (function () {
                     message.scopes = [];
                     for (var i = 0; i < object.scopes.length; ++i)
                         switch (object.scopes[i]) {
-                            default:
-                            case "READ":
-                            case 0:
-                                message.scopes[i] = 0;
-                                break;
-                            case "CREATE":
-                            case 1:
-                                message.scopes[i] = 1;
-                                break;
-                            case "GETACCESS":
-                            case 2:
-                                message.scopes[i] = 2;
-                                break;
-                            case "MODIFYACCESS":
-                            case 3:
-                                message.scopes[i] = 3;
-                                break;
-                            case "UPDATE":
-                            case 4:
-                                message.scopes[i] = 4;
-                                break;
-                            case "DELETE":
-                            case 5:
-                                message.scopes[i] = 5;
-                                break;
-                            case "INDEX":
-                            case 6:
-                                message.scopes[i] = 6;
-                                break;
+                        default:
+                        case "READ":
+                        case 0:
+                            message.scopes[i] = 0;
+                            break;
+                        case "CREATE":
+                        case 1:
+                            message.scopes[i] = 1;
+                            break;
+                        case "GETACCESS":
+                        case 2:
+                            message.scopes[i] = 2;
+                            break;
+                        case "MODIFYACCESS":
+                        case 3:
+                            message.scopes[i] = 3;
+                            break;
+                        case "UPDATE":
+                        case 4:
+                            message.scopes[i] = 4;
+                            break;
+                        case "DELETE":
+                        case 5:
+                            message.scopes[i] = 5;
+                            break;
+                        case "INDEX":
+                        case 6:
+                            message.scopes[i] = 6;
+                            break;
                         }
                 }
                 return message;
@@ -563,14 +527,14 @@ $root.d1 = (function () {
             return CreateUserRequest;
         })();
 
-        authn.CreateUserResponse = (function () {
+        authn.CreateUserResponse = (function() {
 
             /**
              * Properties of a CreateUserResponse.
              * @memberof d1.authn
              * @interface ICreateUserResponse
-             * @property {string|null} [userId] ID of the new user.
-             * @property {string|null} [password] The users password.
+             * @property {string|null} [userId] CreateUserResponse userId
+             * @property {string|null} [password] CreateUserResponse password
              */
 
             /**
@@ -589,7 +553,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the new user.
+             * CreateUserResponse userId.
              * @member {string} userId
              * @memberof d1.authn.CreateUserResponse
              * @instance
@@ -597,7 +561,7 @@ $root.d1 = (function () {
             CreateUserResponse.prototype.userId = "";
 
             /**
-             * The users password.
+             * CreateUserResponse password.
              * @member {string} password
              * @memberof d1.authn.CreateUserResponse
              * @instance
@@ -666,17 +630,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.password = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -790,14 +754,14 @@ $root.d1 = (function () {
             return CreateUserResponse;
         })();
 
-        authn.LoginUserRequest = (function () {
+        authn.LoginUserRequest = (function() {
 
             /**
              * Properties of a LoginUserRequest.
              * @memberof d1.authn
              * @interface ILoginUserRequest
-             * @property {string|null} [userId] ID of the user.
-             * @property {string|null} [password] The users password.
+             * @property {string|null} [userId] LoginUserRequest userId
+             * @property {string|null} [password] LoginUserRequest password
              */
 
             /**
@@ -816,7 +780,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the user.
+             * LoginUserRequest userId.
              * @member {string} userId
              * @memberof d1.authn.LoginUserRequest
              * @instance
@@ -824,7 +788,7 @@ $root.d1 = (function () {
             LoginUserRequest.prototype.userId = "";
 
             /**
-             * The users password.
+             * LoginUserRequest password.
              * @member {string} password
              * @memberof d1.authn.LoginUserRequest
              * @instance
@@ -893,17 +857,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.password = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -1017,14 +981,14 @@ $root.d1 = (function () {
             return LoginUserRequest;
         })();
 
-        authn.LoginUserResponse = (function () {
+        authn.LoginUserResponse = (function() {
 
             /**
              * Properties of a LoginUserResponse.
              * @memberof d1.authn
              * @interface ILoginUserResponse
-             * @property {string|null} [accessToken] Access token to be used in subsequent requests.
-             * @property {number|Long|null} [expiryTime] The expiration time of the access token.
+             * @property {string|null} [accessToken] LoginUserResponse accessToken
+             * @property {number|Long|null} [expiryTime] LoginUserResponse expiryTime
              */
 
             /**
@@ -1043,7 +1007,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Access token to be used in subsequent requests.
+             * LoginUserResponse accessToken.
              * @member {string} accessToken
              * @memberof d1.authn.LoginUserResponse
              * @instance
@@ -1051,12 +1015,12 @@ $root.d1 = (function () {
             LoginUserResponse.prototype.accessToken = "";
 
             /**
-             * The expiration time of the access token.
+             * LoginUserResponse expiryTime.
              * @member {number|Long} expiryTime
              * @memberof d1.authn.LoginUserResponse
              * @instance
              */
-            LoginUserResponse.prototype.expiryTime = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
+            LoginUserResponse.prototype.expiryTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Creates a new LoginUserResponse instance using the specified properties.
@@ -1120,17 +1084,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.accessToken = reader.string();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.expiryTime = reader.int64();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -1258,13 +1222,13 @@ $root.d1 = (function () {
             return LoginUserResponse;
         })();
 
-        authn.RemoveUserRequest = (function () {
+        authn.RemoveUserRequest = (function() {
 
             /**
              * Properties of a RemoveUserRequest.
              * @memberof d1.authn
              * @interface IRemoveUserRequest
-             * @property {string|null} [userId] ID of the user to remove.
+             * @property {string|null} [userId] RemoveUserRequest userId
              */
 
             /**
@@ -1283,7 +1247,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the user to remove.
+             * RemoveUserRequest userId.
              * @member {string} userId
              * @memberof d1.authn.RemoveUserRequest
              * @instance
@@ -1350,13 +1314,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -1461,7 +1425,7 @@ $root.d1 = (function () {
             return RemoveUserRequest;
         })();
 
-        authn.RemoveUserResponse = (function () {
+        authn.RemoveUserResponse = (function() {
 
             /**
              * Properties of a RemoveUserResponse.
@@ -1542,9 +1506,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -1636,13 +1600,13 @@ $root.d1 = (function () {
             return RemoveUserResponse;
         })();
 
-        authn.CreateGroupRequest = (function () {
+        authn.CreateGroupRequest = (function() {
 
             /**
              * Properties of a CreateGroupRequest.
              * @memberof d1.authn
              * @interface ICreateGroupRequest
-             * @property {Array.<d1.scopes.Scope>|null} [scopes] The scopes the group should be assigned.
+             * @property {Array.<d1.scopes.Scope>|null} [scopes] CreateGroupRequest scopes
              */
 
             /**
@@ -1662,7 +1626,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The scopes the group should be assigned.
+             * CreateGroupRequest scopes.
              * @member {Array.<d1.scopes.Scope>} scopes
              * @memberof d1.authn.CreateGroupRequest
              * @instance
@@ -1733,7 +1697,7 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             if (!(message.scopes && message.scopes.length))
                                 message.scopes = [];
                             if ((tag & 7) === 2) {
@@ -1744,9 +1708,9 @@ $root.d1 = (function () {
                                 message.scopes.push(reader.int32());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -1784,16 +1748,16 @@ $root.d1 = (function () {
                         return "scopes: array expected";
                     for (var i = 0; i < message.scopes.length; ++i)
                         switch (message.scopes[i]) {
-                            default:
-                                return "scopes: enum value[] expected";
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                                break;
+                        default:
+                            return "scopes: enum value[] expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            break;
                         }
                 }
                 return null;
@@ -1817,35 +1781,35 @@ $root.d1 = (function () {
                     message.scopes = [];
                     for (var i = 0; i < object.scopes.length; ++i)
                         switch (object.scopes[i]) {
-                            default:
-                            case "READ":
-                            case 0:
-                                message.scopes[i] = 0;
-                                break;
-                            case "CREATE":
-                            case 1:
-                                message.scopes[i] = 1;
-                                break;
-                            case "GETACCESS":
-                            case 2:
-                                message.scopes[i] = 2;
-                                break;
-                            case "MODIFYACCESS":
-                            case 3:
-                                message.scopes[i] = 3;
-                                break;
-                            case "UPDATE":
-                            case 4:
-                                message.scopes[i] = 4;
-                                break;
-                            case "DELETE":
-                            case 5:
-                                message.scopes[i] = 5;
-                                break;
-                            case "INDEX":
-                            case 6:
-                                message.scopes[i] = 6;
-                                break;
+                        default:
+                        case "READ":
+                        case 0:
+                            message.scopes[i] = 0;
+                            break;
+                        case "CREATE":
+                        case 1:
+                            message.scopes[i] = 1;
+                            break;
+                        case "GETACCESS":
+                        case 2:
+                            message.scopes[i] = 2;
+                            break;
+                        case "MODIFYACCESS":
+                        case 3:
+                            message.scopes[i] = 3;
+                            break;
+                        case "UPDATE":
+                        case 4:
+                            message.scopes[i] = 4;
+                            break;
+                        case "DELETE":
+                        case 5:
+                            message.scopes[i] = 5;
+                            break;
+                        case "INDEX":
+                        case 6:
+                            message.scopes[i] = 6;
+                            break;
                         }
                 }
                 return message;
@@ -1903,13 +1867,13 @@ $root.d1 = (function () {
             return CreateGroupRequest;
         })();
 
-        authn.CreateGroupResponse = (function () {
+        authn.CreateGroupResponse = (function() {
 
             /**
              * Properties of a CreateGroupResponse.
              * @memberof d1.authn
              * @interface ICreateGroupResponse
-             * @property {string|null} [groupId] ID of the new group.
+             * @property {string|null} [groupId] CreateGroupResponse groupId
              */
 
             /**
@@ -1928,7 +1892,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the new group.
+             * CreateGroupResponse groupId.
              * @member {string} groupId
              * @memberof d1.authn.CreateGroupResponse
              * @instance
@@ -1995,13 +1959,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.groupId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -2106,25 +2070,26 @@ $root.d1 = (function () {
             return CreateGroupResponse;
         })();
 
-        authn.AddUserToGroupRequest = (function () {
+        authn.AddUserToGroupsRequest = (function() {
 
             /**
-             * Properties of an AddUserToGroupRequest.
+             * Properties of an AddUserToGroupsRequest.
              * @memberof d1.authn
-             * @interface IAddUserToGroupRequest
-             * @property {string|null} [userId] ID of the user to add.
-             * @property {string|null} [groupId] ID of the group the user should be added to.
+             * @interface IAddUserToGroupsRequest
+             * @property {string|null} [userId] AddUserToGroupsRequest userId
+             * @property {Array.<string>|null} [groupIds] AddUserToGroupsRequest groupIds
              */
 
             /**
-             * Constructs a new AddUserToGroupRequest.
+             * Constructs a new AddUserToGroupsRequest.
              * @memberof d1.authn
-             * @classdesc Represents an AddUserToGroupRequest.
-             * @implements IAddUserToGroupRequest
+             * @classdesc Represents an AddUserToGroupsRequest.
+             * @implements IAddUserToGroupsRequest
              * @constructor
-             * @param {d1.authn.IAddUserToGroupRequest=} [properties] Properties to set
+             * @param {d1.authn.IAddUserToGroupsRequest=} [properties] Properties to set
              */
-            function AddUserToGroupRequest(properties) {
+            function AddUserToGroupsRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2132,224 +2097,239 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the user to add.
+             * AddUserToGroupsRequest userId.
              * @member {string} userId
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @instance
              */
-            AddUserToGroupRequest.prototype.userId = "";
+            AddUserToGroupsRequest.prototype.userId = "";
 
             /**
-             * ID of the group the user should be added to.
-             * @member {string} groupId
-             * @memberof d1.authn.AddUserToGroupRequest
+             * AddUserToGroupsRequest groupIds.
+             * @member {Array.<string>} groupIds
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @instance
              */
-            AddUserToGroupRequest.prototype.groupId = "";
+            AddUserToGroupsRequest.prototype.groupIds = $util.emptyArray;
 
             /**
-             * Creates a new AddUserToGroupRequest instance using the specified properties.
+             * Creates a new AddUserToGroupsRequest instance using the specified properties.
              * @function create
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
-             * @param {d1.authn.IAddUserToGroupRequest=} [properties] Properties to set
-             * @returns {d1.authn.AddUserToGroupRequest} AddUserToGroupRequest instance
+             * @param {d1.authn.IAddUserToGroupsRequest=} [properties] Properties to set
+             * @returns {d1.authn.AddUserToGroupsRequest} AddUserToGroupsRequest instance
              */
-            AddUserToGroupRequest.create = function create(properties) {
-                return new AddUserToGroupRequest(properties);
+            AddUserToGroupsRequest.create = function create(properties) {
+                return new AddUserToGroupsRequest(properties);
             };
 
             /**
-             * Encodes the specified AddUserToGroupRequest message. Does not implicitly {@link d1.authn.AddUserToGroupRequest.verify|verify} messages.
+             * Encodes the specified AddUserToGroupsRequest message. Does not implicitly {@link d1.authn.AddUserToGroupsRequest.verify|verify} messages.
              * @function encode
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
-             * @param {d1.authn.IAddUserToGroupRequest} message AddUserToGroupRequest message or plain object to encode
+             * @param {d1.authn.IAddUserToGroupsRequest} message AddUserToGroupsRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AddUserToGroupRequest.encode = function encode(message, writer) {
+            AddUserToGroupsRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.userId);
-                if (message.groupId != null && Object.hasOwnProperty.call(message, "groupId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupId);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupIds[i]);
                 return writer;
             };
 
             /**
-             * Encodes the specified AddUserToGroupRequest message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupRequest.verify|verify} messages.
+             * Encodes the specified AddUserToGroupsRequest message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupsRequest.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
-             * @param {d1.authn.IAddUserToGroupRequest} message AddUserToGroupRequest message or plain object to encode
+             * @param {d1.authn.IAddUserToGroupsRequest} message AddUserToGroupsRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AddUserToGroupRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            AddUserToGroupsRequest.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes an AddUserToGroupRequest message from the specified reader or buffer.
+             * Decodes an AddUserToGroupsRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {d1.authn.AddUserToGroupRequest} AddUserToGroupRequest
+             * @returns {d1.authn.AddUserToGroupsRequest} AddUserToGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AddUserToGroupRequest.decode = function decode(reader, length) {
+            AddUserToGroupsRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.AddUserToGroupRequest();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.AddUserToGroupsRequest();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                        case 2: {
-                            message.groupId = reader.string();
+                    case 2: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
             };
 
             /**
-             * Decodes an AddUserToGroupRequest message from the specified reader or buffer, length delimited.
+             * Decodes an AddUserToGroupsRequest message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {d1.authn.AddUserToGroupRequest} AddUserToGroupRequest
+             * @returns {d1.authn.AddUserToGroupsRequest} AddUserToGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AddUserToGroupRequest.decodeDelimited = function decodeDelimited(reader) {
+            AddUserToGroupsRequest.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies an AddUserToGroupRequest message.
+             * Verifies an AddUserToGroupsRequest message.
              * @function verify
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            AddUserToGroupRequest.verify = function verify(message) {
+            AddUserToGroupsRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.userId != null && message.hasOwnProperty("userId"))
                     if (!$util.isString(message.userId))
                         return "userId: string expected";
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    if (!$util.isString(message.groupId))
-                        return "groupId: string expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
             /**
-             * Creates an AddUserToGroupRequest message from a plain object. Also converts values to their respective internal types.
+             * Creates an AddUserToGroupsRequest message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {d1.authn.AddUserToGroupRequest} AddUserToGroupRequest
+             * @returns {d1.authn.AddUserToGroupsRequest} AddUserToGroupsRequest
              */
-            AddUserToGroupRequest.fromObject = function fromObject(object) {
-                if (object instanceof $root.d1.authn.AddUserToGroupRequest)
+            AddUserToGroupsRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authn.AddUserToGroupsRequest)
                     return object;
-                var message = new $root.d1.authn.AddUserToGroupRequest();
+                var message = new $root.d1.authn.AddUserToGroupsRequest();
                 if (object.userId != null)
                     message.userId = String(object.userId);
-                if (object.groupId != null)
-                    message.groupId = String(object.groupId);
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.authn.AddUserToGroupsRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
             /**
-             * Creates a plain object from an AddUserToGroupRequest message. Also converts values to other types if specified.
+             * Creates a plain object from an AddUserToGroupsRequest message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
-             * @param {d1.authn.AddUserToGroupRequest} message AddUserToGroupRequest
+             * @param {d1.authn.AddUserToGroupsRequest} message AddUserToGroupsRequest
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            AddUserToGroupRequest.toObject = function toObject(message, options) {
+            AddUserToGroupsRequest.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
+                if (options.defaults)
                     object.userId = "";
-                    object.groupId = "";
-                }
                 if (message.userId != null && message.hasOwnProperty("userId"))
                     object.userId = message.userId;
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    object.groupId = message.groupId;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
             /**
-             * Converts this AddUserToGroupRequest to JSON.
+             * Converts this AddUserToGroupsRequest to JSON.
              * @function toJSON
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            AddUserToGroupRequest.prototype.toJSON = function toJSON() {
+            AddUserToGroupsRequest.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for AddUserToGroupRequest
+             * Gets the default type url for AddUserToGroupsRequest
              * @function getTypeUrl
-             * @memberof d1.authn.AddUserToGroupRequest
+             * @memberof d1.authn.AddUserToGroupsRequest
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            AddUserToGroupRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            AddUserToGroupsRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/d1.authn.AddUserToGroupRequest";
+                return typeUrlPrefix + "/d1.authn.AddUserToGroupsRequest";
             };
 
-            return AddUserToGroupRequest;
+            return AddUserToGroupsRequest;
         })();
 
-        authn.AddUserToGroupResponse = (function () {
+        authn.AddUserToGroupsResponse = (function() {
 
             /**
-             * Properties of an AddUserToGroupResponse.
+             * Properties of an AddUserToGroupsResponse.
              * @memberof d1.authn
-             * @interface IAddUserToGroupResponse
+             * @interface IAddUserToGroupsResponse
              */
 
             /**
-             * Constructs a new AddUserToGroupResponse.
+             * Constructs a new AddUserToGroupsResponse.
              * @memberof d1.authn
-             * @classdesc Represents an AddUserToGroupResponse.
-             * @implements IAddUserToGroupResponse
+             * @classdesc Represents an AddUserToGroupsResponse.
+             * @implements IAddUserToGroupsResponse
              * @constructor
-             * @param {d1.authn.IAddUserToGroupResponse=} [properties] Properties to set
+             * @param {d1.authn.IAddUserToGroupsResponse=} [properties] Properties to set
              */
-            function AddUserToGroupResponse(properties) {
+            function AddUserToGroupsResponse(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2357,176 +2337,177 @@ $root.d1 = (function () {
             }
 
             /**
-             * Creates a new AddUserToGroupResponse instance using the specified properties.
+             * Creates a new AddUserToGroupsResponse instance using the specified properties.
              * @function create
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
-             * @param {d1.authn.IAddUserToGroupResponse=} [properties] Properties to set
-             * @returns {d1.authn.AddUserToGroupResponse} AddUserToGroupResponse instance
+             * @param {d1.authn.IAddUserToGroupsResponse=} [properties] Properties to set
+             * @returns {d1.authn.AddUserToGroupsResponse} AddUserToGroupsResponse instance
              */
-            AddUserToGroupResponse.create = function create(properties) {
-                return new AddUserToGroupResponse(properties);
+            AddUserToGroupsResponse.create = function create(properties) {
+                return new AddUserToGroupsResponse(properties);
             };
 
             /**
-             * Encodes the specified AddUserToGroupResponse message. Does not implicitly {@link d1.authn.AddUserToGroupResponse.verify|verify} messages.
+             * Encodes the specified AddUserToGroupsResponse message. Does not implicitly {@link d1.authn.AddUserToGroupsResponse.verify|verify} messages.
              * @function encode
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
-             * @param {d1.authn.IAddUserToGroupResponse} message AddUserToGroupResponse message or plain object to encode
+             * @param {d1.authn.IAddUserToGroupsResponse} message AddUserToGroupsResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AddUserToGroupResponse.encode = function encode(message, writer) {
+            AddUserToGroupsResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 return writer;
             };
 
             /**
-             * Encodes the specified AddUserToGroupResponse message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupResponse.verify|verify} messages.
+             * Encodes the specified AddUserToGroupsResponse message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupsResponse.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
-             * @param {d1.authn.IAddUserToGroupResponse} message AddUserToGroupResponse message or plain object to encode
+             * @param {d1.authn.IAddUserToGroupsResponse} message AddUserToGroupsResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AddUserToGroupResponse.encodeDelimited = function encodeDelimited(message, writer) {
+            AddUserToGroupsResponse.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes an AddUserToGroupResponse message from the specified reader or buffer.
+             * Decodes an AddUserToGroupsResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {d1.authn.AddUserToGroupResponse} AddUserToGroupResponse
+             * @returns {d1.authn.AddUserToGroupsResponse} AddUserToGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AddUserToGroupResponse.decode = function decode(reader, length) {
+            AddUserToGroupsResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.AddUserToGroupResponse();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.AddUserToGroupsResponse();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
             };
 
             /**
-             * Decodes an AddUserToGroupResponse message from the specified reader or buffer, length delimited.
+             * Decodes an AddUserToGroupsResponse message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {d1.authn.AddUserToGroupResponse} AddUserToGroupResponse
+             * @returns {d1.authn.AddUserToGroupsResponse} AddUserToGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AddUserToGroupResponse.decodeDelimited = function decodeDelimited(reader) {
+            AddUserToGroupsResponse.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies an AddUserToGroupResponse message.
+             * Verifies an AddUserToGroupsResponse message.
              * @function verify
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            AddUserToGroupResponse.verify = function verify(message) {
+            AddUserToGroupsResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 return null;
             };
 
             /**
-             * Creates an AddUserToGroupResponse message from a plain object. Also converts values to their respective internal types.
+             * Creates an AddUserToGroupsResponse message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {d1.authn.AddUserToGroupResponse} AddUserToGroupResponse
+             * @returns {d1.authn.AddUserToGroupsResponse} AddUserToGroupsResponse
              */
-            AddUserToGroupResponse.fromObject = function fromObject(object) {
-                if (object instanceof $root.d1.authn.AddUserToGroupResponse)
+            AddUserToGroupsResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authn.AddUserToGroupsResponse)
                     return object;
-                return new $root.d1.authn.AddUserToGroupResponse();
+                return new $root.d1.authn.AddUserToGroupsResponse();
             };
 
             /**
-             * Creates a plain object from an AddUserToGroupResponse message. Also converts values to other types if specified.
+             * Creates a plain object from an AddUserToGroupsResponse message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
-             * @param {d1.authn.AddUserToGroupResponse} message AddUserToGroupResponse
+             * @param {d1.authn.AddUserToGroupsResponse} message AddUserToGroupsResponse
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            AddUserToGroupResponse.toObject = function toObject() {
+            AddUserToGroupsResponse.toObject = function toObject() {
                 return {};
             };
 
             /**
-             * Converts this AddUserToGroupResponse to JSON.
+             * Converts this AddUserToGroupsResponse to JSON.
              * @function toJSON
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            AddUserToGroupResponse.prototype.toJSON = function toJSON() {
+            AddUserToGroupsResponse.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for AddUserToGroupResponse
+             * Gets the default type url for AddUserToGroupsResponse
              * @function getTypeUrl
-             * @memberof d1.authn.AddUserToGroupResponse
+             * @memberof d1.authn.AddUserToGroupsResponse
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            AddUserToGroupResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            AddUserToGroupsResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/d1.authn.AddUserToGroupResponse";
+                return typeUrlPrefix + "/d1.authn.AddUserToGroupsResponse";
             };
 
-            return AddUserToGroupResponse;
+            return AddUserToGroupsResponse;
         })();
 
-        authn.RemoveUserFromGroupRequest = (function () {
+        authn.RemoveUserFromGroupsRequest = (function() {
 
             /**
-             * Properties of a RemoveUserFromGroupRequest.
+             * Properties of a RemoveUserFromGroupsRequest.
              * @memberof d1.authn
-             * @interface IRemoveUserFromGroupRequest
-             * @property {string|null} [userId] ID of the user to remove.
-             * @property {string|null} [groupId] ID of the group the user should be removed from.
+             * @interface IRemoveUserFromGroupsRequest
+             * @property {string|null} [userId] RemoveUserFromGroupsRequest userId
+             * @property {Array.<string>|null} [groupIds] RemoveUserFromGroupsRequest groupIds
              */
 
             /**
-             * Constructs a new RemoveUserFromGroupRequest.
+             * Constructs a new RemoveUserFromGroupsRequest.
              * @memberof d1.authn
-             * @classdesc Represents a RemoveUserFromGroupRequest.
-             * @implements IRemoveUserFromGroupRequest
+             * @classdesc Represents a RemoveUserFromGroupsRequest.
+             * @implements IRemoveUserFromGroupsRequest
              * @constructor
-             * @param {d1.authn.IRemoveUserFromGroupRequest=} [properties] Properties to set
+             * @param {d1.authn.IRemoveUserFromGroupsRequest=} [properties] Properties to set
              */
-            function RemoveUserFromGroupRequest(properties) {
+            function RemoveUserFromGroupsRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2534,224 +2515,239 @@ $root.d1 = (function () {
             }
 
             /**
-             * ID of the user to remove.
+             * RemoveUserFromGroupsRequest userId.
              * @member {string} userId
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @instance
              */
-            RemoveUserFromGroupRequest.prototype.userId = "";
+            RemoveUserFromGroupsRequest.prototype.userId = "";
 
             /**
-             * ID of the group the user should be removed from.
-             * @member {string} groupId
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * RemoveUserFromGroupsRequest groupIds.
+             * @member {Array.<string>} groupIds
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @instance
              */
-            RemoveUserFromGroupRequest.prototype.groupId = "";
+            RemoveUserFromGroupsRequest.prototype.groupIds = $util.emptyArray;
 
             /**
-             * Creates a new RemoveUserFromGroupRequest instance using the specified properties.
+             * Creates a new RemoveUserFromGroupsRequest instance using the specified properties.
              * @function create
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupRequest=} [properties] Properties to set
-             * @returns {d1.authn.RemoveUserFromGroupRequest} RemoveUserFromGroupRequest instance
+             * @param {d1.authn.IRemoveUserFromGroupsRequest=} [properties] Properties to set
+             * @returns {d1.authn.RemoveUserFromGroupsRequest} RemoveUserFromGroupsRequest instance
              */
-            RemoveUserFromGroupRequest.create = function create(properties) {
-                return new RemoveUserFromGroupRequest(properties);
+            RemoveUserFromGroupsRequest.create = function create(properties) {
+                return new RemoveUserFromGroupsRequest(properties);
             };
 
             /**
-             * Encodes the specified RemoveUserFromGroupRequest message. Does not implicitly {@link d1.authn.RemoveUserFromGroupRequest.verify|verify} messages.
+             * Encodes the specified RemoveUserFromGroupsRequest message. Does not implicitly {@link d1.authn.RemoveUserFromGroupsRequest.verify|verify} messages.
              * @function encode
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupRequest} message RemoveUserFromGroupRequest message or plain object to encode
+             * @param {d1.authn.IRemoveUserFromGroupsRequest} message RemoveUserFromGroupsRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            RemoveUserFromGroupRequest.encode = function encode(message, writer) {
+            RemoveUserFromGroupsRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.userId);
-                if (message.groupId != null && Object.hasOwnProperty.call(message, "groupId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupId);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupIds[i]);
                 return writer;
             };
 
             /**
-             * Encodes the specified RemoveUserFromGroupRequest message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupRequest.verify|verify} messages.
+             * Encodes the specified RemoveUserFromGroupsRequest message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupsRequest.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupRequest} message RemoveUserFromGroupRequest message or plain object to encode
+             * @param {d1.authn.IRemoveUserFromGroupsRequest} message RemoveUserFromGroupsRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            RemoveUserFromGroupRequest.encodeDelimited = function encodeDelimited(message, writer) {
+            RemoveUserFromGroupsRequest.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes a RemoveUserFromGroupRequest message from the specified reader or buffer.
+             * Decodes a RemoveUserFromGroupsRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {d1.authn.RemoveUserFromGroupRequest} RemoveUserFromGroupRequest
+             * @returns {d1.authn.RemoveUserFromGroupsRequest} RemoveUserFromGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveUserFromGroupRequest.decode = function decode(reader, length) {
+            RemoveUserFromGroupsRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.RemoveUserFromGroupRequest();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.RemoveUserFromGroupsRequest();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.userId = reader.string();
                             break;
                         }
-                        case 2: {
-                            message.groupId = reader.string();
+                    case 2: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
             };
 
             /**
-             * Decodes a RemoveUserFromGroupRequest message from the specified reader or buffer, length delimited.
+             * Decodes a RemoveUserFromGroupsRequest message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {d1.authn.RemoveUserFromGroupRequest} RemoveUserFromGroupRequest
+             * @returns {d1.authn.RemoveUserFromGroupsRequest} RemoveUserFromGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveUserFromGroupRequest.decodeDelimited = function decodeDelimited(reader) {
+            RemoveUserFromGroupsRequest.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies a RemoveUserFromGroupRequest message.
+             * Verifies a RemoveUserFromGroupsRequest message.
              * @function verify
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            RemoveUserFromGroupRequest.verify = function verify(message) {
+            RemoveUserFromGroupsRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.userId != null && message.hasOwnProperty("userId"))
                     if (!$util.isString(message.userId))
                         return "userId: string expected";
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    if (!$util.isString(message.groupId))
-                        return "groupId: string expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
             /**
-             * Creates a RemoveUserFromGroupRequest message from a plain object. Also converts values to their respective internal types.
+             * Creates a RemoveUserFromGroupsRequest message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {d1.authn.RemoveUserFromGroupRequest} RemoveUserFromGroupRequest
+             * @returns {d1.authn.RemoveUserFromGroupsRequest} RemoveUserFromGroupsRequest
              */
-            RemoveUserFromGroupRequest.fromObject = function fromObject(object) {
-                if (object instanceof $root.d1.authn.RemoveUserFromGroupRequest)
+            RemoveUserFromGroupsRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authn.RemoveUserFromGroupsRequest)
                     return object;
-                var message = new $root.d1.authn.RemoveUserFromGroupRequest();
+                var message = new $root.d1.authn.RemoveUserFromGroupsRequest();
                 if (object.userId != null)
                     message.userId = String(object.userId);
-                if (object.groupId != null)
-                    message.groupId = String(object.groupId);
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.authn.RemoveUserFromGroupsRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
             /**
-             * Creates a plain object from a RemoveUserFromGroupRequest message. Also converts values to other types if specified.
+             * Creates a plain object from a RemoveUserFromGroupsRequest message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
-             * @param {d1.authn.RemoveUserFromGroupRequest} message RemoveUserFromGroupRequest
+             * @param {d1.authn.RemoveUserFromGroupsRequest} message RemoveUserFromGroupsRequest
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            RemoveUserFromGroupRequest.toObject = function toObject(message, options) {
+            RemoveUserFromGroupsRequest.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
+                if (options.defaults)
                     object.userId = "";
-                    object.groupId = "";
-                }
                 if (message.userId != null && message.hasOwnProperty("userId"))
                     object.userId = message.userId;
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    object.groupId = message.groupId;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
             /**
-             * Converts this RemoveUserFromGroupRequest to JSON.
+             * Converts this RemoveUserFromGroupsRequest to JSON.
              * @function toJSON
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            RemoveUserFromGroupRequest.prototype.toJSON = function toJSON() {
+            RemoveUserFromGroupsRequest.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for RemoveUserFromGroupRequest
+             * Gets the default type url for RemoveUserFromGroupsRequest
              * @function getTypeUrl
-             * @memberof d1.authn.RemoveUserFromGroupRequest
+             * @memberof d1.authn.RemoveUserFromGroupsRequest
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            RemoveUserFromGroupRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            RemoveUserFromGroupsRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/d1.authn.RemoveUserFromGroupRequest";
+                return typeUrlPrefix + "/d1.authn.RemoveUserFromGroupsRequest";
             };
 
-            return RemoveUserFromGroupRequest;
+            return RemoveUserFromGroupsRequest;
         })();
 
-        authn.RemoveUserFromGroupResponse = (function () {
+        authn.RemoveUserFromGroupsResponse = (function() {
 
             /**
-             * Properties of a RemoveUserFromGroupResponse.
+             * Properties of a RemoveUserFromGroupsResponse.
              * @memberof d1.authn
-             * @interface IRemoveUserFromGroupResponse
+             * @interface IRemoveUserFromGroupsResponse
              */
 
             /**
-             * Constructs a new RemoveUserFromGroupResponse.
+             * Constructs a new RemoveUserFromGroupsResponse.
              * @memberof d1.authn
-             * @classdesc Represents a RemoveUserFromGroupResponse.
-             * @implements IRemoveUserFromGroupResponse
+             * @classdesc Represents a RemoveUserFromGroupsResponse.
+             * @implements IRemoveUserFromGroupsResponse
              * @constructor
-             * @param {d1.authn.IRemoveUserFromGroupResponse=} [properties] Properties to set
+             * @param {d1.authn.IRemoveUserFromGroupsResponse=} [properties] Properties to set
              */
-            function RemoveUserFromGroupResponse(properties) {
+            function RemoveUserFromGroupsResponse(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2759,161 +2755,161 @@ $root.d1 = (function () {
             }
 
             /**
-             * Creates a new RemoveUserFromGroupResponse instance using the specified properties.
+             * Creates a new RemoveUserFromGroupsResponse instance using the specified properties.
              * @function create
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupResponse=} [properties] Properties to set
-             * @returns {d1.authn.RemoveUserFromGroupResponse} RemoveUserFromGroupResponse instance
+             * @param {d1.authn.IRemoveUserFromGroupsResponse=} [properties] Properties to set
+             * @returns {d1.authn.RemoveUserFromGroupsResponse} RemoveUserFromGroupsResponse instance
              */
-            RemoveUserFromGroupResponse.create = function create(properties) {
-                return new RemoveUserFromGroupResponse(properties);
+            RemoveUserFromGroupsResponse.create = function create(properties) {
+                return new RemoveUserFromGroupsResponse(properties);
             };
 
             /**
-             * Encodes the specified RemoveUserFromGroupResponse message. Does not implicitly {@link d1.authn.RemoveUserFromGroupResponse.verify|verify} messages.
+             * Encodes the specified RemoveUserFromGroupsResponse message. Does not implicitly {@link d1.authn.RemoveUserFromGroupsResponse.verify|verify} messages.
              * @function encode
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupResponse} message RemoveUserFromGroupResponse message or plain object to encode
+             * @param {d1.authn.IRemoveUserFromGroupsResponse} message RemoveUserFromGroupsResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            RemoveUserFromGroupResponse.encode = function encode(message, writer) {
+            RemoveUserFromGroupsResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 return writer;
             };
 
             /**
-             * Encodes the specified RemoveUserFromGroupResponse message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupResponse.verify|verify} messages.
+             * Encodes the specified RemoveUserFromGroupsResponse message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupsResponse.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
-             * @param {d1.authn.IRemoveUserFromGroupResponse} message RemoveUserFromGroupResponse message or plain object to encode
+             * @param {d1.authn.IRemoveUserFromGroupsResponse} message RemoveUserFromGroupsResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            RemoveUserFromGroupResponse.encodeDelimited = function encodeDelimited(message, writer) {
+            RemoveUserFromGroupsResponse.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
 
             /**
-             * Decodes a RemoveUserFromGroupResponse message from the specified reader or buffer.
+             * Decodes a RemoveUserFromGroupsResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {d1.authn.RemoveUserFromGroupResponse} RemoveUserFromGroupResponse
+             * @returns {d1.authn.RemoveUserFromGroupsResponse} RemoveUserFromGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveUserFromGroupResponse.decode = function decode(reader, length) {
+            RemoveUserFromGroupsResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.RemoveUserFromGroupResponse();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authn.RemoveUserFromGroupsResponse();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
             };
 
             /**
-             * Decodes a RemoveUserFromGroupResponse message from the specified reader or buffer, length delimited.
+             * Decodes a RemoveUserFromGroupsResponse message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {d1.authn.RemoveUserFromGroupResponse} RemoveUserFromGroupResponse
+             * @returns {d1.authn.RemoveUserFromGroupsResponse} RemoveUserFromGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            RemoveUserFromGroupResponse.decodeDelimited = function decodeDelimited(reader) {
+            RemoveUserFromGroupsResponse.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
 
             /**
-             * Verifies a RemoveUserFromGroupResponse message.
+             * Verifies a RemoveUserFromGroupsResponse message.
              * @function verify
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            RemoveUserFromGroupResponse.verify = function verify(message) {
+            RemoveUserFromGroupsResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 return null;
             };
 
             /**
-             * Creates a RemoveUserFromGroupResponse message from a plain object. Also converts values to their respective internal types.
+             * Creates a RemoveUserFromGroupsResponse message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {d1.authn.RemoveUserFromGroupResponse} RemoveUserFromGroupResponse
+             * @returns {d1.authn.RemoveUserFromGroupsResponse} RemoveUserFromGroupsResponse
              */
-            RemoveUserFromGroupResponse.fromObject = function fromObject(object) {
-                if (object instanceof $root.d1.authn.RemoveUserFromGroupResponse)
+            RemoveUserFromGroupsResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authn.RemoveUserFromGroupsResponse)
                     return object;
-                return new $root.d1.authn.RemoveUserFromGroupResponse();
+                return new $root.d1.authn.RemoveUserFromGroupsResponse();
             };
 
             /**
-             * Creates a plain object from a RemoveUserFromGroupResponse message. Also converts values to other types if specified.
+             * Creates a plain object from a RemoveUserFromGroupsResponse message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
-             * @param {d1.authn.RemoveUserFromGroupResponse} message RemoveUserFromGroupResponse
+             * @param {d1.authn.RemoveUserFromGroupsResponse} message RemoveUserFromGroupsResponse
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            RemoveUserFromGroupResponse.toObject = function toObject() {
+            RemoveUserFromGroupsResponse.toObject = function toObject() {
                 return {};
             };
 
             /**
-             * Converts this RemoveUserFromGroupResponse to JSON.
+             * Converts this RemoveUserFromGroupsResponse to JSON.
              * @function toJSON
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            RemoveUserFromGroupResponse.prototype.toJSON = function toJSON() {
+            RemoveUserFromGroupsResponse.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
 
             /**
-             * Gets the default type url for RemoveUserFromGroupResponse
+             * Gets the default type url for RemoveUserFromGroupsResponse
              * @function getTypeUrl
-             * @memberof d1.authn.RemoveUserFromGroupResponse
+             * @memberof d1.authn.RemoveUserFromGroupsResponse
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            RemoveUserFromGroupResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            RemoveUserFromGroupsResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/d1.authn.RemoveUserFromGroupResponse";
+                return typeUrlPrefix + "/d1.authn.RemoveUserFromGroupsResponse";
             };
 
-            return RemoveUserFromGroupResponse;
+            return RemoveUserFromGroupsResponse;
         })();
 
         return authn;
     })();
 
-    d1.scopes = (function () {
+    d1.scopes = (function() {
 
         /**
          * Namespace scopes.
@@ -2923,18 +2919,18 @@ $root.d1 = (function () {
         var scopes = {};
 
         /**
-         * Access scopes.
+         * Scope enum.
          * @name d1.scopes.Scope
          * @enum {number}
-         * @property {number} READ=0 Read and decrypt data.
-         * @property {number} CREATE=1 Store and encrypt data.
-         * @property {number} GETACCESS=2 Get permissions to an object.
-         * @property {number} MODIFYACCESS=3 Modify permissions to an object.
-         * @property {number} UPDATE=4 Modify data.
-         * @property {number} DELETE=5 Delete data.
-         * @property {number} INDEX=6 Use secure index for searching in data.
+         * @property {number} READ=0 READ value
+         * @property {number} CREATE=1 CREATE value
+         * @property {number} GETACCESS=2 GETACCESS value
+         * @property {number} MODIFYACCESS=3 MODIFYACCESS value
+         * @property {number} UPDATE=4 UPDATE value
+         * @property {number} DELETE=5 DELETE value
+         * @property {number} INDEX=6 INDEX value
          */
-        scopes.Scope = (function () {
+        scopes.Scope = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "READ"] = 0;
             values[valuesById[1] = "CREATE"] = 1;
@@ -2949,7 +2945,7 @@ $root.d1 = (function () {
         return scopes;
     })();
 
-    d1.authz = (function () {
+    d1.authz = (function() {
 
         /**
          * Namespace authz.
@@ -2958,12 +2954,12 @@ $root.d1 = (function () {
          */
         var authz = {};
 
-        authz.Authz = (function () {
+        authz.Authz = (function() {
 
             /**
              * Constructs a new Authz service.
              * @memberof d1.authz
-             * @classdesc Service for managing authorization rules.
+             * @classdesc Represents an Authz
              * @extends $protobuf.rpc.Service
              * @constructor
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
@@ -3000,10 +2996,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Returns a list of groups with access to the specified object.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
-             * The calling user has to be authenticated and authorized to access the object in order to get the object permissions.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls GetPermissions.
              * @function getPermissions
              * @memberof d1.authz.Authz
              * @instance
@@ -3017,10 +3010,7 @@ $root.d1 = (function () {
             }, "name", { value: "GetPermissions" });
 
             /**
-             * Returns a list of groups with access to the specified object.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
-             * The calling user has to be authenticated and authorized to access the object in order to get the object permissions.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls GetPermissions.
              * @function getPermissions
              * @memberof d1.authz.Authz
              * @instance
@@ -3039,10 +3029,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Adds a group to the access list of the specified object.
-             * This call can fail if the caller does not have access to the object, if the target group does not exist, or if the auth storage cannot be reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls AddPermission.
              * @function addPermission
              * @memberof d1.authz.Authz
              * @instance
@@ -3056,10 +3043,7 @@ $root.d1 = (function () {
             }, "name", { value: "AddPermission" });
 
             /**
-             * Adds a group to the access list of the specified object.
-             * This call can fail if the caller does not have access to the object, if the target group does not exist, or if the auth storage cannot be reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls AddPermission.
              * @function addPermission
              * @memberof d1.authz.Authz
              * @instance
@@ -3078,10 +3062,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Removes a group from the access list of the specified object.
-             * This call can fail if the caller does not have access to the object or if the auth storage cannot reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls RemovePermission.
              * @function removePermission
              * @memberof d1.authz.Authz
              * @instance
@@ -3095,10 +3076,7 @@ $root.d1 = (function () {
             }, "name", { value: "RemovePermission" });
 
             /**
-             * Removes a group from the access list of the specified object.
-             * This call can fail if the caller does not have access to the object or if the auth storage cannot reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls RemovePermission.
              * @function removePermission
              * @memberof d1.authz.Authz
              * @instance
@@ -3107,22 +3085,55 @@ $root.d1 = (function () {
              * @variation 2
              */
 
+            /**
+             * Callback as used by {@link d1.authz.Authz#checkPermission}.
+             * @memberof d1.authz.Authz
+             * @typedef CheckPermissionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {d1.authz.CheckPermissionResponse} [response] CheckPermissionResponse
+             */
+
+            /**
+             * Calls CheckPermission.
+             * @function checkPermission
+             * @memberof d1.authz.Authz
+             * @instance
+             * @param {d1.authz.ICheckPermissionRequest} request CheckPermissionRequest message or plain object
+             * @param {d1.authz.Authz.CheckPermissionCallback} callback Node-style callback called with the error, if any, and CheckPermissionResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(Authz.prototype.checkPermission = function checkPermission(request, callback) {
+                return this.rpcCall(checkPermission, $root.d1.authz.CheckPermissionRequest, $root.d1.authz.CheckPermissionResponse, request, callback);
+            }, "name", { value: "CheckPermission" });
+
+            /**
+             * Calls CheckPermission.
+             * @function checkPermission
+             * @memberof d1.authz.Authz
+             * @instance
+             * @param {d1.authz.ICheckPermissionRequest} request CheckPermissionRequest message or plain object
+             * @returns {Promise<d1.authz.CheckPermissionResponse>} Promise
+             * @variation 2
+             */
+
             return Authz;
         })();
 
-        authz.GetPermissionsRequest = (function () {
+        authz.GetPermissionsRequest = (function() {
 
             /**
              * Properties of a GetPermissionsRequest.
              * @memberof d1.authz
              * @interface IGetPermissionsRequest
-             * @property {string|null} [objectId] The ID of the object to get the permission list for.
+             * @property {string|null} [objectId] GetPermissionsRequest objectId
              */
 
             /**
              * Constructs a new GetPermissionsRequest.
              * @memberof d1.authz
-             * @classdesc Represents a request to get the permissions of an object.
+             * @classdesc Represents a GetPermissionsRequest.
              * @implements IGetPermissionsRequest
              * @constructor
              * @param {d1.authz.IGetPermissionsRequest=} [properties] Properties to set
@@ -3135,7 +3146,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The ID of the object to get the permission list for.
+             * GetPermissionsRequest objectId.
              * @member {string} objectId
              * @memberof d1.authz.GetPermissionsRequest
              * @instance
@@ -3202,13 +3213,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -3313,19 +3324,19 @@ $root.d1 = (function () {
             return GetPermissionsRequest;
         })();
 
-        authz.GetPermissionsResponse = (function () {
+        authz.GetPermissionsResponse = (function() {
 
             /**
              * Properties of a GetPermissionsResponse.
              * @memberof d1.authz
              * @interface IGetPermissionsResponse
-             * @property {Array.<string>|null} [groupIds] List of groups with access to the object.
+             * @property {Array.<string>|null} [groupIds] GetPermissionsResponse groupIds
              */
 
             /**
              * Constructs a new GetPermissionsResponse.
              * @memberof d1.authz
-             * @classdesc Represents the result of a request to get permissions for an object.
+             * @classdesc Represents a GetPermissionsResponse.
              * @implements IGetPermissionsResponse
              * @constructor
              * @param {d1.authz.IGetPermissionsResponse=} [properties] Properties to set
@@ -3339,7 +3350,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * List of groups with access to the object.
+             * GetPermissionsResponse groupIds.
              * @member {Array.<string>} groupIds
              * @memberof d1.authz.GetPermissionsResponse
              * @instance
@@ -3407,15 +3418,15 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             if (!(message.groupIds && message.groupIds.length))
                                 message.groupIds = [];
                             message.groupIds.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -3532,25 +3543,26 @@ $root.d1 = (function () {
             return GetPermissionsResponse;
         })();
 
-        authz.AddPermissionRequest = (function () {
+        authz.AddPermissionRequest = (function() {
 
             /**
              * Properties of an AddPermissionRequest.
              * @memberof d1.authz
              * @interface IAddPermissionRequest
-             * @property {string|null} [objectId] The ID of the object to add the permission to.
-             * @property {string|null} [groupId] The ID of the group to give access.
+             * @property {string|null} [objectId] AddPermissionRequest objectId
+             * @property {Array.<string>|null} [groupIds] AddPermissionRequest groupIds
              */
 
             /**
              * Constructs a new AddPermissionRequest.
              * @memberof d1.authz
-             * @classdesc Represents a request to add permission to an object.
+             * @classdesc Represents an AddPermissionRequest.
              * @implements IAddPermissionRequest
              * @constructor
              * @param {d1.authz.IAddPermissionRequest=} [properties] Properties to set
              */
             function AddPermissionRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3558,7 +3570,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The ID of the object to add the permission to.
+             * AddPermissionRequest objectId.
              * @member {string} objectId
              * @memberof d1.authz.AddPermissionRequest
              * @instance
@@ -3566,12 +3578,12 @@ $root.d1 = (function () {
             AddPermissionRequest.prototype.objectId = "";
 
             /**
-             * The ID of the group to give access.
-             * @member {string} groupId
+             * AddPermissionRequest groupIds.
+             * @member {Array.<string>} groupIds
              * @memberof d1.authz.AddPermissionRequest
              * @instance
              */
-            AddPermissionRequest.prototype.groupId = "";
+            AddPermissionRequest.prototype.groupIds = $util.emptyArray;
 
             /**
              * Creates a new AddPermissionRequest instance using the specified properties.
@@ -3599,8 +3611,9 @@ $root.d1 = (function () {
                     writer = $Writer.create();
                 if (message.objectId != null && Object.hasOwnProperty.call(message, "objectId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.objectId);
-                if (message.groupId != null && Object.hasOwnProperty.call(message, "groupId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupId);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupIds[i]);
                 return writer;
             };
 
@@ -3635,17 +3648,19 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        case 2: {
-                            message.groupId = reader.string();
+                    case 2: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -3681,9 +3696,13 @@ $root.d1 = (function () {
                 if (message.objectId != null && message.hasOwnProperty("objectId"))
                     if (!$util.isString(message.objectId))
                         return "objectId: string expected";
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    if (!$util.isString(message.groupId))
-                        return "groupId: string expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
@@ -3701,8 +3720,13 @@ $root.d1 = (function () {
                 var message = new $root.d1.authz.AddPermissionRequest();
                 if (object.objectId != null)
                     message.objectId = String(object.objectId);
-                if (object.groupId != null)
-                    message.groupId = String(object.groupId);
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.authz.AddPermissionRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
@@ -3719,14 +3743,17 @@ $root.d1 = (function () {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
+                if (options.defaults)
                     object.objectId = "";
-                    object.groupId = "";
-                }
                 if (message.objectId != null && message.hasOwnProperty("objectId"))
                     object.objectId = message.objectId;
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    object.groupId = message.groupId;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
@@ -3759,7 +3786,7 @@ $root.d1 = (function () {
             return AddPermissionRequest;
         })();
 
-        authz.AddPermissionResponse = (function () {
+        authz.AddPermissionResponse = (function() {
 
             /**
              * Properties of an AddPermissionResponse.
@@ -3770,7 +3797,7 @@ $root.d1 = (function () {
             /**
              * Constructs a new AddPermissionResponse.
              * @memberof d1.authz
-             * @classdesc Represents the result of a request to add permission to an object.
+             * @classdesc Represents an AddPermissionResponse.
              * @implements IAddPermissionResponse
              * @constructor
              * @param {d1.authz.IAddPermissionResponse=} [properties] Properties to set
@@ -3840,9 +3867,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -3934,25 +3961,26 @@ $root.d1 = (function () {
             return AddPermissionResponse;
         })();
 
-        authz.RemovePermissionRequest = (function () {
+        authz.RemovePermissionRequest = (function() {
 
             /**
              * Properties of a RemovePermissionRequest.
              * @memberof d1.authz
              * @interface IRemovePermissionRequest
-             * @property {string|null} [objectId] The ID of the object to remove the permission for.
-             * @property {string|null} [groupId] The ID of the group to revoke permission for.
+             * @property {string|null} [objectId] RemovePermissionRequest objectId
+             * @property {Array.<string>|null} [groupIds] RemovePermissionRequest groupIds
              */
 
             /**
              * Constructs a new RemovePermissionRequest.
              * @memberof d1.authz
-             * @classdesc Represents a request to remove permission to an object.
+             * @classdesc Represents a RemovePermissionRequest.
              * @implements IRemovePermissionRequest
              * @constructor
              * @param {d1.authz.IRemovePermissionRequest=} [properties] Properties to set
              */
             function RemovePermissionRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3960,7 +3988,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The ID of the object to remove the permission for.
+             * RemovePermissionRequest objectId.
              * @member {string} objectId
              * @memberof d1.authz.RemovePermissionRequest
              * @instance
@@ -3968,12 +3996,12 @@ $root.d1 = (function () {
             RemovePermissionRequest.prototype.objectId = "";
 
             /**
-             * The ID of the group to revoke permission for.
-             * @member {string} groupId
+             * RemovePermissionRequest groupIds.
+             * @member {Array.<string>} groupIds
              * @memberof d1.authz.RemovePermissionRequest
              * @instance
              */
-            RemovePermissionRequest.prototype.groupId = "";
+            RemovePermissionRequest.prototype.groupIds = $util.emptyArray;
 
             /**
              * Creates a new RemovePermissionRequest instance using the specified properties.
@@ -4001,8 +4029,9 @@ $root.d1 = (function () {
                     writer = $Writer.create();
                 if (message.objectId != null && Object.hasOwnProperty.call(message, "objectId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.objectId);
-                if (message.groupId != null && Object.hasOwnProperty.call(message, "groupId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupId);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.groupIds[i]);
                 return writer;
             };
 
@@ -4037,17 +4066,19 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        case 2: {
-                            message.groupId = reader.string();
+                    case 2: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -4083,9 +4114,13 @@ $root.d1 = (function () {
                 if (message.objectId != null && message.hasOwnProperty("objectId"))
                     if (!$util.isString(message.objectId))
                         return "objectId: string expected";
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    if (!$util.isString(message.groupId))
-                        return "groupId: string expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
@@ -4103,8 +4138,13 @@ $root.d1 = (function () {
                 var message = new $root.d1.authz.RemovePermissionRequest();
                 if (object.objectId != null)
                     message.objectId = String(object.objectId);
-                if (object.groupId != null)
-                    message.groupId = String(object.groupId);
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.authz.RemovePermissionRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
@@ -4121,14 +4161,17 @@ $root.d1 = (function () {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults) {
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
+                if (options.defaults)
                     object.objectId = "";
-                    object.groupId = "";
-                }
                 if (message.objectId != null && message.hasOwnProperty("objectId"))
                     object.objectId = message.objectId;
-                if (message.groupId != null && message.hasOwnProperty("groupId"))
-                    object.groupId = message.groupId;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
@@ -4161,7 +4204,7 @@ $root.d1 = (function () {
             return RemovePermissionRequest;
         })();
 
-        authz.RemovePermissionResponse = (function () {
+        authz.RemovePermissionResponse = (function() {
 
             /**
              * Properties of a RemovePermissionResponse.
@@ -4172,7 +4215,7 @@ $root.d1 = (function () {
             /**
              * Constructs a new RemovePermissionResponse.
              * @memberof d1.authz
-             * @classdesc Represents the result of a request to remove permission to an object.
+             * @classdesc Represents a RemovePermissionResponse.
              * @implements IRemovePermissionResponse
              * @constructor
              * @param {d1.authz.IRemovePermissionResponse=} [properties] Properties to set
@@ -4242,9 +4285,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -4336,10 +4379,416 @@ $root.d1 = (function () {
             return RemovePermissionResponse;
         })();
 
+        authz.CheckPermissionRequest = (function() {
+
+            /**
+             * Properties of a CheckPermissionRequest.
+             * @memberof d1.authz
+             * @interface ICheckPermissionRequest
+             * @property {string|null} [objectId] CheckPermissionRequest objectId
+             */
+
+            /**
+             * Constructs a new CheckPermissionRequest.
+             * @memberof d1.authz
+             * @classdesc Represents a CheckPermissionRequest.
+             * @implements ICheckPermissionRequest
+             * @constructor
+             * @param {d1.authz.ICheckPermissionRequest=} [properties] Properties to set
+             */
+            function CheckPermissionRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CheckPermissionRequest objectId.
+             * @member {string} objectId
+             * @memberof d1.authz.CheckPermissionRequest
+             * @instance
+             */
+            CheckPermissionRequest.prototype.objectId = "";
+
+            /**
+             * Creates a new CheckPermissionRequest instance using the specified properties.
+             * @function create
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {d1.authz.ICheckPermissionRequest=} [properties] Properties to set
+             * @returns {d1.authz.CheckPermissionRequest} CheckPermissionRequest instance
+             */
+            CheckPermissionRequest.create = function create(properties) {
+                return new CheckPermissionRequest(properties);
+            };
+
+            /**
+             * Encodes the specified CheckPermissionRequest message. Does not implicitly {@link d1.authz.CheckPermissionRequest.verify|verify} messages.
+             * @function encode
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {d1.authz.ICheckPermissionRequest} message CheckPermissionRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckPermissionRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.objectId != null && Object.hasOwnProperty.call(message, "objectId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.objectId);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CheckPermissionRequest message, length delimited. Does not implicitly {@link d1.authz.CheckPermissionRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {d1.authz.ICheckPermissionRequest} message CheckPermissionRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckPermissionRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CheckPermissionRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {d1.authz.CheckPermissionRequest} CheckPermissionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckPermissionRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authz.CheckPermissionRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.objectId = reader.string();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CheckPermissionRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {d1.authz.CheckPermissionRequest} CheckPermissionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckPermissionRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CheckPermissionRequest message.
+             * @function verify
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CheckPermissionRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.objectId != null && message.hasOwnProperty("objectId"))
+                    if (!$util.isString(message.objectId))
+                        return "objectId: string expected";
+                return null;
+            };
+
+            /**
+             * Creates a CheckPermissionRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {d1.authz.CheckPermissionRequest} CheckPermissionRequest
+             */
+            CheckPermissionRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authz.CheckPermissionRequest)
+                    return object;
+                var message = new $root.d1.authz.CheckPermissionRequest();
+                if (object.objectId != null)
+                    message.objectId = String(object.objectId);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a CheckPermissionRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {d1.authz.CheckPermissionRequest} message CheckPermissionRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CheckPermissionRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.objectId = "";
+                if (message.objectId != null && message.hasOwnProperty("objectId"))
+                    object.objectId = message.objectId;
+                return object;
+            };
+
+            /**
+             * Converts this CheckPermissionRequest to JSON.
+             * @function toJSON
+             * @memberof d1.authz.CheckPermissionRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CheckPermissionRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for CheckPermissionRequest
+             * @function getTypeUrl
+             * @memberof d1.authz.CheckPermissionRequest
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CheckPermissionRequest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/d1.authz.CheckPermissionRequest";
+            };
+
+            return CheckPermissionRequest;
+        })();
+
+        authz.CheckPermissionResponse = (function() {
+
+            /**
+             * Properties of a CheckPermissionResponse.
+             * @memberof d1.authz
+             * @interface ICheckPermissionResponse
+             * @property {boolean|null} [hasPermission] CheckPermissionResponse hasPermission
+             */
+
+            /**
+             * Constructs a new CheckPermissionResponse.
+             * @memberof d1.authz
+             * @classdesc Represents a CheckPermissionResponse.
+             * @implements ICheckPermissionResponse
+             * @constructor
+             * @param {d1.authz.ICheckPermissionResponse=} [properties] Properties to set
+             */
+            function CheckPermissionResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CheckPermissionResponse hasPermission.
+             * @member {boolean} hasPermission
+             * @memberof d1.authz.CheckPermissionResponse
+             * @instance
+             */
+            CheckPermissionResponse.prototype.hasPermission = false;
+
+            /**
+             * Creates a new CheckPermissionResponse instance using the specified properties.
+             * @function create
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {d1.authz.ICheckPermissionResponse=} [properties] Properties to set
+             * @returns {d1.authz.CheckPermissionResponse} CheckPermissionResponse instance
+             */
+            CheckPermissionResponse.create = function create(properties) {
+                return new CheckPermissionResponse(properties);
+            };
+
+            /**
+             * Encodes the specified CheckPermissionResponse message. Does not implicitly {@link d1.authz.CheckPermissionResponse.verify|verify} messages.
+             * @function encode
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {d1.authz.ICheckPermissionResponse} message CheckPermissionResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckPermissionResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.hasPermission != null && Object.hasOwnProperty.call(message, "hasPermission"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.hasPermission);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CheckPermissionResponse message, length delimited. Does not implicitly {@link d1.authz.CheckPermissionResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {d1.authz.ICheckPermissionResponse} message CheckPermissionResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckPermissionResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CheckPermissionResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {d1.authz.CheckPermissionResponse} CheckPermissionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckPermissionResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.d1.authz.CheckPermissionResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.hasPermission = reader.bool();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CheckPermissionResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {d1.authz.CheckPermissionResponse} CheckPermissionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckPermissionResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CheckPermissionResponse message.
+             * @function verify
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CheckPermissionResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.hasPermission != null && message.hasOwnProperty("hasPermission"))
+                    if (typeof message.hasPermission !== "boolean")
+                        return "hasPermission: boolean expected";
+                return null;
+            };
+
+            /**
+             * Creates a CheckPermissionResponse message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {d1.authz.CheckPermissionResponse} CheckPermissionResponse
+             */
+            CheckPermissionResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.d1.authz.CheckPermissionResponse)
+                    return object;
+                var message = new $root.d1.authz.CheckPermissionResponse();
+                if (object.hasPermission != null)
+                    message.hasPermission = Boolean(object.hasPermission);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a CheckPermissionResponse message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {d1.authz.CheckPermissionResponse} message CheckPermissionResponse
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CheckPermissionResponse.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.hasPermission = false;
+                if (message.hasPermission != null && message.hasOwnProperty("hasPermission"))
+                    object.hasPermission = message.hasPermission;
+                return object;
+            };
+
+            /**
+             * Converts this CheckPermissionResponse to JSON.
+             * @function toJSON
+             * @memberof d1.authz.CheckPermissionResponse
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CheckPermissionResponse.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for CheckPermissionResponse
+             * @function getTypeUrl
+             * @memberof d1.authz.CheckPermissionResponse
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CheckPermissionResponse.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/d1.authz.CheckPermissionResponse";
+            };
+
+            return CheckPermissionResponse;
+        })();
+
         return authz;
     })();
 
-    d1.generic = (function () {
+    d1.generic = (function() {
 
         /**
          * Namespace generic.
@@ -4348,12 +4797,12 @@ $root.d1 = (function () {
          */
         var generic = {};
 
-        generic.Generic = (function () {
+        generic.Generic = (function() {
 
             /**
              * Constructs a new Generic service.
              * @memberof d1.generic
-             * @classdesc Service for encryption and decryption of data.
+             * @classdesc Represents a Generic
              * @extends $protobuf.rpc.Service
              * @constructor
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
@@ -4449,25 +4898,27 @@ $root.d1 = (function () {
             return Generic;
         })();
 
-        generic.EncryptRequest = (function () {
+        generic.EncryptRequest = (function() {
 
             /**
              * Properties of an EncryptRequest.
              * @memberof d1.generic
              * @interface IEncryptRequest
-             * @property {Uint8Array|null} [plaintext] Data to encrypt.
-             * @property {Uint8Array|null} [associatedData] Associated data.
+             * @property {Uint8Array|null} [plaintext] EncryptRequest plaintext
+             * @property {Uint8Array|null} [associatedData] EncryptRequest associatedData
+             * @property {Array.<string>|null} [groupIds] EncryptRequest groupIds
              */
 
             /**
              * Constructs a new EncryptRequest.
              * @memberof d1.generic
-             * @classdesc Represents a request to encrypt data.
+             * @classdesc Represents an EncryptRequest.
              * @implements IEncryptRequest
              * @constructor
              * @param {d1.generic.IEncryptRequest=} [properties] Properties to set
              */
             function EncryptRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4475,7 +4926,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Data to encrypt.
+             * EncryptRequest plaintext.
              * @member {Uint8Array} plaintext
              * @memberof d1.generic.EncryptRequest
              * @instance
@@ -4483,12 +4934,20 @@ $root.d1 = (function () {
             EncryptRequest.prototype.plaintext = $util.newBuffer([]);
 
             /**
-             * Associated data.
+             * EncryptRequest associatedData.
              * @member {Uint8Array} associatedData
              * @memberof d1.generic.EncryptRequest
              * @instance
              */
             EncryptRequest.prototype.associatedData = $util.newBuffer([]);
+
+            /**
+             * EncryptRequest groupIds.
+             * @member {Array.<string>} groupIds
+             * @memberof d1.generic.EncryptRequest
+             * @instance
+             */
+            EncryptRequest.prototype.groupIds = $util.emptyArray;
 
             /**
              * Creates a new EncryptRequest instance using the specified properties.
@@ -4518,6 +4977,9 @@ $root.d1 = (function () {
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.plaintext);
                 if (message.associatedData != null && Object.hasOwnProperty.call(message, "associatedData"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.associatedData);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.groupIds[i]);
                 return writer;
             };
 
@@ -4552,17 +5014,23 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
+                    case 3: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -4601,6 +5069,13 @@ $root.d1 = (function () {
                 if (message.associatedData != null && message.hasOwnProperty("associatedData"))
                     if (!(message.associatedData && typeof message.associatedData.length === "number" || $util.isString(message.associatedData)))
                         return "associatedData: buffer expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
@@ -4626,6 +5101,13 @@ $root.d1 = (function () {
                         $util.base64.decode(object.associatedData, message.associatedData = $util.newBuffer($util.base64.length(object.associatedData)), 0);
                     else if (object.associatedData.length >= 0)
                         message.associatedData = object.associatedData;
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.generic.EncryptRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
@@ -4642,6 +5124,8 @@ $root.d1 = (function () {
                 if (!options)
                     options = {};
                 var object = {};
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
                 if (options.defaults) {
                     if (options.bytes === String)
                         object.plaintext = "";
@@ -4662,6 +5146,11 @@ $root.d1 = (function () {
                     object.plaintext = options.bytes === String ? $util.base64.encode(message.plaintext, 0, message.plaintext.length) : options.bytes === Array ? Array.prototype.slice.call(message.plaintext) : message.plaintext;
                 if (message.associatedData != null && message.hasOwnProperty("associatedData"))
                     object.associatedData = options.bytes === String ? $util.base64.encode(message.associatedData, 0, message.associatedData.length) : options.bytes === Array ? Array.prototype.slice.call(message.associatedData) : message.associatedData;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
@@ -4694,21 +5183,21 @@ $root.d1 = (function () {
             return EncryptRequest;
         })();
 
-        generic.EncryptResponse = (function () {
+        generic.EncryptResponse = (function() {
 
             /**
              * Properties of an EncryptResponse.
              * @memberof d1.generic
              * @interface IEncryptResponse
-             * @property {Uint8Array|null} [ciphertext] Ciphertext of the provided plaintext.
-             * @property {Uint8Array|null} [associatedData] Associated data.
-             * @property {string|null} [objectId] The object ID of the encrypted data.
+             * @property {Uint8Array|null} [ciphertext] EncryptResponse ciphertext
+             * @property {Uint8Array|null} [associatedData] EncryptResponse associatedData
+             * @property {string|null} [objectId] EncryptResponse objectId
              */
 
             /**
              * Constructs a new EncryptResponse.
              * @memberof d1.generic
-             * @classdesc Represents a response to an encryption request.
+             * @classdesc Represents an EncryptResponse.
              * @implements IEncryptResponse
              * @constructor
              * @param {d1.generic.IEncryptResponse=} [properties] Properties to set
@@ -4721,7 +5210,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Ciphertext of the provided plaintext.
+             * EncryptResponse ciphertext.
              * @member {Uint8Array} ciphertext
              * @memberof d1.generic.EncryptResponse
              * @instance
@@ -4729,7 +5218,7 @@ $root.d1 = (function () {
             EncryptResponse.prototype.ciphertext = $util.newBuffer([]);
 
             /**
-             * Associated data.
+             * EncryptResponse associatedData.
              * @member {Uint8Array} associatedData
              * @memberof d1.generic.EncryptResponse
              * @instance
@@ -4737,7 +5226,7 @@ $root.d1 = (function () {
             EncryptResponse.prototype.associatedData = $util.newBuffer([]);
 
             /**
-             * The object ID of the encrypted data.
+             * EncryptResponse objectId.
              * @member {string} objectId
              * @memberof d1.generic.EncryptResponse
              * @instance
@@ -4808,21 +5297,21 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.ciphertext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        case 3: {
+                    case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -4962,21 +5451,21 @@ $root.d1 = (function () {
             return EncryptResponse;
         })();
 
-        generic.DecryptRequest = (function () {
+        generic.DecryptRequest = (function() {
 
             /**
              * Properties of a DecryptRequest.
              * @memberof d1.generic
              * @interface IDecryptRequest
-             * @property {Uint8Array|null} [ciphertext] Data to decrypt.
-             * @property {Uint8Array|null} [associatedData] Associated data.
-             * @property {string|null} [objectId] The object ID of the data.
+             * @property {Uint8Array|null} [ciphertext] DecryptRequest ciphertext
+             * @property {Uint8Array|null} [associatedData] DecryptRequest associatedData
+             * @property {string|null} [objectId] DecryptRequest objectId
              */
 
             /**
              * Constructs a new DecryptRequest.
              * @memberof d1.generic
-             * @classdesc Represents a request to decrypt data.
+             * @classdesc Represents a DecryptRequest.
              * @implements IDecryptRequest
              * @constructor
              * @param {d1.generic.IDecryptRequest=} [properties] Properties to set
@@ -4989,7 +5478,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Data to decrypt.
+             * DecryptRequest ciphertext.
              * @member {Uint8Array} ciphertext
              * @memberof d1.generic.DecryptRequest
              * @instance
@@ -4997,7 +5486,7 @@ $root.d1 = (function () {
             DecryptRequest.prototype.ciphertext = $util.newBuffer([]);
 
             /**
-             * Associated data.
+             * DecryptRequest associatedData.
              * @member {Uint8Array} associatedData
              * @memberof d1.generic.DecryptRequest
              * @instance
@@ -5005,7 +5494,7 @@ $root.d1 = (function () {
             DecryptRequest.prototype.associatedData = $util.newBuffer([]);
 
             /**
-             * The object ID of the data.
+             * DecryptRequest objectId.
              * @member {string} objectId
              * @memberof d1.generic.DecryptRequest
              * @instance
@@ -5076,21 +5565,21 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.ciphertext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        case 3: {
+                    case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -5230,20 +5719,20 @@ $root.d1 = (function () {
             return DecryptRequest;
         })();
 
-        generic.DecryptResponse = (function () {
+        generic.DecryptResponse = (function() {
 
             /**
              * Properties of a DecryptResponse.
              * @memberof d1.generic
              * @interface IDecryptResponse
-             * @property {Uint8Array|null} [plaintext] Decrypted data.
-             * @property {Uint8Array|null} [associatedData] Associated data.
+             * @property {Uint8Array|null} [plaintext] DecryptResponse plaintext
+             * @property {Uint8Array|null} [associatedData] DecryptResponse associatedData
              */
 
             /**
              * Constructs a new DecryptResponse.
              * @memberof d1.generic
-             * @classdesc Represents a response to a decryption request.
+             * @classdesc Represents a DecryptResponse.
              * @implements IDecryptResponse
              * @constructor
              * @param {d1.generic.IDecryptResponse=} [properties] Properties to set
@@ -5256,7 +5745,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Decrypted data.
+             * DecryptResponse plaintext.
              * @member {Uint8Array} plaintext
              * @memberof d1.generic.DecryptResponse
              * @instance
@@ -5264,7 +5753,7 @@ $root.d1 = (function () {
             DecryptResponse.prototype.plaintext = $util.newBuffer([]);
 
             /**
-             * Associated data.
+             * DecryptResponse associatedData.
              * @member {Uint8Array} associatedData
              * @memberof d1.generic.DecryptResponse
              * @instance
@@ -5333,17 +5822,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -5478,7 +5967,7 @@ $root.d1 = (function () {
         return generic;
     })();
 
-    d1.index = (function () {
+    d1.index = (function() {
 
         /**
          * Namespace index.
@@ -5487,12 +5976,12 @@ $root.d1 = (function () {
          */
         var index = {};
 
-        index.Index = (function () {
+        index.Index = (function() {
 
             /**
              * Constructs a new Index service.
              * @memberof d1.index
-             * @classdesc Service for using secure index.
+             * @classdesc Represents an Index
              * @extends $protobuf.rpc.Service
              * @constructor
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
@@ -5621,14 +6110,14 @@ $root.d1 = (function () {
             return Index;
         })();
 
-        index.AddRequest = (function () {
+        index.AddRequest = (function() {
 
             /**
              * Properties of an AddRequest.
              * @memberof d1.index
              * @interface IAddRequest
-             * @property {Array.<string>|null} [keywords] Keywords to be associated with identifier in secure index.
-             * @property {string|null} [identifier] Identifier, e.g. a document ID, to be stored in secure index.
+             * @property {Array.<string>|null} [keywords] AddRequest keywords
+             * @property {string|null} [identifier] AddRequest identifier
              */
 
             /**
@@ -5648,7 +6137,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Keywords to be associated with identifier in secure index.
+             * AddRequest keywords.
              * @member {Array.<string>} keywords
              * @memberof d1.index.AddRequest
              * @instance
@@ -5656,7 +6145,7 @@ $root.d1 = (function () {
             AddRequest.prototype.keywords = $util.emptyArray;
 
             /**
-             * Identifier, e.g. a document ID, to be stored in secure index.
+             * AddRequest identifier.
              * @member {string} identifier
              * @memberof d1.index.AddRequest
              * @instance
@@ -5726,19 +6215,19 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             if (!(message.keywords && message.keywords.length))
                                 message.keywords = [];
                             message.keywords.push(reader.string());
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.identifier = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -5864,7 +6353,7 @@ $root.d1 = (function () {
             return AddRequest;
         })();
 
-        index.AddResponse = (function () {
+        index.AddResponse = (function() {
 
             /**
              * Properties of an AddResponse.
@@ -5875,7 +6364,7 @@ $root.d1 = (function () {
             /**
              * Constructs a new AddResponse.
              * @memberof d1.index
-             * @classdesc Represents a response to an add request.
+             * @classdesc Represents an AddResponse.
              * @implements IAddResponse
              * @constructor
              * @param {d1.index.IAddResponse=} [properties] Properties to set
@@ -5945,9 +6434,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -6039,13 +6528,13 @@ $root.d1 = (function () {
             return AddResponse;
         })();
 
-        index.SearchRequest = (function () {
+        index.SearchRequest = (function() {
 
             /**
              * Properties of a SearchRequest.
              * @memberof d1.index
              * @interface ISearchRequest
-             * @property {string|null} [keyword] Keyword to search for in secure index.
+             * @property {string|null} [keyword] SearchRequest keyword
              */
 
             /**
@@ -6064,7 +6553,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Keyword to search for in secure index.
+             * SearchRequest keyword.
              * @member {string} keyword
              * @memberof d1.index.SearchRequest
              * @instance
@@ -6131,13 +6620,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.keyword = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -6242,19 +6731,19 @@ $root.d1 = (function () {
             return SearchRequest;
         })();
 
-        index.SearchResponse = (function () {
+        index.SearchResponse = (function() {
 
             /**
              * Properties of a SearchResponse.
              * @memberof d1.index
              * @interface ISearchResponse
-             * @property {Array.<string>|null} [identifiers] Identifiers that contain the keyword in secure index.
+             * @property {Array.<string>|null} [identifiers] SearchResponse identifiers
              */
 
             /**
              * Constructs a new SearchResponse.
              * @memberof d1.index
-             * @classdesc Represents a response to a search request.
+             * @classdesc Represents a SearchResponse.
              * @implements ISearchResponse
              * @constructor
              * @param {d1.index.ISearchResponse=} [properties] Properties to set
@@ -6268,7 +6757,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Identifiers that contain the keyword in secure index.
+             * SearchResponse identifiers.
              * @member {Array.<string>} identifiers
              * @memberof d1.index.SearchResponse
              * @instance
@@ -6336,15 +6825,15 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 2: {
+                    case 2: {
                             if (!(message.identifiers && message.identifiers.length))
                                 message.identifiers = [];
                             message.identifiers.push(reader.string());
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -6461,14 +6950,14 @@ $root.d1 = (function () {
             return SearchResponse;
         })();
 
-        index.DeleteRequest = (function () {
+        index.DeleteRequest = (function() {
 
             /**
              * Properties of a DeleteRequest.
              * @memberof d1.index
              * @interface IDeleteRequest
-             * @property {Array.<string>|null} [keywords] Keywords that are associated with identifier in secure index.
-             * @property {string|null} [identifier] Identifier stored in secure index.
+             * @property {Array.<string>|null} [keywords] DeleteRequest keywords
+             * @property {string|null} [identifier] DeleteRequest identifier
              */
 
             /**
@@ -6488,7 +6977,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * Keywords that are associated with identifier in secure index.
+             * DeleteRequest keywords.
              * @member {Array.<string>} keywords
              * @memberof d1.index.DeleteRequest
              * @instance
@@ -6496,7 +6985,7 @@ $root.d1 = (function () {
             DeleteRequest.prototype.keywords = $util.emptyArray;
 
             /**
-             * Identifier stored in secure index.
+             * DeleteRequest identifier.
              * @member {string} identifier
              * @memberof d1.index.DeleteRequest
              * @instance
@@ -6566,19 +7055,19 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             if (!(message.keywords && message.keywords.length))
                                 message.keywords = [];
                             message.keywords.push(reader.string());
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.identifier = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -6704,7 +7193,7 @@ $root.d1 = (function () {
             return DeleteRequest;
         })();
 
-        index.DeleteResponse = (function () {
+        index.DeleteResponse = (function() {
 
             /**
              * Properties of a DeleteResponse.
@@ -6715,7 +7204,7 @@ $root.d1 = (function () {
             /**
              * Constructs a new DeleteResponse.
              * @memberof d1.index
-             * @classdesc Represents a response to a delete request.
+             * @classdesc Represents a DeleteResponse.
              * @implements IDeleteResponse
              * @constructor
              * @param {d1.index.IDeleteResponse=} [properties] Properties to set
@@ -6785,9 +7274,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -6882,7 +7371,7 @@ $root.d1 = (function () {
         return index;
     })();
 
-    d1.storage = (function () {
+    d1.storage = (function() {
 
         /**
          * Namespace storage.
@@ -6891,7 +7380,7 @@ $root.d1 = (function () {
          */
         var storage = {};
 
-        storage.Storage = (function () {
+        storage.Storage = (function() {
 
             /**
              * Constructs a new Storage service.
@@ -7058,7 +7547,7 @@ $root.d1 = (function () {
             return Storage;
         })();
 
-        storage.StoreRequest = (function () {
+        storage.StoreRequest = (function() {
 
             /**
              * Properties of a StoreRequest.
@@ -7066,6 +7555,7 @@ $root.d1 = (function () {
              * @interface IStoreRequest
              * @property {Uint8Array|null} [plaintext] Data to encrypt.
              * @property {Uint8Array|null} [associatedData] Associated data.
+             * @property {Array.<string>|null} [groupIds] StoreRequest groupIds
              */
 
             /**
@@ -7077,6 +7567,7 @@ $root.d1 = (function () {
              * @param {d1.storage.IStoreRequest=} [properties] Properties to set
              */
             function StoreRequest(properties) {
+                this.groupIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -7098,6 +7589,14 @@ $root.d1 = (function () {
              * @instance
              */
             StoreRequest.prototype.associatedData = $util.newBuffer([]);
+
+            /**
+             * StoreRequest groupIds.
+             * @member {Array.<string>} groupIds
+             * @memberof d1.storage.StoreRequest
+             * @instance
+             */
+            StoreRequest.prototype.groupIds = $util.emptyArray;
 
             /**
              * Creates a new StoreRequest instance using the specified properties.
@@ -7127,6 +7626,9 @@ $root.d1 = (function () {
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.plaintext);
                 if (message.associatedData != null && Object.hasOwnProperty.call(message, "associatedData"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.associatedData);
+                if (message.groupIds != null && message.groupIds.length)
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.groupIds[i]);
                 return writer;
             };
 
@@ -7161,17 +7663,23 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
+                    case 3: {
+                            if (!(message.groupIds && message.groupIds.length))
+                                message.groupIds = [];
+                            message.groupIds.push(reader.string());
                             break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -7210,6 +7718,13 @@ $root.d1 = (function () {
                 if (message.associatedData != null && message.hasOwnProperty("associatedData"))
                     if (!(message.associatedData && typeof message.associatedData.length === "number" || $util.isString(message.associatedData)))
                         return "associatedData: buffer expected";
+                if (message.groupIds != null && message.hasOwnProperty("groupIds")) {
+                    if (!Array.isArray(message.groupIds))
+                        return "groupIds: array expected";
+                    for (var i = 0; i < message.groupIds.length; ++i)
+                        if (!$util.isString(message.groupIds[i]))
+                            return "groupIds: string[] expected";
+                }
                 return null;
             };
 
@@ -7235,6 +7750,13 @@ $root.d1 = (function () {
                         $util.base64.decode(object.associatedData, message.associatedData = $util.newBuffer($util.base64.length(object.associatedData)), 0);
                     else if (object.associatedData.length >= 0)
                         message.associatedData = object.associatedData;
+                if (object.groupIds) {
+                    if (!Array.isArray(object.groupIds))
+                        throw TypeError(".d1.storage.StoreRequest.groupIds: array expected");
+                    message.groupIds = [];
+                    for (var i = 0; i < object.groupIds.length; ++i)
+                        message.groupIds[i] = String(object.groupIds[i]);
+                }
                 return message;
             };
 
@@ -7251,6 +7773,8 @@ $root.d1 = (function () {
                 if (!options)
                     options = {};
                 var object = {};
+                if (options.arrays || options.defaults)
+                    object.groupIds = [];
                 if (options.defaults) {
                     if (options.bytes === String)
                         object.plaintext = "";
@@ -7271,6 +7795,11 @@ $root.d1 = (function () {
                     object.plaintext = options.bytes === String ? $util.base64.encode(message.plaintext, 0, message.plaintext.length) : options.bytes === Array ? Array.prototype.slice.call(message.plaintext) : message.plaintext;
                 if (message.associatedData != null && message.hasOwnProperty("associatedData"))
                     object.associatedData = options.bytes === String ? $util.base64.encode(message.associatedData, 0, message.associatedData.length) : options.bytes === Array ? Array.prototype.slice.call(message.associatedData) : message.associatedData;
+                if (message.groupIds && message.groupIds.length) {
+                    object.groupIds = [];
+                    for (var j = 0; j < message.groupIds.length; ++j)
+                        object.groupIds[j] = message.groupIds[j];
+                }
                 return object;
             };
 
@@ -7303,7 +7832,7 @@ $root.d1 = (function () {
             return StoreRequest;
         })();
 
-        storage.StoreResponse = (function () {
+        storage.StoreResponse = (function() {
 
             /**
              * Properties of a StoreResponse.
@@ -7395,13 +7924,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -7506,7 +8035,7 @@ $root.d1 = (function () {
             return StoreResponse;
         })();
 
-        storage.RetrieveRequest = (function () {
+        storage.RetrieveRequest = (function() {
 
             /**
              * Properties of a RetrieveRequest.
@@ -7598,13 +8127,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -7709,7 +8238,7 @@ $root.d1 = (function () {
             return RetrieveRequest;
         })();
 
-        storage.RetrieveResponse = (function () {
+        storage.RetrieveResponse = (function() {
 
             /**
              * Properties of a RetrieveResponse.
@@ -7812,17 +8341,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -7954,7 +8483,7 @@ $root.d1 = (function () {
             return RetrieveResponse;
         })();
 
-        storage.UpdateRequest = (function () {
+        storage.UpdateRequest = (function() {
 
             /**
              * Properties of an UpdateRequest.
@@ -8068,21 +8597,21 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.plaintext = reader.bytes();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.associatedData = reader.bytes();
                             break;
                         }
-                        case 3: {
+                    case 3: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -8222,7 +8751,7 @@ $root.d1 = (function () {
             return UpdateRequest;
         })();
 
-        storage.UpdateResponse = (function () {
+        storage.UpdateResponse = (function() {
 
             /**
              * Properties of an UpdateResponse.
@@ -8303,9 +8832,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -8397,7 +8926,7 @@ $root.d1 = (function () {
             return UpdateResponse;
         })();
 
-        storage.DeleteRequest = (function () {
+        storage.DeleteRequest = (function() {
 
             /**
              * Properties of a DeleteRequest.
@@ -8489,13 +9018,13 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.objectId = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -8600,7 +9129,7 @@ $root.d1 = (function () {
             return DeleteRequest;
         })();
 
-        storage.DeleteResponse = (function () {
+        storage.DeleteResponse = (function() {
 
             /**
              * Properties of a DeleteResponse.
@@ -8681,9 +9210,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -8778,7 +9307,7 @@ $root.d1 = (function () {
         return storage;
     })();
 
-    d1.version = (function () {
+    d1.version = (function() {
 
         /**
          * Namespace version.
@@ -8787,12 +9316,12 @@ $root.d1 = (function () {
          */
         var version = {};
 
-        version.Version = (function () {
+        version.Version = (function() {
 
             /**
              * Constructs a new Version service.
              * @memberof d1.version
-             * @classdesc Service for getting version information.
+             * @classdesc Represents a Version
              * @extends $protobuf.rpc.Service
              * @constructor
              * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
@@ -8829,7 +9358,7 @@ $root.d1 = (function () {
              */
 
             /**
-             * Returns the versions of the currently running service.
+             * Calls Version.
              * @function version
              * @memberof d1.version.Version
              * @instance
@@ -8843,7 +9372,7 @@ $root.d1 = (function () {
             }, "name", { value: "Version" });
 
             /**
-             * Returns the versions of the currently running service.
+             * Calls Version.
              * @function version
              * @memberof d1.version.Version
              * @instance
@@ -8855,7 +9384,7 @@ $root.d1 = (function () {
             return Version;
         })();
 
-        version.VersionRequest = (function () {
+        version.VersionRequest = (function() {
 
             /**
              * Properties of a VersionRequest.
@@ -8866,7 +9395,7 @@ $root.d1 = (function () {
             /**
              * Constructs a new VersionRequest.
              * @memberof d1.version
-             * @classdesc Represents a request to get version information.
+             * @classdesc Represents a VersionRequest.
              * @implements IVersionRequest
              * @constructor
              * @param {d1.version.IVersionRequest=} [properties] Properties to set
@@ -8936,9 +9465,9 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;
@@ -9030,20 +9559,20 @@ $root.d1 = (function () {
             return VersionRequest;
         })();
 
-        version.VersionResponse = (function () {
+        version.VersionResponse = (function() {
 
             /**
              * Properties of a VersionResponse.
              * @memberof d1.version
              * @interface IVersionResponse
-             * @property {string|null} [commit] The Git commit of the running service.
-             * @property {string|null} [tag] The version of the running service.
+             * @property {string|null} [commit] VersionResponse commit
+             * @property {string|null} [tag] VersionResponse tag
              */
 
             /**
              * Constructs a new VersionResponse.
              * @memberof d1.version
-             * @classdesc Represents a response to get version information.
+             * @classdesc Represents a VersionResponse.
              * @implements IVersionResponse
              * @constructor
              * @param {d1.version.IVersionResponse=} [properties] Properties to set
@@ -9056,7 +9585,7 @@ $root.d1 = (function () {
             }
 
             /**
-             * The Git commit of the running service.
+             * VersionResponse commit.
              * @member {string} commit
              * @memberof d1.version.VersionResponse
              * @instance
@@ -9064,7 +9593,7 @@ $root.d1 = (function () {
             VersionResponse.prototype.commit = "";
 
             /**
-             * The version of the running service.
+             * VersionResponse tag.
              * @member {string} tag
              * @memberof d1.version.VersionResponse
              * @instance
@@ -9133,17 +9662,17 @@ $root.d1 = (function () {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                        case 1: {
+                    case 1: {
                             message.commit = reader.string();
                             break;
                         }
-                        case 2: {
+                    case 2: {
                             message.tag = reader.string();
                             break;
                         }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
                     }
                 }
                 return message;

@@ -1,17 +1,3 @@
-// Copyright 2022 CYBERCRYPT
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// 	http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 import * as $protobuf from "protobufjs";
 /** Namespace d1. */
 export namespace d1 {
@@ -40,110 +26,88 @@ export namespace d1 {
             public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Authn;
 
             /**
-             * Creates a new user.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
+             * Calls CreateUser.
              * @param request CreateUserRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and CreateUserResponse
              */
             public createUser(request: d1.authn.ICreateUserRequest, callback: d1.authn.Authn.CreateUserCallback): void;
 
             /**
-             * Creates a new user.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
+             * Calls CreateUser.
              * @param request CreateUserRequest message or plain object
              * @returns Promise
              */
             public createUser(request: d1.authn.ICreateUserRequest): Promise<d1.authn.CreateUserResponse>;
 
             /**
-             * Logs in an existing user, returning a User Access Token and an expiry time.
-             * This call can fail if the caller provides the wrong credentials or if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls LoginUser.
              * @param request LoginUserRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and LoginUserResponse
              */
             public loginUser(request: d1.authn.ILoginUserRequest, callback: d1.authn.Authn.LoginUserCallback): void;
 
             /**
-             * Logs in an existing user, returning a User Access Token and an expiry time.
-             * This call can fail if the caller provides the wrong credentials or if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls LoginUser.
              * @param request LoginUserRequest message or plain object
              * @returns Promise
              */
             public loginUser(request: d1.authn.ILoginUserRequest): Promise<d1.authn.LoginUserResponse>;
 
             /**
-             * Deletes an existing user.
-             * This call can fail if the user does not exist,
-             * or if the auth storage cannot be reached, in which case an error is returned.
+             * Calls RemoveUser.
              * @param request RemoveUserRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and RemoveUserResponse
              */
             public removeUser(request: d1.authn.IRemoveUserRequest, callback: d1.authn.Authn.RemoveUserCallback): void;
 
             /**
-             * Deletes an existing user.
-             * This call can fail if the user does not exist,
-             * or if the auth storage cannot be reached, in which case an error is returned.
+             * Calls RemoveUser.
              * @param request RemoveUserRequest message or plain object
              * @returns Promise
              */
             public removeUser(request: d1.authn.IRemoveUserRequest): Promise<d1.authn.RemoveUserResponse>;
 
             /**
-             * Creates a new group with the requested scopes. The caller is added to the group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls CreateGroup.
              * @param request CreateGroupRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and CreateGroupResponse
              */
             public createGroup(request: d1.authn.ICreateGroupRequest, callback: d1.authn.Authn.CreateGroupCallback): void;
 
             /**
-             * Creates a new group with the requested scopes. The caller is added to the group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
+             * Calls CreateGroup.
              * @param request CreateGroupRequest message or plain object
              * @returns Promise
              */
             public createGroup(request: d1.authn.ICreateGroupRequest): Promise<d1.authn.CreateGroupResponse>;
 
             /**
-             * Adds a user to a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @param request AddUserToGroupRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and AddUserToGroupResponse
+             * Calls AddUserToGroups.
+             * @param request AddUserToGroupsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and AddUserToGroupsResponse
              */
-            public addUserToGroup(request: d1.authn.IAddUserToGroupRequest, callback: d1.authn.Authn.AddUserToGroupCallback): void;
+            public addUserToGroups(request: d1.authn.IAddUserToGroupsRequest, callback: d1.authn.Authn.AddUserToGroupsCallback): void;
 
             /**
-             * Adds a user to a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @param request AddUserToGroupRequest message or plain object
+             * Calls AddUserToGroups.
+             * @param request AddUserToGroupsRequest message or plain object
              * @returns Promise
              */
-            public addUserToGroup(request: d1.authn.IAddUserToGroupRequest): Promise<d1.authn.AddUserToGroupResponse>;
+            public addUserToGroups(request: d1.authn.IAddUserToGroupsRequest): Promise<d1.authn.AddUserToGroupsResponse>;
 
             /**
-             * Removes a user from a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @param request RemoveUserFromGroupRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and RemoveUserFromGroupResponse
+             * Calls RemoveUserFromGroups.
+             * @param request RemoveUserFromGroupsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and RemoveUserFromGroupsResponse
              */
-            public removeUserFromGroup(request: d1.authn.IRemoveUserFromGroupRequest, callback: d1.authn.Authn.RemoveUserFromGroupCallback): void;
+            public removeUserFromGroups(request: d1.authn.IRemoveUserFromGroupsRequest, callback: d1.authn.Authn.RemoveUserFromGroupsCallback): void;
 
             /**
-             * Removes a user from a group.
-             * This call can fail if the auth storage cannot be reached,
-             * in which case an error is returned.
-             * @param request RemoveUserFromGroupRequest message or plain object
+             * Calls RemoveUserFromGroups.
+             * @param request RemoveUserFromGroupsRequest message or plain object
              * @returns Promise
              */
-            public removeUserFromGroup(request: d1.authn.IRemoveUserFromGroupRequest): Promise<d1.authn.RemoveUserFromGroupResponse>;
+            public removeUserFromGroups(request: d1.authn.IRemoveUserFromGroupsRequest): Promise<d1.authn.RemoveUserFromGroupsResponse>;
         }
 
         namespace Authn {
@@ -153,49 +117,49 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] CreateUserResponse
              */
-            type CreateUserCallback = (error: (Error | null), response?: d1.authn.CreateUserResponse) => void;
+            type CreateUserCallback = (error: (Error|null), response?: d1.authn.CreateUserResponse) => void;
 
             /**
              * Callback as used by {@link d1.authn.Authn#loginUser}.
              * @param error Error, if any
              * @param [response] LoginUserResponse
              */
-            type LoginUserCallback = (error: (Error | null), response?: d1.authn.LoginUserResponse) => void;
+            type LoginUserCallback = (error: (Error|null), response?: d1.authn.LoginUserResponse) => void;
 
             /**
              * Callback as used by {@link d1.authn.Authn#removeUser}.
              * @param error Error, if any
              * @param [response] RemoveUserResponse
              */
-            type RemoveUserCallback = (error: (Error | null), response?: d1.authn.RemoveUserResponse) => void;
+            type RemoveUserCallback = (error: (Error|null), response?: d1.authn.RemoveUserResponse) => void;
 
             /**
              * Callback as used by {@link d1.authn.Authn#createGroup}.
              * @param error Error, if any
              * @param [response] CreateGroupResponse
              */
-            type CreateGroupCallback = (error: (Error | null), response?: d1.authn.CreateGroupResponse) => void;
+            type CreateGroupCallback = (error: (Error|null), response?: d1.authn.CreateGroupResponse) => void;
 
             /**
-             * Callback as used by {@link d1.authn.Authn#addUserToGroup}.
+             * Callback as used by {@link d1.authn.Authn#addUserToGroups}.
              * @param error Error, if any
-             * @param [response] AddUserToGroupResponse
+             * @param [response] AddUserToGroupsResponse
              */
-            type AddUserToGroupCallback = (error: (Error | null), response?: d1.authn.AddUserToGroupResponse) => void;
+            type AddUserToGroupsCallback = (error: (Error|null), response?: d1.authn.AddUserToGroupsResponse) => void;
 
             /**
-             * Callback as used by {@link d1.authn.Authn#removeUserFromGroup}.
+             * Callback as used by {@link d1.authn.Authn#removeUserFromGroups}.
              * @param error Error, if any
-             * @param [response] RemoveUserFromGroupResponse
+             * @param [response] RemoveUserFromGroupsResponse
              */
-            type RemoveUserFromGroupCallback = (error: (Error | null), response?: d1.authn.RemoveUserFromGroupResponse) => void;
+            type RemoveUserFromGroupsCallback = (error: (Error|null), response?: d1.authn.RemoveUserFromGroupsResponse) => void;
         }
 
         /** Properties of a CreateUserRequest. */
         interface ICreateUserRequest {
 
-            /** The scopes the user should be assigned. */
-            scopes?: (d1.scopes.Scope[] | null);
+            /** CreateUserRequest scopes */
+            scopes?: (d1.scopes.Scope[]|null);
         }
 
         /** Represents a CreateUserRequest. */
@@ -207,7 +171,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ICreateUserRequest);
 
-            /** The scopes the user should be assigned. */
+            /** CreateUserRequest scopes. */
             public scopes: d1.scopes.Scope[];
 
             /**
@@ -241,7 +205,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.CreateUserRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.CreateUserRequest;
 
             /**
              * Decodes a CreateUserRequest message from the specified reader or buffer, length delimited.
@@ -250,14 +214,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.CreateUserRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.CreateUserRequest;
 
             /**
              * Verifies a CreateUserRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a CreateUserRequest message from a plain object. Also converts values to their respective internal types.
@@ -291,11 +255,11 @@ export namespace d1 {
         /** Properties of a CreateUserResponse. */
         interface ICreateUserResponse {
 
-            /** ID of the new user. */
-            userId?: (string | null);
+            /** CreateUserResponse userId */
+            userId?: (string|null);
 
-            /** The users password. */
-            password?: (string | null);
+            /** CreateUserResponse password */
+            password?: (string|null);
         }
 
         /** Represents a CreateUserResponse. */
@@ -307,10 +271,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ICreateUserResponse);
 
-            /** ID of the new user. */
+            /** CreateUserResponse userId. */
             public userId: string;
 
-            /** The users password. */
+            /** CreateUserResponse password. */
             public password: string;
 
             /**
@@ -344,7 +308,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.CreateUserResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.CreateUserResponse;
 
             /**
              * Decodes a CreateUserResponse message from the specified reader or buffer, length delimited.
@@ -353,14 +317,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.CreateUserResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.CreateUserResponse;
 
             /**
              * Verifies a CreateUserResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a CreateUserResponse message from a plain object. Also converts values to their respective internal types.
@@ -394,11 +358,11 @@ export namespace d1 {
         /** Properties of a LoginUserRequest. */
         interface ILoginUserRequest {
 
-            /** ID of the user. */
-            userId?: (string | null);
+            /** LoginUserRequest userId */
+            userId?: (string|null);
 
-            /** The users password. */
-            password?: (string | null);
+            /** LoginUserRequest password */
+            password?: (string|null);
         }
 
         /** Represents a LoginUserRequest. */
@@ -410,10 +374,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ILoginUserRequest);
 
-            /** ID of the user. */
+            /** LoginUserRequest userId. */
             public userId: string;
 
-            /** The users password. */
+            /** LoginUserRequest password. */
             public password: string;
 
             /**
@@ -447,7 +411,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.LoginUserRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.LoginUserRequest;
 
             /**
              * Decodes a LoginUserRequest message from the specified reader or buffer, length delimited.
@@ -456,14 +420,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.LoginUserRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.LoginUserRequest;
 
             /**
              * Verifies a LoginUserRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a LoginUserRequest message from a plain object. Also converts values to their respective internal types.
@@ -497,11 +461,11 @@ export namespace d1 {
         /** Properties of a LoginUserResponse. */
         interface ILoginUserResponse {
 
-            /** Access token to be used in subsequent requests. */
-            accessToken?: (string | null);
+            /** LoginUserResponse accessToken */
+            accessToken?: (string|null);
 
-            /** The expiration time of the access token. */
-            expiryTime?: (number | Long | null);
+            /** LoginUserResponse expiryTime */
+            expiryTime?: (number|Long|null);
         }
 
         /** Represents a LoginUserResponse. */
@@ -513,11 +477,11 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ILoginUserResponse);
 
-            /** Access token to be used in subsequent requests. */
+            /** LoginUserResponse accessToken. */
             public accessToken: string;
 
-            /** The expiration time of the access token. */
-            public expiryTime: (number | Long);
+            /** LoginUserResponse expiryTime. */
+            public expiryTime: (number|Long);
 
             /**
              * Creates a new LoginUserResponse instance using the specified properties.
@@ -550,7 +514,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.LoginUserResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.LoginUserResponse;
 
             /**
              * Decodes a LoginUserResponse message from the specified reader or buffer, length delimited.
@@ -559,14 +523,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.LoginUserResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.LoginUserResponse;
 
             /**
              * Verifies a LoginUserResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a LoginUserResponse message from a plain object. Also converts values to their respective internal types.
@@ -600,8 +564,8 @@ export namespace d1 {
         /** Properties of a RemoveUserRequest. */
         interface IRemoveUserRequest {
 
-            /** ID of the user to remove. */
-            userId?: (string | null);
+            /** RemoveUserRequest userId */
+            userId?: (string|null);
         }
 
         /** Represents a RemoveUserRequest. */
@@ -613,7 +577,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.IRemoveUserRequest);
 
-            /** ID of the user to remove. */
+            /** RemoveUserRequest userId. */
             public userId: string;
 
             /**
@@ -647,7 +611,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.RemoveUserRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.RemoveUserRequest;
 
             /**
              * Decodes a RemoveUserRequest message from the specified reader or buffer, length delimited.
@@ -656,14 +620,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.RemoveUserRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.RemoveUserRequest;
 
             /**
              * Verifies a RemoveUserRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RemoveUserRequest message from a plain object. Also converts values to their respective internal types.
@@ -738,7 +702,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.RemoveUserResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.RemoveUserResponse;
 
             /**
              * Decodes a RemoveUserResponse message from the specified reader or buffer, length delimited.
@@ -747,14 +711,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.RemoveUserResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.RemoveUserResponse;
 
             /**
              * Verifies a RemoveUserResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RemoveUserResponse message from a plain object. Also converts values to their respective internal types.
@@ -788,8 +752,8 @@ export namespace d1 {
         /** Properties of a CreateGroupRequest. */
         interface ICreateGroupRequest {
 
-            /** The scopes the group should be assigned. */
-            scopes?: (d1.scopes.Scope[] | null);
+            /** CreateGroupRequest scopes */
+            scopes?: (d1.scopes.Scope[]|null);
         }
 
         /** Represents a CreateGroupRequest. */
@@ -801,7 +765,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ICreateGroupRequest);
 
-            /** The scopes the group should be assigned. */
+            /** CreateGroupRequest scopes. */
             public scopes: d1.scopes.Scope[];
 
             /**
@@ -835,7 +799,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.CreateGroupRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.CreateGroupRequest;
 
             /**
              * Decodes a CreateGroupRequest message from the specified reader or buffer, length delimited.
@@ -844,14 +808,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.CreateGroupRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.CreateGroupRequest;
 
             /**
              * Verifies a CreateGroupRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a CreateGroupRequest message from a plain object. Also converts values to their respective internal types.
@@ -885,8 +849,8 @@ export namespace d1 {
         /** Properties of a CreateGroupResponse. */
         interface ICreateGroupResponse {
 
-            /** ID of the new group. */
-            groupId?: (string | null);
+            /** CreateGroupResponse groupId */
+            groupId?: (string|null);
         }
 
         /** Represents a CreateGroupResponse. */
@@ -898,7 +862,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authn.ICreateGroupResponse);
 
-            /** ID of the new group. */
+            /** CreateGroupResponse groupId. */
             public groupId: string;
 
             /**
@@ -932,7 +896,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.CreateGroupResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.CreateGroupResponse;
 
             /**
              * Decodes a CreateGroupResponse message from the specified reader or buffer, length delimited.
@@ -941,14 +905,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.CreateGroupResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.CreateGroupResponse;
 
             /**
              * Verifies a CreateGroupResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a CreateGroupResponse message from a plain object. Also converts values to their respective internal types.
@@ -979,388 +943,388 @@ export namespace d1 {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an AddUserToGroupRequest. */
-        interface IAddUserToGroupRequest {
+        /** Properties of an AddUserToGroupsRequest. */
+        interface IAddUserToGroupsRequest {
 
-            /** ID of the user to add. */
-            userId?: (string | null);
+            /** AddUserToGroupsRequest userId */
+            userId?: (string|null);
 
-            /** ID of the group the user should be added to. */
-            groupId?: (string | null);
+            /** AddUserToGroupsRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents an AddUserToGroupRequest. */
-        class AddUserToGroupRequest implements IAddUserToGroupRequest {
+        /** Represents an AddUserToGroupsRequest. */
+        class AddUserToGroupsRequest implements IAddUserToGroupsRequest {
 
             /**
-             * Constructs a new AddUserToGroupRequest.
+             * Constructs a new AddUserToGroupsRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: d1.authn.IAddUserToGroupRequest);
+            constructor(properties?: d1.authn.IAddUserToGroupsRequest);
 
-            /** ID of the user to add. */
+            /** AddUserToGroupsRequest userId. */
             public userId: string;
 
-            /** ID of the group the user should be added to. */
-            public groupId: string;
+            /** AddUserToGroupsRequest groupIds. */
+            public groupIds: string[];
 
             /**
-             * Creates a new AddUserToGroupRequest instance using the specified properties.
+             * Creates a new AddUserToGroupsRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns AddUserToGroupRequest instance
+             * @returns AddUserToGroupsRequest instance
              */
-            public static create(properties?: d1.authn.IAddUserToGroupRequest): d1.authn.AddUserToGroupRequest;
+            public static create(properties?: d1.authn.IAddUserToGroupsRequest): d1.authn.AddUserToGroupsRequest;
 
             /**
-             * Encodes the specified AddUserToGroupRequest message. Does not implicitly {@link d1.authn.AddUserToGroupRequest.verify|verify} messages.
-             * @param message AddUserToGroupRequest message or plain object to encode
+             * Encodes the specified AddUserToGroupsRequest message. Does not implicitly {@link d1.authn.AddUserToGroupsRequest.verify|verify} messages.
+             * @param message AddUserToGroupsRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: d1.authn.IAddUserToGroupRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: d1.authn.IAddUserToGroupsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified AddUserToGroupRequest message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupRequest.verify|verify} messages.
-             * @param message AddUserToGroupRequest message or plain object to encode
+             * Encodes the specified AddUserToGroupsRequest message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupsRequest.verify|verify} messages.
+             * @param message AddUserToGroupsRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: d1.authn.IAddUserToGroupRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: d1.authn.IAddUserToGroupsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an AddUserToGroupRequest message from the specified reader or buffer.
+             * Decodes an AddUserToGroupsRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AddUserToGroupRequest
+             * @returns AddUserToGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.AddUserToGroupRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.AddUserToGroupsRequest;
 
             /**
-             * Decodes an AddUserToGroupRequest message from the specified reader or buffer, length delimited.
+             * Decodes an AddUserToGroupsRequest message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AddUserToGroupRequest
+             * @returns AddUserToGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.AddUserToGroupRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.AddUserToGroupsRequest;
 
             /**
-             * Verifies an AddUserToGroupRequest message.
+             * Verifies an AddUserToGroupsRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates an AddUserToGroupRequest message from a plain object. Also converts values to their respective internal types.
+             * Creates an AddUserToGroupsRequest message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns AddUserToGroupRequest
+             * @returns AddUserToGroupsRequest
              */
-            public static fromObject(object: { [k: string]: any }): d1.authn.AddUserToGroupRequest;
+            public static fromObject(object: { [k: string]: any }): d1.authn.AddUserToGroupsRequest;
 
             /**
-             * Creates a plain object from an AddUserToGroupRequest message. Also converts values to other types if specified.
-             * @param message AddUserToGroupRequest
+             * Creates a plain object from an AddUserToGroupsRequest message. Also converts values to other types if specified.
+             * @param message AddUserToGroupsRequest
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: d1.authn.AddUserToGroupRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: d1.authn.AddUserToGroupsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this AddUserToGroupRequest to JSON.
+             * Converts this AddUserToGroupsRequest to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for AddUserToGroupRequest
+             * Gets the default type url for AddUserToGroupsRequest
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an AddUserToGroupResponse. */
-        interface IAddUserToGroupResponse {
+        /** Properties of an AddUserToGroupsResponse. */
+        interface IAddUserToGroupsResponse {
         }
 
-        /** Represents an AddUserToGroupResponse. */
-        class AddUserToGroupResponse implements IAddUserToGroupResponse {
+        /** Represents an AddUserToGroupsResponse. */
+        class AddUserToGroupsResponse implements IAddUserToGroupsResponse {
 
             /**
-             * Constructs a new AddUserToGroupResponse.
+             * Constructs a new AddUserToGroupsResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: d1.authn.IAddUserToGroupResponse);
+            constructor(properties?: d1.authn.IAddUserToGroupsResponse);
 
             /**
-             * Creates a new AddUserToGroupResponse instance using the specified properties.
+             * Creates a new AddUserToGroupsResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns AddUserToGroupResponse instance
+             * @returns AddUserToGroupsResponse instance
              */
-            public static create(properties?: d1.authn.IAddUserToGroupResponse): d1.authn.AddUserToGroupResponse;
+            public static create(properties?: d1.authn.IAddUserToGroupsResponse): d1.authn.AddUserToGroupsResponse;
 
             /**
-             * Encodes the specified AddUserToGroupResponse message. Does not implicitly {@link d1.authn.AddUserToGroupResponse.verify|verify} messages.
-             * @param message AddUserToGroupResponse message or plain object to encode
+             * Encodes the specified AddUserToGroupsResponse message. Does not implicitly {@link d1.authn.AddUserToGroupsResponse.verify|verify} messages.
+             * @param message AddUserToGroupsResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: d1.authn.IAddUserToGroupResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: d1.authn.IAddUserToGroupsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified AddUserToGroupResponse message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupResponse.verify|verify} messages.
-             * @param message AddUserToGroupResponse message or plain object to encode
+             * Encodes the specified AddUserToGroupsResponse message, length delimited. Does not implicitly {@link d1.authn.AddUserToGroupsResponse.verify|verify} messages.
+             * @param message AddUserToGroupsResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: d1.authn.IAddUserToGroupResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: d1.authn.IAddUserToGroupsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an AddUserToGroupResponse message from the specified reader or buffer.
+             * Decodes an AddUserToGroupsResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns AddUserToGroupResponse
+             * @returns AddUserToGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.AddUserToGroupResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.AddUserToGroupsResponse;
 
             /**
-             * Decodes an AddUserToGroupResponse message from the specified reader or buffer, length delimited.
+             * Decodes an AddUserToGroupsResponse message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns AddUserToGroupResponse
+             * @returns AddUserToGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.AddUserToGroupResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.AddUserToGroupsResponse;
 
             /**
-             * Verifies an AddUserToGroupResponse message.
+             * Verifies an AddUserToGroupsResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates an AddUserToGroupResponse message from a plain object. Also converts values to their respective internal types.
+             * Creates an AddUserToGroupsResponse message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns AddUserToGroupResponse
+             * @returns AddUserToGroupsResponse
              */
-            public static fromObject(object: { [k: string]: any }): d1.authn.AddUserToGroupResponse;
+            public static fromObject(object: { [k: string]: any }): d1.authn.AddUserToGroupsResponse;
 
             /**
-             * Creates a plain object from an AddUserToGroupResponse message. Also converts values to other types if specified.
-             * @param message AddUserToGroupResponse
+             * Creates a plain object from an AddUserToGroupsResponse message. Also converts values to other types if specified.
+             * @param message AddUserToGroupsResponse
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: d1.authn.AddUserToGroupResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: d1.authn.AddUserToGroupsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this AddUserToGroupResponse to JSON.
+             * Converts this AddUserToGroupsResponse to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for AddUserToGroupResponse
+             * Gets the default type url for AddUserToGroupsResponse
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a RemoveUserFromGroupRequest. */
-        interface IRemoveUserFromGroupRequest {
+        /** Properties of a RemoveUserFromGroupsRequest. */
+        interface IRemoveUserFromGroupsRequest {
 
-            /** ID of the user to remove. */
-            userId?: (string | null);
+            /** RemoveUserFromGroupsRequest userId */
+            userId?: (string|null);
 
-            /** ID of the group the user should be removed from. */
-            groupId?: (string | null);
+            /** RemoveUserFromGroupsRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents a RemoveUserFromGroupRequest. */
-        class RemoveUserFromGroupRequest implements IRemoveUserFromGroupRequest {
+        /** Represents a RemoveUserFromGroupsRequest. */
+        class RemoveUserFromGroupsRequest implements IRemoveUserFromGroupsRequest {
 
             /**
-             * Constructs a new RemoveUserFromGroupRequest.
+             * Constructs a new RemoveUserFromGroupsRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: d1.authn.IRemoveUserFromGroupRequest);
+            constructor(properties?: d1.authn.IRemoveUserFromGroupsRequest);
 
-            /** ID of the user to remove. */
+            /** RemoveUserFromGroupsRequest userId. */
             public userId: string;
 
-            /** ID of the group the user should be removed from. */
-            public groupId: string;
+            /** RemoveUserFromGroupsRequest groupIds. */
+            public groupIds: string[];
 
             /**
-             * Creates a new RemoveUserFromGroupRequest instance using the specified properties.
+             * Creates a new RemoveUserFromGroupsRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns RemoveUserFromGroupRequest instance
+             * @returns RemoveUserFromGroupsRequest instance
              */
-            public static create(properties?: d1.authn.IRemoveUserFromGroupRequest): d1.authn.RemoveUserFromGroupRequest;
+            public static create(properties?: d1.authn.IRemoveUserFromGroupsRequest): d1.authn.RemoveUserFromGroupsRequest;
 
             /**
-             * Encodes the specified RemoveUserFromGroupRequest message. Does not implicitly {@link d1.authn.RemoveUserFromGroupRequest.verify|verify} messages.
-             * @param message RemoveUserFromGroupRequest message or plain object to encode
+             * Encodes the specified RemoveUserFromGroupsRequest message. Does not implicitly {@link d1.authn.RemoveUserFromGroupsRequest.verify|verify} messages.
+             * @param message RemoveUserFromGroupsRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: d1.authn.IRemoveUserFromGroupRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: d1.authn.IRemoveUserFromGroupsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified RemoveUserFromGroupRequest message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupRequest.verify|verify} messages.
-             * @param message RemoveUserFromGroupRequest message or plain object to encode
+             * Encodes the specified RemoveUserFromGroupsRequest message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupsRequest.verify|verify} messages.
+             * @param message RemoveUserFromGroupsRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: d1.authn.IRemoveUserFromGroupRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: d1.authn.IRemoveUserFromGroupsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a RemoveUserFromGroupRequest message from the specified reader or buffer.
+             * Decodes a RemoveUserFromGroupsRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns RemoveUserFromGroupRequest
+             * @returns RemoveUserFromGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.RemoveUserFromGroupRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.RemoveUserFromGroupsRequest;
 
             /**
-             * Decodes a RemoveUserFromGroupRequest message from the specified reader or buffer, length delimited.
+             * Decodes a RemoveUserFromGroupsRequest message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns RemoveUserFromGroupRequest
+             * @returns RemoveUserFromGroupsRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.RemoveUserFromGroupRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.RemoveUserFromGroupsRequest;
 
             /**
-             * Verifies a RemoveUserFromGroupRequest message.
+             * Verifies a RemoveUserFromGroupsRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates a RemoveUserFromGroupRequest message from a plain object. Also converts values to their respective internal types.
+             * Creates a RemoveUserFromGroupsRequest message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns RemoveUserFromGroupRequest
+             * @returns RemoveUserFromGroupsRequest
              */
-            public static fromObject(object: { [k: string]: any }): d1.authn.RemoveUserFromGroupRequest;
+            public static fromObject(object: { [k: string]: any }): d1.authn.RemoveUserFromGroupsRequest;
 
             /**
-             * Creates a plain object from a RemoveUserFromGroupRequest message. Also converts values to other types if specified.
-             * @param message RemoveUserFromGroupRequest
+             * Creates a plain object from a RemoveUserFromGroupsRequest message. Also converts values to other types if specified.
+             * @param message RemoveUserFromGroupsRequest
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: d1.authn.RemoveUserFromGroupRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: d1.authn.RemoveUserFromGroupsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this RemoveUserFromGroupRequest to JSON.
+             * Converts this RemoveUserFromGroupsRequest to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for RemoveUserFromGroupRequest
+             * Gets the default type url for RemoveUserFromGroupsRequest
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a RemoveUserFromGroupResponse. */
-        interface IRemoveUserFromGroupResponse {
+        /** Properties of a RemoveUserFromGroupsResponse. */
+        interface IRemoveUserFromGroupsResponse {
         }
 
-        /** Represents a RemoveUserFromGroupResponse. */
-        class RemoveUserFromGroupResponse implements IRemoveUserFromGroupResponse {
+        /** Represents a RemoveUserFromGroupsResponse. */
+        class RemoveUserFromGroupsResponse implements IRemoveUserFromGroupsResponse {
 
             /**
-             * Constructs a new RemoveUserFromGroupResponse.
+             * Constructs a new RemoveUserFromGroupsResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: d1.authn.IRemoveUserFromGroupResponse);
+            constructor(properties?: d1.authn.IRemoveUserFromGroupsResponse);
 
             /**
-             * Creates a new RemoveUserFromGroupResponse instance using the specified properties.
+             * Creates a new RemoveUserFromGroupsResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns RemoveUserFromGroupResponse instance
+             * @returns RemoveUserFromGroupsResponse instance
              */
-            public static create(properties?: d1.authn.IRemoveUserFromGroupResponse): d1.authn.RemoveUserFromGroupResponse;
+            public static create(properties?: d1.authn.IRemoveUserFromGroupsResponse): d1.authn.RemoveUserFromGroupsResponse;
 
             /**
-             * Encodes the specified RemoveUserFromGroupResponse message. Does not implicitly {@link d1.authn.RemoveUserFromGroupResponse.verify|verify} messages.
-             * @param message RemoveUserFromGroupResponse message or plain object to encode
+             * Encodes the specified RemoveUserFromGroupsResponse message. Does not implicitly {@link d1.authn.RemoveUserFromGroupsResponse.verify|verify} messages.
+             * @param message RemoveUserFromGroupsResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: d1.authn.IRemoveUserFromGroupResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: d1.authn.IRemoveUserFromGroupsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Encodes the specified RemoveUserFromGroupResponse message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupResponse.verify|verify} messages.
-             * @param message RemoveUserFromGroupResponse message or plain object to encode
+             * Encodes the specified RemoveUserFromGroupsResponse message, length delimited. Does not implicitly {@link d1.authn.RemoveUserFromGroupsResponse.verify|verify} messages.
+             * @param message RemoveUserFromGroupsResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: d1.authn.IRemoveUserFromGroupResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: d1.authn.IRemoveUserFromGroupsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a RemoveUserFromGroupResponse message from the specified reader or buffer.
+             * Decodes a RemoveUserFromGroupsResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns RemoveUserFromGroupResponse
+             * @returns RemoveUserFromGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authn.RemoveUserFromGroupResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authn.RemoveUserFromGroupsResponse;
 
             /**
-             * Decodes a RemoveUserFromGroupResponse message from the specified reader or buffer, length delimited.
+             * Decodes a RemoveUserFromGroupsResponse message from the specified reader or buffer, length delimited.
              * @param reader Reader or buffer to decode from
-             * @returns RemoveUserFromGroupResponse
+             * @returns RemoveUserFromGroupsResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authn.RemoveUserFromGroupResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authn.RemoveUserFromGroupsResponse;
 
             /**
-             * Verifies a RemoveUserFromGroupResponse message.
+             * Verifies a RemoveUserFromGroupsResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
-             * Creates a RemoveUserFromGroupResponse message from a plain object. Also converts values to their respective internal types.
+             * Creates a RemoveUserFromGroupsResponse message from a plain object. Also converts values to their respective internal types.
              * @param object Plain object
-             * @returns RemoveUserFromGroupResponse
+             * @returns RemoveUserFromGroupsResponse
              */
-            public static fromObject(object: { [k: string]: any }): d1.authn.RemoveUserFromGroupResponse;
+            public static fromObject(object: { [k: string]: any }): d1.authn.RemoveUserFromGroupsResponse;
 
             /**
-             * Creates a plain object from a RemoveUserFromGroupResponse message. Also converts values to other types if specified.
-             * @param message RemoveUserFromGroupResponse
+             * Creates a plain object from a RemoveUserFromGroupsResponse message. Also converts values to other types if specified.
+             * @param message RemoveUserFromGroupsResponse
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: d1.authn.RemoveUserFromGroupResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: d1.authn.RemoveUserFromGroupsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
             /**
-             * Converts this RemoveUserFromGroupResponse to JSON.
+             * Converts this RemoveUserFromGroupsResponse to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };
 
             /**
-             * Gets the default type url for RemoveUserFromGroupResponse
+             * Gets the default type url for RemoveUserFromGroupsResponse
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
@@ -1371,7 +1335,7 @@ export namespace d1 {
     /** Namespace scopes. */
     namespace scopes {
 
-        /** Access scopes. */
+        /** Scope enum. */
         enum Scope {
             READ = 0,
             CREATE = 1,
@@ -1386,7 +1350,7 @@ export namespace d1 {
     /** Namespace authz. */
     namespace authz {
 
-        /** Service for managing authorization rules. */
+        /** Represents an Authz */
         class Authz extends $protobuf.rpc.Service {
 
             /**
@@ -1407,64 +1371,60 @@ export namespace d1 {
             public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Authz;
 
             /**
-             * Returns a list of groups with access to the specified object.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
-             * The calling user has to be authenticated and authorized to access the object in order to get the object permissions.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls GetPermissions.
              * @param request GetPermissionsRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and GetPermissionsResponse
              */
             public getPermissions(request: d1.authz.IGetPermissionsRequest, callback: d1.authz.Authz.GetPermissionsCallback): void;
 
             /**
-             * Returns a list of groups with access to the specified object.
-             * This call can fail if the auth storage cannot be reached, in which case an error is returned.
-             * The calling user has to be authenticated and authorized to access the object in order to get the object permissions.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls GetPermissions.
              * @param request GetPermissionsRequest message or plain object
              * @returns Promise
              */
             public getPermissions(request: d1.authz.IGetPermissionsRequest): Promise<d1.authz.GetPermissionsResponse>;
 
             /**
-             * Adds a group to the access list of the specified object.
-             * This call can fail if the caller does not have access to the object, if the target group does not exist, or if the auth storage cannot be reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls AddPermission.
              * @param request AddPermissionRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and AddPermissionResponse
              */
             public addPermission(request: d1.authz.IAddPermissionRequest, callback: d1.authz.Authz.AddPermissionCallback): void;
 
             /**
-             * Adds a group to the access list of the specified object.
-             * This call can fail if the caller does not have access to the object, if the target group does not exist, or if the auth storage cannot be reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls AddPermission.
              * @param request AddPermissionRequest message or plain object
              * @returns Promise
              */
             public addPermission(request: d1.authz.IAddPermissionRequest): Promise<d1.authz.AddPermissionResponse>;
 
             /**
-             * Removes a group from the access list of the specified object.
-             * This call can fail if the caller does not have access to the object or if the auth storage cannot reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls RemovePermission.
              * @param request RemovePermissionRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and RemovePermissionResponse
              */
             public removePermission(request: d1.authz.IRemovePermissionRequest, callback: d1.authz.Authz.RemovePermissionCallback): void;
 
             /**
-             * Removes a group from the access list of the specified object.
-             * This call can fail if the caller does not have access to the object or if the auth storage cannot reached.
-             * In these cases, an error is returned.
-             * Requires the scope `OBJECTPERMISSIONS`.
+             * Calls RemovePermission.
              * @param request RemovePermissionRequest message or plain object
              * @returns Promise
              */
             public removePermission(request: d1.authz.IRemovePermissionRequest): Promise<d1.authz.RemovePermissionResponse>;
+
+            /**
+             * Calls CheckPermission.
+             * @param request CheckPermissionRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CheckPermissionResponse
+             */
+            public checkPermission(request: d1.authz.ICheckPermissionRequest, callback: d1.authz.Authz.CheckPermissionCallback): void;
+
+            /**
+             * Calls CheckPermission.
+             * @param request CheckPermissionRequest message or plain object
+             * @returns Promise
+             */
+            public checkPermission(request: d1.authz.ICheckPermissionRequest): Promise<d1.authz.CheckPermissionResponse>;
         }
 
         namespace Authz {
@@ -1474,31 +1434,38 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] GetPermissionsResponse
              */
-            type GetPermissionsCallback = (error: (Error | null), response?: d1.authz.GetPermissionsResponse) => void;
+            type GetPermissionsCallback = (error: (Error|null), response?: d1.authz.GetPermissionsResponse) => void;
 
             /**
              * Callback as used by {@link d1.authz.Authz#addPermission}.
              * @param error Error, if any
              * @param [response] AddPermissionResponse
              */
-            type AddPermissionCallback = (error: (Error | null), response?: d1.authz.AddPermissionResponse) => void;
+            type AddPermissionCallback = (error: (Error|null), response?: d1.authz.AddPermissionResponse) => void;
 
             /**
              * Callback as used by {@link d1.authz.Authz#removePermission}.
              * @param error Error, if any
              * @param [response] RemovePermissionResponse
              */
-            type RemovePermissionCallback = (error: (Error | null), response?: d1.authz.RemovePermissionResponse) => void;
+            type RemovePermissionCallback = (error: (Error|null), response?: d1.authz.RemovePermissionResponse) => void;
+
+            /**
+             * Callback as used by {@link d1.authz.Authz#checkPermission}.
+             * @param error Error, if any
+             * @param [response] CheckPermissionResponse
+             */
+            type CheckPermissionCallback = (error: (Error|null), response?: d1.authz.CheckPermissionResponse) => void;
         }
 
         /** Properties of a GetPermissionsRequest. */
         interface IGetPermissionsRequest {
 
-            /** The ID of the object to get the permission list for. */
-            objectId?: (string | null);
+            /** GetPermissionsRequest objectId */
+            objectId?: (string|null);
         }
 
-        /** Represents a request to get the permissions of an object. */
+        /** Represents a GetPermissionsRequest. */
         class GetPermissionsRequest implements IGetPermissionsRequest {
 
             /**
@@ -1507,7 +1474,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authz.IGetPermissionsRequest);
 
-            /** The ID of the object to get the permission list for. */
+            /** GetPermissionsRequest objectId. */
             public objectId: string;
 
             /**
@@ -1541,7 +1508,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.GetPermissionsRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.GetPermissionsRequest;
 
             /**
              * Decodes a GetPermissionsRequest message from the specified reader or buffer, length delimited.
@@ -1550,14 +1517,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.GetPermissionsRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.GetPermissionsRequest;
 
             /**
              * Verifies a GetPermissionsRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a GetPermissionsRequest message from a plain object. Also converts values to their respective internal types.
@@ -1591,11 +1558,11 @@ export namespace d1 {
         /** Properties of a GetPermissionsResponse. */
         interface IGetPermissionsResponse {
 
-            /** List of groups with access to the object. */
-            groupIds?: (string[] | null);
+            /** GetPermissionsResponse groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents the result of a request to get permissions for an object. */
+        /** Represents a GetPermissionsResponse. */
         class GetPermissionsResponse implements IGetPermissionsResponse {
 
             /**
@@ -1604,7 +1571,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.authz.IGetPermissionsResponse);
 
-            /** List of groups with access to the object. */
+            /** GetPermissionsResponse groupIds. */
             public groupIds: string[];
 
             /**
@@ -1638,7 +1605,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.GetPermissionsResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.GetPermissionsResponse;
 
             /**
              * Decodes a GetPermissionsResponse message from the specified reader or buffer, length delimited.
@@ -1647,14 +1614,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.GetPermissionsResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.GetPermissionsResponse;
 
             /**
              * Verifies a GetPermissionsResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a GetPermissionsResponse message from a plain object. Also converts values to their respective internal types.
@@ -1688,14 +1655,14 @@ export namespace d1 {
         /** Properties of an AddPermissionRequest. */
         interface IAddPermissionRequest {
 
-            /** The ID of the object to add the permission to. */
-            objectId?: (string | null);
+            /** AddPermissionRequest objectId */
+            objectId?: (string|null);
 
-            /** The ID of the group to give access. */
-            groupId?: (string | null);
+            /** AddPermissionRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents a request to add permission to an object. */
+        /** Represents an AddPermissionRequest. */
         class AddPermissionRequest implements IAddPermissionRequest {
 
             /**
@@ -1704,11 +1671,11 @@ export namespace d1 {
              */
             constructor(properties?: d1.authz.IAddPermissionRequest);
 
-            /** The ID of the object to add the permission to. */
+            /** AddPermissionRequest objectId. */
             public objectId: string;
 
-            /** The ID of the group to give access. */
-            public groupId: string;
+            /** AddPermissionRequest groupIds. */
+            public groupIds: string[];
 
             /**
              * Creates a new AddPermissionRequest instance using the specified properties.
@@ -1741,7 +1708,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.AddPermissionRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.AddPermissionRequest;
 
             /**
              * Decodes an AddPermissionRequest message from the specified reader or buffer, length delimited.
@@ -1750,14 +1717,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.AddPermissionRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.AddPermissionRequest;
 
             /**
              * Verifies an AddPermissionRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an AddPermissionRequest message from a plain object. Also converts values to their respective internal types.
@@ -1792,7 +1759,7 @@ export namespace d1 {
         interface IAddPermissionResponse {
         }
 
-        /** Represents the result of a request to add permission to an object. */
+        /** Represents an AddPermissionResponse. */
         class AddPermissionResponse implements IAddPermissionResponse {
 
             /**
@@ -1832,7 +1799,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.AddPermissionResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.AddPermissionResponse;
 
             /**
              * Decodes an AddPermissionResponse message from the specified reader or buffer, length delimited.
@@ -1841,14 +1808,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.AddPermissionResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.AddPermissionResponse;
 
             /**
              * Verifies an AddPermissionResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an AddPermissionResponse message from a plain object. Also converts values to their respective internal types.
@@ -1882,14 +1849,14 @@ export namespace d1 {
         /** Properties of a RemovePermissionRequest. */
         interface IRemovePermissionRequest {
 
-            /** The ID of the object to remove the permission for. */
-            objectId?: (string | null);
+            /** RemovePermissionRequest objectId */
+            objectId?: (string|null);
 
-            /** The ID of the group to revoke permission for. */
-            groupId?: (string | null);
+            /** RemovePermissionRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents a request to remove permission to an object. */
+        /** Represents a RemovePermissionRequest. */
         class RemovePermissionRequest implements IRemovePermissionRequest {
 
             /**
@@ -1898,11 +1865,11 @@ export namespace d1 {
              */
             constructor(properties?: d1.authz.IRemovePermissionRequest);
 
-            /** The ID of the object to remove the permission for. */
+            /** RemovePermissionRequest objectId. */
             public objectId: string;
 
-            /** The ID of the group to revoke permission for. */
-            public groupId: string;
+            /** RemovePermissionRequest groupIds. */
+            public groupIds: string[];
 
             /**
              * Creates a new RemovePermissionRequest instance using the specified properties.
@@ -1935,7 +1902,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.RemovePermissionRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.RemovePermissionRequest;
 
             /**
              * Decodes a RemovePermissionRequest message from the specified reader or buffer, length delimited.
@@ -1944,14 +1911,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.RemovePermissionRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.RemovePermissionRequest;
 
             /**
              * Verifies a RemovePermissionRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RemovePermissionRequest message from a plain object. Also converts values to their respective internal types.
@@ -1986,7 +1953,7 @@ export namespace d1 {
         interface IRemovePermissionResponse {
         }
 
-        /** Represents the result of a request to remove permission to an object. */
+        /** Represents a RemovePermissionResponse. */
         class RemovePermissionResponse implements IRemovePermissionResponse {
 
             /**
@@ -2026,7 +1993,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.authz.RemovePermissionResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.RemovePermissionResponse;
 
             /**
              * Decodes a RemovePermissionResponse message from the specified reader or buffer, length delimited.
@@ -2035,14 +2002,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.authz.RemovePermissionResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.RemovePermissionResponse;
 
             /**
              * Verifies a RemovePermissionResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RemovePermissionResponse message from a plain object. Also converts values to their respective internal types.
@@ -2072,12 +2039,206 @@ export namespace d1 {
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
+
+        /** Properties of a CheckPermissionRequest. */
+        interface ICheckPermissionRequest {
+
+            /** CheckPermissionRequest objectId */
+            objectId?: (string|null);
+        }
+
+        /** Represents a CheckPermissionRequest. */
+        class CheckPermissionRequest implements ICheckPermissionRequest {
+
+            /**
+             * Constructs a new CheckPermissionRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: d1.authz.ICheckPermissionRequest);
+
+            /** CheckPermissionRequest objectId. */
+            public objectId: string;
+
+            /**
+             * Creates a new CheckPermissionRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CheckPermissionRequest instance
+             */
+            public static create(properties?: d1.authz.ICheckPermissionRequest): d1.authz.CheckPermissionRequest;
+
+            /**
+             * Encodes the specified CheckPermissionRequest message. Does not implicitly {@link d1.authz.CheckPermissionRequest.verify|verify} messages.
+             * @param message CheckPermissionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: d1.authz.ICheckPermissionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CheckPermissionRequest message, length delimited. Does not implicitly {@link d1.authz.CheckPermissionRequest.verify|verify} messages.
+             * @param message CheckPermissionRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: d1.authz.ICheckPermissionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CheckPermissionRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CheckPermissionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.CheckPermissionRequest;
+
+            /**
+             * Decodes a CheckPermissionRequest message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CheckPermissionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.CheckPermissionRequest;
+
+            /**
+             * Verifies a CheckPermissionRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CheckPermissionRequest message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CheckPermissionRequest
+             */
+            public static fromObject(object: { [k: string]: any }): d1.authz.CheckPermissionRequest;
+
+            /**
+             * Creates a plain object from a CheckPermissionRequest message. Also converts values to other types if specified.
+             * @param message CheckPermissionRequest
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: d1.authz.CheckPermissionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CheckPermissionRequest to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for CheckPermissionRequest
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of a CheckPermissionResponse. */
+        interface ICheckPermissionResponse {
+
+            /** CheckPermissionResponse hasPermission */
+            hasPermission?: (boolean|null);
+        }
+
+        /** Represents a CheckPermissionResponse. */
+        class CheckPermissionResponse implements ICheckPermissionResponse {
+
+            /**
+             * Constructs a new CheckPermissionResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: d1.authz.ICheckPermissionResponse);
+
+            /** CheckPermissionResponse hasPermission. */
+            public hasPermission: boolean;
+
+            /**
+             * Creates a new CheckPermissionResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CheckPermissionResponse instance
+             */
+            public static create(properties?: d1.authz.ICheckPermissionResponse): d1.authz.CheckPermissionResponse;
+
+            /**
+             * Encodes the specified CheckPermissionResponse message. Does not implicitly {@link d1.authz.CheckPermissionResponse.verify|verify} messages.
+             * @param message CheckPermissionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: d1.authz.ICheckPermissionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified CheckPermissionResponse message, length delimited. Does not implicitly {@link d1.authz.CheckPermissionResponse.verify|verify} messages.
+             * @param message CheckPermissionResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: d1.authz.ICheckPermissionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CheckPermissionResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CheckPermissionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.authz.CheckPermissionResponse;
+
+            /**
+             * Decodes a CheckPermissionResponse message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns CheckPermissionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.authz.CheckPermissionResponse;
+
+            /**
+             * Verifies a CheckPermissionResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a CheckPermissionResponse message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns CheckPermissionResponse
+             */
+            public static fromObject(object: { [k: string]: any }): d1.authz.CheckPermissionResponse;
+
+            /**
+             * Creates a plain object from a CheckPermissionResponse message. Also converts values to other types if specified.
+             * @param message CheckPermissionResponse
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: d1.authz.CheckPermissionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this CheckPermissionResponse to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for CheckPermissionResponse
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
     }
 
     /** Namespace generic. */
     namespace generic {
 
-        /** Service for encryption and decryption of data. */
+        /** Represents a Generic */
         class Generic extends $protobuf.rpc.Service {
 
             /**
@@ -2133,27 +2294,30 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] EncryptResponse
              */
-            type EncryptCallback = (error: (Error | null), response?: d1.generic.EncryptResponse) => void;
+            type EncryptCallback = (error: (Error|null), response?: d1.generic.EncryptResponse) => void;
 
             /**
              * Callback as used by {@link d1.generic.Generic#decrypt}.
              * @param error Error, if any
              * @param [response] DecryptResponse
              */
-            type DecryptCallback = (error: (Error | null), response?: d1.generic.DecryptResponse) => void;
+            type DecryptCallback = (error: (Error|null), response?: d1.generic.DecryptResponse) => void;
         }
 
         /** Properties of an EncryptRequest. */
         interface IEncryptRequest {
 
-            /** Data to encrypt. */
-            plaintext?: (Uint8Array | null);
+            /** EncryptRequest plaintext */
+            plaintext?: (Uint8Array|null);
 
-            /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            /** EncryptRequest associatedData */
+            associatedData?: (Uint8Array|null);
+
+            /** EncryptRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
-        /** Represents a request to encrypt data. */
+        /** Represents an EncryptRequest. */
         class EncryptRequest implements IEncryptRequest {
 
             /**
@@ -2162,11 +2326,14 @@ export namespace d1 {
              */
             constructor(properties?: d1.generic.IEncryptRequest);
 
-            /** Data to encrypt. */
+            /** EncryptRequest plaintext. */
             public plaintext: Uint8Array;
 
-            /** Associated data. */
+            /** EncryptRequest associatedData. */
             public associatedData: Uint8Array;
+
+            /** EncryptRequest groupIds. */
+            public groupIds: string[];
 
             /**
              * Creates a new EncryptRequest instance using the specified properties.
@@ -2199,7 +2366,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.generic.EncryptRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.generic.EncryptRequest;
 
             /**
              * Decodes an EncryptRequest message from the specified reader or buffer, length delimited.
@@ -2208,14 +2375,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.generic.EncryptRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.generic.EncryptRequest;
 
             /**
              * Verifies an EncryptRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an EncryptRequest message from a plain object. Also converts values to their respective internal types.
@@ -2249,17 +2416,17 @@ export namespace d1 {
         /** Properties of an EncryptResponse. */
         interface IEncryptResponse {
 
-            /** Ciphertext of the provided plaintext. */
-            ciphertext?: (Uint8Array | null);
+            /** EncryptResponse ciphertext */
+            ciphertext?: (Uint8Array|null);
 
-            /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            /** EncryptResponse associatedData */
+            associatedData?: (Uint8Array|null);
 
-            /** The object ID of the encrypted data. */
-            objectId?: (string | null);
+            /** EncryptResponse objectId */
+            objectId?: (string|null);
         }
 
-        /** Represents a response to an encryption request. */
+        /** Represents an EncryptResponse. */
         class EncryptResponse implements IEncryptResponse {
 
             /**
@@ -2268,13 +2435,13 @@ export namespace d1 {
              */
             constructor(properties?: d1.generic.IEncryptResponse);
 
-            /** Ciphertext of the provided plaintext. */
+            /** EncryptResponse ciphertext. */
             public ciphertext: Uint8Array;
 
-            /** Associated data. */
+            /** EncryptResponse associatedData. */
             public associatedData: Uint8Array;
 
-            /** The object ID of the encrypted data. */
+            /** EncryptResponse objectId. */
             public objectId: string;
 
             /**
@@ -2308,7 +2475,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.generic.EncryptResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.generic.EncryptResponse;
 
             /**
              * Decodes an EncryptResponse message from the specified reader or buffer, length delimited.
@@ -2317,14 +2484,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.generic.EncryptResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.generic.EncryptResponse;
 
             /**
              * Verifies an EncryptResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an EncryptResponse message from a plain object. Also converts values to their respective internal types.
@@ -2358,17 +2525,17 @@ export namespace d1 {
         /** Properties of a DecryptRequest. */
         interface IDecryptRequest {
 
-            /** Data to decrypt. */
-            ciphertext?: (Uint8Array | null);
+            /** DecryptRequest ciphertext */
+            ciphertext?: (Uint8Array|null);
 
-            /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            /** DecryptRequest associatedData */
+            associatedData?: (Uint8Array|null);
 
-            /** The object ID of the data. */
-            objectId?: (string | null);
+            /** DecryptRequest objectId */
+            objectId?: (string|null);
         }
 
-        /** Represents a request to decrypt data. */
+        /** Represents a DecryptRequest. */
         class DecryptRequest implements IDecryptRequest {
 
             /**
@@ -2377,13 +2544,13 @@ export namespace d1 {
              */
             constructor(properties?: d1.generic.IDecryptRequest);
 
-            /** Data to decrypt. */
+            /** DecryptRequest ciphertext. */
             public ciphertext: Uint8Array;
 
-            /** Associated data. */
+            /** DecryptRequest associatedData. */
             public associatedData: Uint8Array;
 
-            /** The object ID of the data. */
+            /** DecryptRequest objectId. */
             public objectId: string;
 
             /**
@@ -2417,7 +2584,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.generic.DecryptRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.generic.DecryptRequest;
 
             /**
              * Decodes a DecryptRequest message from the specified reader or buffer, length delimited.
@@ -2426,14 +2593,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.generic.DecryptRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.generic.DecryptRequest;
 
             /**
              * Verifies a DecryptRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DecryptRequest message from a plain object. Also converts values to their respective internal types.
@@ -2467,14 +2634,14 @@ export namespace d1 {
         /** Properties of a DecryptResponse. */
         interface IDecryptResponse {
 
-            /** Decrypted data. */
-            plaintext?: (Uint8Array | null);
+            /** DecryptResponse plaintext */
+            plaintext?: (Uint8Array|null);
 
-            /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            /** DecryptResponse associatedData */
+            associatedData?: (Uint8Array|null);
         }
 
-        /** Represents a response to a decryption request. */
+        /** Represents a DecryptResponse. */
         class DecryptResponse implements IDecryptResponse {
 
             /**
@@ -2483,10 +2650,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.generic.IDecryptResponse);
 
-            /** Decrypted data. */
+            /** DecryptResponse plaintext. */
             public plaintext: Uint8Array;
 
-            /** Associated data. */
+            /** DecryptResponse associatedData. */
             public associatedData: Uint8Array;
 
             /**
@@ -2520,7 +2687,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.generic.DecryptResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.generic.DecryptResponse;
 
             /**
              * Decodes a DecryptResponse message from the specified reader or buffer, length delimited.
@@ -2529,14 +2696,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.generic.DecryptResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.generic.DecryptResponse;
 
             /**
              * Verifies a DecryptResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DecryptResponse message from a plain object. Also converts values to their respective internal types.
@@ -2571,7 +2738,7 @@ export namespace d1 {
     /** Namespace index. */
     namespace index {
 
-        /** Service for using secure index. */
+        /** Represents an Index */
         class Index extends $protobuf.rpc.Service {
 
             /**
@@ -2641,31 +2808,31 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] AddResponse
              */
-            type AddCallback = (error: (Error | null), response?: d1.index.AddResponse) => void;
+            type AddCallback = (error: (Error|null), response?: d1.index.AddResponse) => void;
 
             /**
              * Callback as used by {@link d1.index.Index#search}.
              * @param error Error, if any
              * @param [response] SearchResponse
              */
-            type SearchCallback = (error: (Error | null), response?: d1.index.SearchResponse) => void;
+            type SearchCallback = (error: (Error|null), response?: d1.index.SearchResponse) => void;
 
             /**
              * Callback as used by {@link d1.index.Index#delete_}.
              * @param error Error, if any
              * @param [response] DeleteResponse
              */
-            type DeleteCallback = (error: (Error | null), response?: d1.index.DeleteResponse) => void;
+            type DeleteCallback = (error: (Error|null), response?: d1.index.DeleteResponse) => void;
         }
 
         /** Properties of an AddRequest. */
         interface IAddRequest {
 
-            /** Keywords to be associated with identifier in secure index. */
-            keywords?: (string[] | null);
+            /** AddRequest keywords */
+            keywords?: (string[]|null);
 
-            /** Identifier, e.g. a document ID, to be stored in secure index. */
-            identifier?: (string | null);
+            /** AddRequest identifier */
+            identifier?: (string|null);
         }
 
         /** Represents an AddRequest. */
@@ -2677,10 +2844,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.index.IAddRequest);
 
-            /** Keywords to be associated with identifier in secure index. */
+            /** AddRequest keywords. */
             public keywords: string[];
 
-            /** Identifier, e.g. a document ID, to be stored in secure index. */
+            /** AddRequest identifier. */
             public identifier: string;
 
             /**
@@ -2714,7 +2881,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.AddRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.AddRequest;
 
             /**
              * Decodes an AddRequest message from the specified reader or buffer, length delimited.
@@ -2723,14 +2890,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.AddRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.AddRequest;
 
             /**
              * Verifies an AddRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an AddRequest message from a plain object. Also converts values to their respective internal types.
@@ -2765,7 +2932,7 @@ export namespace d1 {
         interface IAddResponse {
         }
 
-        /** Represents a response to an add request. */
+        /** Represents an AddResponse. */
         class AddResponse implements IAddResponse {
 
             /**
@@ -2805,7 +2972,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.AddResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.AddResponse;
 
             /**
              * Decodes an AddResponse message from the specified reader or buffer, length delimited.
@@ -2814,14 +2981,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.AddResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.AddResponse;
 
             /**
              * Verifies an AddResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an AddResponse message from a plain object. Also converts values to their respective internal types.
@@ -2855,8 +3022,8 @@ export namespace d1 {
         /** Properties of a SearchRequest. */
         interface ISearchRequest {
 
-            /** Keyword to search for in secure index. */
-            keyword?: (string | null);
+            /** SearchRequest keyword */
+            keyword?: (string|null);
         }
 
         /** Represents a SearchRequest. */
@@ -2868,7 +3035,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.index.ISearchRequest);
 
-            /** Keyword to search for in secure index. */
+            /** SearchRequest keyword. */
             public keyword: string;
 
             /**
@@ -2902,7 +3069,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.SearchRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.SearchRequest;
 
             /**
              * Decodes a SearchRequest message from the specified reader or buffer, length delimited.
@@ -2911,14 +3078,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.SearchRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.SearchRequest;
 
             /**
              * Verifies a SearchRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a SearchRequest message from a plain object. Also converts values to their respective internal types.
@@ -2952,11 +3119,11 @@ export namespace d1 {
         /** Properties of a SearchResponse. */
         interface ISearchResponse {
 
-            /** Identifiers that contain the keyword in secure index. */
-            identifiers?: (string[] | null);
+            /** SearchResponse identifiers */
+            identifiers?: (string[]|null);
         }
 
-        /** Represents a response to a search request. */
+        /** Represents a SearchResponse. */
         class SearchResponse implements ISearchResponse {
 
             /**
@@ -2965,7 +3132,7 @@ export namespace d1 {
              */
             constructor(properties?: d1.index.ISearchResponse);
 
-            /** Identifiers that contain the keyword in secure index. */
+            /** SearchResponse identifiers. */
             public identifiers: string[];
 
             /**
@@ -2999,7 +3166,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.SearchResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.SearchResponse;
 
             /**
              * Decodes a SearchResponse message from the specified reader or buffer, length delimited.
@@ -3008,14 +3175,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.SearchResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.SearchResponse;
 
             /**
              * Verifies a SearchResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a SearchResponse message from a plain object. Also converts values to their respective internal types.
@@ -3049,11 +3216,11 @@ export namespace d1 {
         /** Properties of a DeleteRequest. */
         interface IDeleteRequest {
 
-            /** Keywords that are associated with identifier in secure index. */
-            keywords?: (string[] | null);
+            /** DeleteRequest keywords */
+            keywords?: (string[]|null);
 
-            /** Identifier stored in secure index. */
-            identifier?: (string | null);
+            /** DeleteRequest identifier */
+            identifier?: (string|null);
         }
 
         /** Represents a DeleteRequest. */
@@ -3065,10 +3232,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.index.IDeleteRequest);
 
-            /** Keywords that are associated with identifier in secure index. */
+            /** DeleteRequest keywords. */
             public keywords: string[];
 
-            /** Identifier stored in secure index. */
+            /** DeleteRequest identifier. */
             public identifier: string;
 
             /**
@@ -3102,7 +3269,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.DeleteRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.DeleteRequest;
 
             /**
              * Decodes a DeleteRequest message from the specified reader or buffer, length delimited.
@@ -3111,14 +3278,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.DeleteRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.DeleteRequest;
 
             /**
              * Verifies a DeleteRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DeleteRequest message from a plain object. Also converts values to their respective internal types.
@@ -3153,7 +3320,7 @@ export namespace d1 {
         interface IDeleteResponse {
         }
 
-        /** Represents a response to a delete request. */
+        /** Represents a DeleteResponse. */
         class DeleteResponse implements IDeleteResponse {
 
             /**
@@ -3193,7 +3360,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.index.DeleteResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.index.DeleteResponse;
 
             /**
              * Decodes a DeleteResponse message from the specified reader or buffer, length delimited.
@@ -3202,14 +3369,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.index.DeleteResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.index.DeleteResponse;
 
             /**
              * Verifies a DeleteResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DeleteResponse message from a plain object. Also converts values to their respective internal types.
@@ -3328,38 +3495,41 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] StoreResponse
              */
-            type StoreCallback = (error: (Error | null), response?: d1.storage.StoreResponse) => void;
+            type StoreCallback = (error: (Error|null), response?: d1.storage.StoreResponse) => void;
 
             /**
              * Callback as used by {@link d1.storage.Storage#retrieve}.
              * @param error Error, if any
              * @param [response] RetrieveResponse
              */
-            type RetrieveCallback = (error: (Error | null), response?: d1.storage.RetrieveResponse) => void;
+            type RetrieveCallback = (error: (Error|null), response?: d1.storage.RetrieveResponse) => void;
 
             /**
              * Callback as used by {@link d1.storage.Storage#update}.
              * @param error Error, if any
              * @param [response] UpdateResponse
              */
-            type UpdateCallback = (error: (Error | null), response?: d1.storage.UpdateResponse) => void;
+            type UpdateCallback = (error: (Error|null), response?: d1.storage.UpdateResponse) => void;
 
             /**
              * Callback as used by {@link d1.storage.Storage#delete_}.
              * @param error Error, if any
              * @param [response] DeleteResponse
              */
-            type DeleteCallback = (error: (Error | null), response?: d1.storage.DeleteResponse) => void;
+            type DeleteCallback = (error: (Error|null), response?: d1.storage.DeleteResponse) => void;
         }
 
         /** Properties of a StoreRequest. */
         interface IStoreRequest {
 
             /** Data to encrypt. */
-            plaintext?: (Uint8Array | null);
+            plaintext?: (Uint8Array|null);
 
             /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            associatedData?: (Uint8Array|null);
+
+            /** StoreRequest groupIds */
+            groupIds?: (string[]|null);
         }
 
         /** Represents a request to store an object. */
@@ -3376,6 +3546,9 @@ export namespace d1 {
 
             /** Associated data. */
             public associatedData: Uint8Array;
+
+            /** StoreRequest groupIds. */
+            public groupIds: string[];
 
             /**
              * Creates a new StoreRequest instance using the specified properties.
@@ -3408,7 +3581,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.StoreRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.StoreRequest;
 
             /**
              * Decodes a StoreRequest message from the specified reader or buffer, length delimited.
@@ -3417,14 +3590,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.StoreRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.StoreRequest;
 
             /**
              * Verifies a StoreRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a StoreRequest message from a plain object. Also converts values to their respective internal types.
@@ -3459,7 +3632,7 @@ export namespace d1 {
         interface IStoreResponse {
 
             /** The object ID to the stored data. */
-            objectId?: (string | null);
+            objectId?: (string|null);
         }
 
         /** Represents a response to a store request. */
@@ -3505,7 +3678,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.StoreResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.StoreResponse;
 
             /**
              * Decodes a StoreResponse message from the specified reader or buffer, length delimited.
@@ -3514,14 +3687,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.StoreResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.StoreResponse;
 
             /**
              * Verifies a StoreResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a StoreResponse message from a plain object. Also converts values to their respective internal types.
@@ -3556,7 +3729,7 @@ export namespace d1 {
         interface IRetrieveRequest {
 
             /** The object ID to retrieve. */
-            objectId?: (string | null);
+            objectId?: (string|null);
         }
 
         /** Represents a request to retrieve an object. */
@@ -3602,7 +3775,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.RetrieveRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.RetrieveRequest;
 
             /**
              * Decodes a RetrieveRequest message from the specified reader or buffer, length delimited.
@@ -3611,14 +3784,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.RetrieveRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.RetrieveRequest;
 
             /**
              * Verifies a RetrieveRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RetrieveRequest message from a plain object. Also converts values to their respective internal types.
@@ -3653,10 +3826,10 @@ export namespace d1 {
         interface IRetrieveResponse {
 
             /** The decrypted data. */
-            plaintext?: (Uint8Array | null);
+            plaintext?: (Uint8Array|null);
 
             /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            associatedData?: (Uint8Array|null);
         }
 
         /** Represents a response to a retrieve request. */
@@ -3705,7 +3878,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.RetrieveResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.RetrieveResponse;
 
             /**
              * Decodes a RetrieveResponse message from the specified reader or buffer, length delimited.
@@ -3714,14 +3887,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.RetrieveResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.RetrieveResponse;
 
             /**
              * Verifies a RetrieveResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a RetrieveResponse message from a plain object. Also converts values to their respective internal types.
@@ -3756,13 +3929,13 @@ export namespace d1 {
         interface IUpdateRequest {
 
             /** The data to encrypt. */
-            plaintext?: (Uint8Array | null);
+            plaintext?: (Uint8Array|null);
 
             /** Associated data. */
-            associatedData?: (Uint8Array | null);
+            associatedData?: (Uint8Array|null);
 
             /** The ID of the object to update. */
-            objectId?: (string | null);
+            objectId?: (string|null);
         }
 
         /** Represents a request to update an object. */
@@ -3814,7 +3987,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.UpdateRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.UpdateRequest;
 
             /**
              * Decodes an UpdateRequest message from the specified reader or buffer, length delimited.
@@ -3823,14 +3996,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.UpdateRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.UpdateRequest;
 
             /**
              * Verifies an UpdateRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an UpdateRequest message from a plain object. Also converts values to their respective internal types.
@@ -3905,7 +4078,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.UpdateResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.UpdateResponse;
 
             /**
              * Decodes an UpdateResponse message from the specified reader or buffer, length delimited.
@@ -3914,14 +4087,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.UpdateResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.UpdateResponse;
 
             /**
              * Verifies an UpdateResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates an UpdateResponse message from a plain object. Also converts values to their respective internal types.
@@ -3956,7 +4129,7 @@ export namespace d1 {
         interface IDeleteRequest {
 
             /** The ID of the object to delete. */
-            objectId?: (string | null);
+            objectId?: (string|null);
         }
 
         /** Represents a request to delete an object. */
@@ -4002,7 +4175,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.DeleteRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.DeleteRequest;
 
             /**
              * Decodes a DeleteRequest message from the specified reader or buffer, length delimited.
@@ -4011,14 +4184,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.DeleteRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.DeleteRequest;
 
             /**
              * Verifies a DeleteRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DeleteRequest message from a plain object. Also converts values to their respective internal types.
@@ -4093,7 +4266,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.storage.DeleteResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.storage.DeleteResponse;
 
             /**
              * Decodes a DeleteResponse message from the specified reader or buffer, length delimited.
@@ -4102,14 +4275,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.storage.DeleteResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.storage.DeleteResponse;
 
             /**
              * Verifies a DeleteResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a DeleteResponse message from a plain object. Also converts values to their respective internal types.
@@ -4144,7 +4317,7 @@ export namespace d1 {
     /** Namespace version. */
     namespace version {
 
-        /** Service for getting version information. */
+        /** Represents a Version */
         class Version extends $protobuf.rpc.Service {
 
             /**
@@ -4165,14 +4338,14 @@ export namespace d1 {
             public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Version;
 
             /**
-             * Returns the versions of the currently running service.
+             * Calls Version.
              * @param request VersionRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and VersionResponse
              */
             public version(request: d1.version.IVersionRequest, callback: d1.version.Version.VersionCallback): void;
 
             /**
-             * Returns the versions of the currently running service.
+             * Calls Version.
              * @param request VersionRequest message or plain object
              * @returns Promise
              */
@@ -4186,14 +4359,14 @@ export namespace d1 {
              * @param error Error, if any
              * @param [response] VersionResponse
              */
-            type VersionCallback = (error: (Error | null), response?: d1.version.VersionResponse) => void;
+            type VersionCallback = (error: (Error|null), response?: d1.version.VersionResponse) => void;
         }
 
         /** Properties of a VersionRequest. */
         interface IVersionRequest {
         }
 
-        /** Represents a request to get version information. */
+        /** Represents a VersionRequest. */
         class VersionRequest implements IVersionRequest {
 
             /**
@@ -4233,7 +4406,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.version.VersionRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.version.VersionRequest;
 
             /**
              * Decodes a VersionRequest message from the specified reader or buffer, length delimited.
@@ -4242,14 +4415,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.version.VersionRequest;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.version.VersionRequest;
 
             /**
              * Verifies a VersionRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a VersionRequest message from a plain object. Also converts values to their respective internal types.
@@ -4283,14 +4456,14 @@ export namespace d1 {
         /** Properties of a VersionResponse. */
         interface IVersionResponse {
 
-            /** The Git commit of the running service. */
-            commit?: (string | null);
+            /** VersionResponse commit */
+            commit?: (string|null);
 
-            /** The version of the running service. */
-            tag?: (string | null);
+            /** VersionResponse tag */
+            tag?: (string|null);
         }
 
-        /** Represents a response to get version information. */
+        /** Represents a VersionResponse. */
         class VersionResponse implements IVersionResponse {
 
             /**
@@ -4299,10 +4472,10 @@ export namespace d1 {
              */
             constructor(properties?: d1.version.IVersionResponse);
 
-            /** The Git commit of the running service. */
+            /** VersionResponse commit. */
             public commit: string;
 
-            /** The version of the running service. */
+            /** VersionResponse tag. */
             public tag: string;
 
             /**
@@ -4336,7 +4509,7 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader | Uint8Array), length?: number): d1.version.VersionResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): d1.version.VersionResponse;
 
             /**
              * Decodes a VersionResponse message from the specified reader or buffer, length delimited.
@@ -4345,14 +4518,14 @@ export namespace d1 {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: ($protobuf.Reader | Uint8Array)): d1.version.VersionResponse;
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): d1.version.VersionResponse;
 
             /**
              * Verifies a VersionResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
-            public static verify(message: { [k: string]: any }): (string | null);
+            public static verify(message: { [k: string]: any }): (string|null);
 
             /**
              * Creates a VersionResponse message from a plain object. Also converts values to their respective internal types.

@@ -46,8 +46,8 @@ describe("generic", () => {
     it("should be able to manage users", async () => {
         const createUserRes = await client.authn.createUser({ scopes: [] });
         const createGroupRes = await client.authn.createGroup({ scopes: [] });
-        await client.authn.addUserToGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
-        await client.authn.removeUserFromGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
+        await client.authn.addUserToGroups({ userId: createUserRes.userId, groupIds: [createGroupRes.groupId] });
+        await client.authn.removeUserFromGroups({ userId: createUserRes.userId, groupIds: [createGroupRes.groupId] });
         await client.authn.removeUser({ userId: createUserRes.userId });
     })
     it("should be able to encrypt data", async () => {
