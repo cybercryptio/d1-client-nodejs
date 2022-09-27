@@ -46,8 +46,8 @@ describe("storage", () => {
     it("should be able to manage users", async () => {
         const createUserRes = await client.authn.createUser({ scopes: [] });
         const createGroupRes = await client.authn.createGroup({ scopes: [] });
-        await client.authn.addUserToGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
-        await client.authn.removeUserFromGroup({ userId: createUserRes.userId, groupId: createGroupRes.groupId });
+        await client.authn.addUserToGroups({ userId: createUserRes.userId, groupIds: [createGroupRes.groupId] });
+        await client.authn.removeUserFromGroups({ userId: createUserRes.userId, groupIds: [createGroupRes.groupId] });
         await client.authn.removeUser({ userId: createUserRes.userId });
     })
     it("should be able to store data", async () => {
@@ -75,11 +75,11 @@ describe("storage", () => {
         const client2 = new D1StorageClient(endpoint, new UsernamePasswordCredentials(createUserResponse.userId, createUserResponse.password, endpoint));
         const storeResponse = await client2.storage.store({ plaintext, associatedData });
 
-        await client2.authz.addPermission({ objectId: storeResponse.objectId, groupId: createUserResponse.userId });
+        await client2.authz.addPermission({ objectId: storeResponse.objectId, groupIds: [createUserResponse.userId] });
         const getPermissionsResponse = await client2.authz.getPermissions({ objectId: storeResponse.objectId });
         expect(getPermissionsResponse.groupIds).toContain(createUserResponse.userId);
 
-        await client2.authz.removePermission({ objectId: storeResponse.objectId, groupId: createUserResponse.userId });
+        await client2.authz.removePermission({ objectId: storeResponse.objectId, groupIds: [createUserResponse.userId] });
         expect(async () => await client2.authz.getPermissions({ objectId: storeResponse.objectId })).rejects.toThrow();
     })
     it("should be able to add and search for keywords in index", async () => {
