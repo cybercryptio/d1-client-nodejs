@@ -20,6 +20,9 @@ jobs:
         node-version: '16.x'
         registry-url: 'https://registry.npmjs.org'
 
+    - name: Install NPM modules
+      run: npm install
+
     - name: Set package version
       run: npm version ${{ github.ref_name }} --no-git-tag-version
 
