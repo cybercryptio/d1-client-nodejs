@@ -28,7 +28,7 @@ build: ## Build all clients
 
 .PHONY: publish
 publish: build ## Publish package
-	npm publish
+	npm publish --access public
 
 .PHONY: tests
 tests: docker-generic-tests docker-storage-tests ## Run all tests
