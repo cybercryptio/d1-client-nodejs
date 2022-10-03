@@ -84,7 +84,7 @@ jobs:
       if: ${{ github.ref_name == 'master' || github.ref_type == 'tag' }}
       run: make publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.CYBOT_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Create tag
       if: ${{ github.ref_name == 'master' }}
