@@ -11,7 +11,20 @@ env:
   PACKAGE_SOURCE: github
 
 jobs:
+  pre_job:
+    runs-on: ubuntu-20.04
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v5
+        with:
+          concurrent_skipping: 'same_content_newer'
+          skip_after_successful_duplicate: 'false'
+
   build:
+    needs: pre_job
+    if: needs.pre_job.outputs.should_skip != 'true'
     runs-on: ubuntu-20.04
 
     steps:
@@ -26,9 +39,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16.x'
-        registry-url: 'https://npm.pkg.github.com'
-        # Defaults to the user or organization that owns the workflow file
-        scope: '@cybercryptio'
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Install NPM modules
       run: npm install
@@ -53,30 +64,30 @@ jobs:
       run: make tests
 
     - name: Install GitVersion
-      if: github.ref_name == 'master'
+      if: ${{ github.ref_name == 'master' || github.ref_type == 'tag' }}
       uses: gittools/actions/gitversion/setup@v0.9.13
       with:
         versionSpec: '5.x'
 
     - name: Determine Version
-      if: github.ref_name == 'master'
+      if: ${{ github.ref_name == 'master' || github.ref_type == 'tag' }}
       id: gitversion
       uses: gittools/actions/gitversion/execute@v0.9.13
       with:
         additionalArguments: '/overrideconfig mode=ContinuousDeployment'
 
     - name: Set package version
-      if: github.ref_name == 'master'
+      if: ${{ github.ref_name == 'master' || github.ref_type == 'tag' }}
       run: npm version ${{ steps.gitversion.outputs.semVer }} --no-git-tag-version
 
     - name: Publish package
-      if: github.ref_name == 'master'
+      if: ${{ github.ref_name == 'master' || github.ref_type == 'tag' }}
       run: make publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.CYBOT_TOKEN }}
 
     - name: Create tag
-      if: github.ref_name == 'master'
+      if: ${{ github.ref_name == 'master' }}
       run: |
         git tag -f v${{ steps.gitversion.outputs.semVer }}
         git push origin v${{ steps.gitversion.outputs.semVer }}
